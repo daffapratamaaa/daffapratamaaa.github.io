@@ -82,7 +82,7 @@ a.nav-link{
        home
 ──────────────────*/
 
-#home{ 	
+#beranda{ 	
 	margin: auto;
 	height: 100vh;
 	color: var(--main-fonts-color);
@@ -92,7 +92,7 @@ a.nav-link{
 	justify-content: space-evenly;
 }
 
-#home .filter{
+#beranda .filter{
 	background: url('https://images.unsplash.com/photo-1544099858-75feeb57f01b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80') no-repeat;
 	background-size: cover;
 	background-position:center;
