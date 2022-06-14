@@ -1,0 +1,189 @@
+<html><meta charset='UTF-8'/><meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5' name='viewport'/><meta content='IE=edge' http-equiv='X-UA-Compatible'/>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet"><script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script><script src="https://kit.fontawesome.com/4f3ce16e3e.js" crossorigin="anonymous"></script>
+<link rel="icon" href="https://i.postimg.cc/PfVgKm3H/Huruf-A-sampai-Z-dengan-Elemen-Api.jpg">
+<head>
+  <meta content='#1098F7' name='theme-color'/>
+  <meta content='#1098F7' name='msapplication-navbutton-color'/>
+  <meta content='#1098F7' name='apple-mobile-web-app-status-bar-style'/>
+  <meta content='yes' name='apple-mobile-web-app-capable'/>
+<!-- Edit Judul Script di Sini -->
+  <title>Aku Mau Ngomong Sesuatu Nih - Daffa Pratama</title>
+<!-- 
+  Made with love by Daffa!
+
+     Blog: https://daffapratamaaa.github.io
+     Instagram: @daffapratamanurardiansyah
+     TikTok: @daffa_pratama_
+     Email: daffapratama@mail.com
+
+  Thanks to all <3
+-->
+</head>
+<style>
+:root {
+--warna-bg: rgba(0, 0, 0, .6); 
+--warna-teks: white;
+--bingkai: 8px;
+--warna-bingkai: rgba(255, 255, 255, .8);
+--gaya-font: 'Josefin Sans', sans-serif;
+--gaya-font2: 'Dancing Script', sans-serif;
+}
+body{background-color:#101010;font-family:var(--gaya-font);padding: 25px;-webkit-user-select: none; -ms-user-select: none; user-select: none;} a{text-decoration:none;} #linkmp3{display:none}
+body::before{content:"\00A9  Script HTML Bucin | Daffa Pratama";color:white;opacity:.3;font-size:2vw;position:fixed;bottom:15px;left:15px;}
+#bodyblur{opacity:1;animation: jj 7s infinite;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.3);z-index:-1;transition:all 1s ease;} #wallpaper{transition:all 3s ease;}
+#beneranblur{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.3);-webkit-backdrop-filter:blur(2px); backdrop-filter:blur(2px);transition:all 3s ease;}
+@keyframes jj{0%  {transform: scale(1.1);} 50% {transform: scale(1.2);} 100% {transform: scale(1.1);}}
+@keyframes rto{from {transform:scale(1);} to {transform:scale(1.1);}}
+
+@keyframes leaves {0% {transform: scale(1.0);} 100% {transform: scale(.8);}}
+#lope, .lopdeg{animation: leaves 1s ease-in-out infinite alternate;-webkit-animation: leaves 1s ease-in-out infinite alternate;}
+.lovein:hover{transform: scale(1.3);}
+
+@keyframes kont{0%  {left:-1px; top:-3px;} 50% {left:1px; top:3px;} 100% {left:-1px; top:-3px;}}
+blockquote{opacity:0;visibility:hidden;transition:all 1s ease;position:relative;margin-top:120px;margin-left:0;margin-right:0;}
+blockquote{width:400px;background:var(--warna-bg);color:var(--warna-teks);font-size:20px;font-weight:700;text-shadow: 0px 2px 2px rgba(0, 0, 0, .8);text-align:center;line-height:1.3em;padding:16px 35px 16px 35px;border: 1px solid var(--warna-teks);border-radius:var(--bingkai);}
+blockquote p:first-child{font-size:18px;font-weight:700;text-align:center;} #katabawah{font-size:15px;}
+p{margin:1.5em 0;transition:all .3s ease;}
+#bq img{display:none;width:160px;height:160px;margin:20px 0 0 0;}
+#akhiran, #idkirim{display:none;color:#FFA300;font-size:16px;text-align:center;background:rgba(0,0,0,.55);text-shadow: 0px;padding:10px;border-radius:var(--bingkai);line-height:10px;transition:all .2s ease;} #akhiran:hover, #idkirim:hover{transform: scale(.9);opacity:.5;}
+
+#pergeseran{opacity:0;visibility:hidden;transition:all 2s ease;display:flex;flex-wrap:nowrap;align-items:flex-start;justify-content:flex-start;position:relative;max-width:500px;padding:0 20px; overflow-y:hidden;overflow-x:scroll;scroll-behavior:smooth;scroll-snap-type:x mandatory; -ms-overflow-style:none;-webkit-overflow-scrolling:touch}
+#pergeseran p{background:var(--warna-bg);color:var(--warna-teks);text-shadow: 0px 2px 2px rgba(0, 0, 0, .8);border-left:2px solid var(--warna-bingkai);border-right:2px solid var(--warna-bingkai);border-radius:var(--bingkai);padding:8px;display:flex;flex-wrap:nowrap;text-align:center;line-height:1.4em;align-items:center;justify-content:center;flex-shrink:0; width:90%;height:150px;margin:0 15px 0 0; scroll-snap-align:center} #pergeseran > *:last-child{margin-right:0} #pergeseran:after{content:'';display:block;flex-shrink:0; align-self:stretch;padding-left:20px}
+#pergeseran p b{display:block;} #pergeseran p b span{margin-left:10px;margin-right:10px;font-size:17px;font-weight:700;} #pergeseran p b img{width:80px;height:80px;margin-bottom:20px;}
+#tm{width:100px;color:#FFB400;transition:all .5s ease;} #tm:hover{transform: scale(.7);}
+#idgeser, #idkalimat, #palingakhir{position:relative;opacity:.9;margin-left:40px;margin-right:40px;font-size:17px;line-height:1.4em;color:var(--warna-teks);text-align:center;text-shadow: 0px 2px 2px rgba(0, 0, 0, .8);transition:all .7s ease;} #idkalimat, #palingakhir{opacity:0;transform: scale(.1);}
+#imgakhir{opacity:0;max-width:520px;height:0;position:relative;z-index:-1;transition:all 1s ease;} 
+#imgakhir img{background:white;border-radius:50%;padding:8px}
+#idkalimat{font-family:var(--gaya-font2);font-size:25px;font-weight:700}
+#fotolove{opacity:0;visibility:hidden;border-radius:50%;transform: scale(.8);transition:all .3s ease;} #fotolove:hover{transform: scale(.6);}
+
+.lovein{font-size:50px;display:flex;align-items:center;justify-content:center;transition:all .3s ease;}
+.lovein svg{width:80px;height:80px;fill:#fefefe}
+
+.content2{display:block;text-align:center;width:100%;height:180px;margin-top:50px;}
+.content2 > *{display:flex;align-items:center;justify-content:center;margin-top:15px;font-size:17px;color:white}
+.image img{border-radius:10%;transform:scale(.1);transition:all .8s ease;}
+#k2 .image > *{margin-bottom:40px;} #k2{font-weight:700;font-size:17px;color:white;text-shadow: 0px 2px 2px rgba(0, 0, 0, .8);} #final1{transition:all 3s ease;}
+
+.content2{display:none;}
+#Content, #k2{animation:none 3s infinite;position:relative;opacity:0;width:100%;height:180px;transition:all 1.2s ease;}
+#Content > *, #k2 > *{display:flex;align-items:center;justify-content:center;margin-top:20px;}
+#k2, #final1{transform:scale(.4);}
+
+#Tombol{position:relative;opacity:0;margin:0;margin-top:-100px;display:flex;align-items:left;list-style:none;transform: scale(.1);transition:all 1s ease;}
+#Tombol a{cursor:pointer;display:inline-flex;align-items:center; margin:0;margin:12px 12px 12px 0;transition:all .2s ease;padding:10px;outline:0;border-left:2px solid var(--warna-bingkai);border-right:2px solid var(--warna-bingkai); border-radius:var(--bingkai);line-height:15px;background:var(--warna-bg);color:var(--warna-teks);font-size:14px;font-weight:700;white-space:nowrap;overflow:hidden;z-index:1} 
+/* #Tombol a:hover{border-left:4px solid var(--warna-bingkai);border-right:4px solid var(--warna-bingkai);transform: scale(.90);opacity:.98;} */
+#buttonv2{position:absolute;font-size:15px;color:white;background:var(--warna-bg);padding:10px;border-radius:8px;line-height:10px;text-shadow: 0px 2px 2px rgba(0, 0, 0, .8);opacity:0}
+
+.swal2-title{margin-right:20px;margin-left:20px;font-size:22px;text-align:center;padding:15px 30px 0 30px;}
+.swal2-modal{background:rgba(255, 255, 255, .99);border: .7px solid #000;border-radius:var(--bingkai);top:-60px;}
+
+.fa-heart {opacity:.4;color:white;font-size: 20px;position: absolute;animation:  heartMove linear 1;top: -10vh;z-index: 0;}
+@keyframes heartMove {0%{transform: translateY(-10vh) ;} 100%{transform: translateY(100vh) ;}}
+</style>
+<body>
+  <!-- Ganti Audio di sini --><audio id="linkmp3">https://daffapratamaaa.github.io/7101212264560216858.mp3</audio>
+  
+<div id="bodyblur">
+  <!-- Wallpaper --><img src="https://daffapratamaaa.github.io/wp.jpg" id="wallpaper" width="100%" height="100%"/>
+  <div id="beneranblur"></div>
+</div>
+
+<div id='Content'>
+
+<div id="imgakhir">
+   <!-- Stiker Akhir --><img src="https://feeldreams.github.io/tos.gif" id="stikerakhir" width="100px" height="100px"/>
+</div>
+
+<div><div id='pergeseran'>
+
+<!-- Pesan -->
+<p><b><img src="https://feeldreams.github.io/cilukba.gif"/><br>
+	<span>Hai kamu! 😆</span>
+</b></p>
+
+<p><b><img src="https://feeldreams.github.io/mndkat.gif"/><br>
+	<span>Aku mau ngomong sesuatu nih 🤭</span>
+</b></p>
+
+<p><b><img src="https://feeldreams.github.io/gigitin.gif"/><br>
+	<span>Tapi singkat aja yaa 🤣</span>
+</b></p>
+
+<p><b><img src="https://feeldreams.github.io/g5.gif"/><br>
+	<span>Sebenarnya... 👉🏻👈🏻</span>
+</b></p>
+
+<!-- Tombol Akhir --><p><b><img id="fotolove" src="https://maafin.feeldream.repl.co/love.gif" onClick="akhiran();"/><br>
+	<span>Klik LOVE-nya dulu</span>
+</b></p>
+
+</div></div>
+
+<p id="idgeser">Geser ya &#128073;</p><p id="palingakhir"></p><p id="idkalimat"></p>
+
+   <!-- Tombol -->
+     <div id="Tombol">
+       <a id="By" onClick="multifungsi()">
+         <b id="tmbl">Geser &#128073;</b>
+       </a>
+       <b id='buttonv2'></b>
+       <a id="Bn" onClick="tolak()">Engga</a>
+     </div>
+     
+</div>
+
+<script>
+  ftom=0; jikapr=1;audio = new Audio('' + linkmp3.innerHTML);function nongeser() {tombol();idgeser.style = "transform: scale(.1);opacity:0;";fotolove.style="opacity:1;visibility:visible";}
+  function showDiv() {Bn.style.display="none";setTimeout(kpemb,100);setTimeout(nongeser,1000);document.getElementById('Content').style = "opacity:1;margin-top:10vh;animation:none 3s infinite;";document.getElementById("pergeseran").style = "opacity:1;visibility:visible;";}
+  function showAkhir() {setInterval(createHeart,200);document.getElementById('k2').style = "opacity:1;transform:scale(1);margin:0;";document.getElementById('Content').style.display = "none";}
+  function mulaiakhir() {nonDiv();setTimeout(showAkhir,500);setTimeout(finalis,600);}
+  function tombol(){if(pergeseran.style.display == 'none'){ftom=50;tmbl.innerHTML="Kangen";Bn.style.display="inline-flex";Tombol.style="margin-top:-20px;opacity:1;transform: scale(1)";}else{ftom=1;jikapr+=1;Tombol.style="opacity:1;margin-top:-150px;transform: scale(1);";}} 
+  function multifungsi(){if(ftom==1){document.getElementById('pergeseran').scrollLeft += 300;hsementara();} if(ftom==50){jawab();} if(ftom==55){menuju();}}
+  function hsementara(){Tombol.style="opacity:0;transform: scale(.1);";ftom=0;if(jikapr<=4){setTimeout(tombol,600);}}
+  
+  var aa=0,pemb;pemb = "";var i=0,halo;halo = "";var u=0,text2;text2 = "";var o=0,text3;text3 = "";var a=0,final1;final1 = "";var ab=0,final2;final2 = "";
+  function kpemb() {document.getElementById('bodyblur').style = "opacity:.7;";}
+  function finalis() {document.getElementById("bq").style = "opacity:1;visibility:visible;margin-top:0";setTimeout(showTom,4000);}
+  const swals = Swal.mixin({allowOutsideClick: false, cancelButtonColor: '#FF0040',}); const swalsy = Swal.mixin({confirmButtonText: 'Iya', allowOutsideClick: false,}); const swalst = Swal.mixin({allowOutsideClick: false, showConfirmButton: false, timer: 1000, timerProgressBar: true, didOpen: () => {Swal.showLoading();const b = Swal.getHtmlContainer().querySelector('b');timerInterval = setInterval(() => {Swal.getTimerLeft()}, 100)},willClose: () => {clearInterval(timerInterval)}}); const style = document.createElement('style');
+  function play() {var audio = new Audio('' + linkmp3);audio.play();} const body = document.querySelector("body");function createHeart() {const heart = document.createElement("div"); heart.className = "fas fa-heart"; heart.style.left = (Math.random() * 90)+"vw"; heart.style.animationDuration = (Math.random()*3)+2+"s"; body.appendChild(heart);} setInterval(function name(params) {var heartArr = document.querySelectorAll(".fa-heart"); if (heartArr.length > 100) {heartArr[0].remove()}},100);
+  function akhiran(){fungsi=1;Tombol.style="transition:all 0s ease;opacity:0;transform: scale(.1);";imgakhir.style="opacity:1;height:100px;";Content.style = "opacity:1;margin-top:5vh;animation:none 3s infinite;";bodyblur.style="opacity:.4;animation:none";beneranblur.style="-webkit-backdrop-filter:blur(5px); backdrop-filter:blur(5px)";wallpaper.style="transform: scale(1.6)";pergeseran.style="display:none";idgeser.innerHTML = "";idgeser.style = "opacity:1;transform: scale(1);font-weight:400;margin-top:15px;";setTimeout(aksiakhir,800);}
+  async function menuju(){await swals.fire('OK!', 'Kirim pesan ke WhatsApp aku, ya!', 'success');window.location = "https://api.whatsapp.com/send?phone=6283138124986&text=" + pesanwhatsapp;}
+  var aa=0,akhirkata;var ai=0,pesanterakhir;function aksiakhir() {if(aa<akhirkata.length){idgeser.innerHTML += akhirkata.charAt(aa);aa++;setTimeout(aksiakhir,65);}
+    if(aa==akhirkata.length){setTimeout(showpalingakhir,300);}} 
+   function aksiakhir2() {if(ai<pesanterakhir.length){idkalimat.innerHTML += pesanterakhir.charAt(ai);ai++;setTimeout(aksiakhir2,100);}
+    if(ai==pesanterakhir.length){idkalimat.style.animation="rto 1s infinite alternate";setTimeout(stakhir,1000);}} function sbakhir(){idkalimat.style = "opacity:1;transform: scale(1);margin-top:30px";Bn.style.display="none";} function stakhir(){tmbl.innerHTML="Kirim Pesan";tmbl.style="font-size:12px";Tombol.style="margin-top:30px;opacity:1;transform: scale(1)";ftom=55;}
+   function showpalingakhir(){palingakhir.style = "opacity:1;transform: scale(1);font-weight:700;margin-top:20px";setTimeout(tombol,1500);}
+   async function lanjut() {await swals.fire('Selamat datang!', 'Sekarang lihat ini ya :)');showDiv();audio.play();}
+   function otomatis() {befanimkata();setTimeout(animkata,700);} function befanimkata(){idgeser.style.opacity="0";palingakhir.style.opacity="0";} function animkata() {idgeser.innerHTML = pesanakhir1;palingakhir.innerHTML = pesanakhir2;idgeser.style.opacity="1";palingakhir.style.opacity="1";}
+
+  flag=1;flagg=1;fungsi=0;
+  function tolak(){
+  	if(fungsi==1){
+  	if(flagg==1){Bn.style="margin-left:90px;transform: rotate(45deg)";buttonv2.style="opacity:1;";By.style="opacity:0";document.getElementById("buttonv2").innerHTML = tekstolak1;flagg=2}
+  	    else if(flagg==2){Bn.style="margin-left:95px;transform: rotate(135deg)";document.getElementById("buttonv2").innerHTML = tekstolak2;flagg=3}
+  		else if(flagg==3){Bn.style="margin:12px 8px 12px 0;transform: rotate(360deg)";buttonv2.style="opacity:0;";By.style="opacity:1";flagg=1}
+  	    }
+   }
+   tekstolak1 = "Eits &#129315;";tekstolak2 = "Gabisa &#129322;";
+
+   async function jawab(){Tombol.style="opacity:0;transform: scale(.1);";setTimeout(sbakhir,2000);setTimeout(aksiakhir2,2100);otomatis();}
+</script>
+
+<script type="text/javascript">
+       async function pertama(){
+            akhirkata = "Aku kangen banget sama kamu, hehe...   ";
+            palingakhir.innerHTML = "Kalo kamu kangen ga sama Aku? 🤭❤️";
+            
+            pesanakhir1 = "Yeayyyy!";
+            pesanakhir2 = "Makasii udah jawab kangen >.<";
+            pesanterakhir = "I Love You ❤️";
+            
+            pesanwhatsapp = "Aku kangen juga kok sama kamu ><";
+            
+            await swalst.fire('Tunggu');lanjut();
+        }
+        pertama();
+</script>
+</body>
+</html>
