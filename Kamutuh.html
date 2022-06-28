@@ -1,0 +1,117 @@
+<html><meta charset='UTF-8'/><meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5' name='viewport'/><meta content='IE=edge' http-equiv='X-UA-Compatible'/>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet"><script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script><link href="https://daffapratamaaa.github.io/Kamutuh.css" rel="stylesheet" type="text/css" /><script src="https://kamutuh.fordream.repl.co/script.js"></script>
+<link rel="icon" href="https://i.postimg.cc/PfVgKm3H/Huruf-A-sampai-Z-dengan-Elemen-Api.jpg">
+<head>
+<title>Kamu Tuh Kaya Tanggal Lahir  -  Daffa Pratama</title>
+<!-- 
+  Made with love by Daffa!
+
+     Blog: https://daffapratamaaa.github.io
+     Instagram: @daffapratamanurardiansyah
+     TikTok: @daffa_pratama_
+     Email: daffapratama@mail.com
+
+  Thanks to all <3
+-->
+</head>
+  <meta content='#1098F7' name='theme-color'/>
+  <meta content='#1098F7' name='msapplication-navbutton-color'/>
+  <meta content='#1098F7' name='apple-mobile-web-app-status-bar-style'/>
+  <meta content='yes' name='apple-mobile-web-app-capable'/>
+<style>
+:root {
+--warna-bg: rgba(0, 0, 0, .4); 
+--warna-teks: white;
+--warna-bingkai: rgba(255, 255, 255, .7);
+--bingkai: 10px;
+--gaya-font: 'Ubuntu', sans-serif;
+--gaya-font2: 'Dancing Script', sans-serif;
+}
+</style>
+<body>
+
+   <div id="bgbelakang">
+     <!-- Wallpaper --><img src="https://daffapratamaaa.github.io/wp.jpg" id="wallpaper"/><div id="beneranblur"></div>
+   </div>
+
+   <div id='Content'>
+   <!-- Foto Atas --><div><img id="fotosatu" src=""/><img id="fotodua" src=""/><img id="fototiga" src=""/><img id="fotoempat" src=""/><img id="fotolima" src=""/></div>
+   <div><blockquote id='bq'>
+   <p id="kalimat">...</p>
+   <p id="kalimatc"></p>
+   </blockquote></div>
+   
+   <!-- Tombol -->
+     <div id="Tombol">
+       <a onClick="sjawab()">
+         <b id="By"> Balas</b>
+       </a>
+     </div>
+   </div>
+
+<!-- Jangan Edit Bagian Ini --><script>
+  function showDiv() {setTimeout(setel,1);pergantian();setTimeout(kpemb,100);document.getElementById('Content').style = "opacity:1;margin-top:4vh;animation:kont 5s infinite;";document.querySelector("body").style.animation = "none 8s ease infinite";} function kpemb() {bq.style = "opacity:1;visibility:visible;margin-top:5px";}
+  function loadfoto(){fotosatu.style="display:inline-flex";fotosatu.src = gambar1;fotodua.src = gambar2;fototiga.src = gambar3;}
+  function tombol(){Tombol.style="opacity:1;transform: scale(1);";ftom=1;} ftom=0; function fakhiran(){document.getElementById("akhiran").style = "display:inline-flex";}
+  const swals = Swal.mixin({allowOutsideClick: false, cancelButtonColor: '#FF0040',}); const swalsy = Swal.mixin({confirmButtonText: 'Iya', allowOutsideClick: false,}); const swalst = Swal.mixin({allowOutsideClick: false, showConfirmButton: false, timer: 1200, timerProgressBar: true, didOpen: () => {Swal.showLoading();const b = Swal.getHtmlContainer().querySelector('b');timerInterval = setInterval(() => {Swal.getTimerLeft()}, 100)},willClose: () => {clearInterval(timerInterval)}}); const style = document.createElement('style'); var today = new Date();var dd = String(today.getDate()).padStart(2, '0');var mm = String(today.getMonth() + 1).padStart(2, '0');var yyyy = today.getFullYear();const monthNames = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];today = dd + ' ' + monthNames[today.getMonth()] + ' ' + yyyy;
+  function otomatis() {befanimkata();setTimeout(animkata,200);} function befanimkata(){kalimat.style="transform:scale(.3);";} function animkata() {kalimat.style="transform:scale(1);";}
+  function otomatis2() {befanimkataa();setTimeout(animkataa,200);} function befanimkataa(){kalimatc.style="transform:scale(.3);font-size:14px;margin-top:30px;";} function animkataa() {kalimatc.style="transform:scale(1);font-size:14px;margin-top:30px;";}
+  function finalakhir(){ftom=2;otomatis2();By.innerHTML = "Kirim Pesan";kalimatc.innerHTML = "Jawabanmu: " + pesanwhatsapp;} function sjawab(){if(ftom==1){kalimatc.innerHTML = "";otomatis2();jawab();} if(ftom==2){menuju();}}
+  function setel(){audio.play();} function setel2(){bgm.play();} 
+  var aa=0,kata1;function ngetik() {if(aa<kata1.length){kalimat.innerHTML += kata1.charAt(aa);aa++;setTimeout(ngetik,50);}}
+  var au=0,kata2;function ngetik2() {kalimat.style.margin="0px 25px";if(au<kata2.length){kalimat.innerHTML += kata2.charAt(au);au++;setTimeout(ngetik2,50);}}
+  var ai=0,kata3;function ngetik3() {if(ai<kata3.length){kalimat.innerHTML += kata3.charAt(ai);ai++;setTimeout(ngetik3,50);}}
+  var ae=0,kata4;function ngetik4() {if(ae<kata4.length){kalimat.innerHTML += kata4.charAt(ae);ae++;setTimeout(ngetik4,40);}}
+  var ao=0,kata5;function ngetik5() {kalimat.style="font-size:20px";if(ao<kata5.length){kalimat.innerHTML += kata5.charAt(ao);ao++;setTimeout(ngetik5,60);}}
+  function bawahlagi(){setTimeout(tombol,1000);kalimatc.style="margin-top:30px;";kalimatc.innerHTML = emot;}
+  
+  function pergantian(){setTimeout(gantikata,1900);setTimeout(gantikata,4100);setTimeout(gantikata,5500);}
+  function tfkata(){fkata+=1;} function bersihkan(){kalimat.innerHTML = "";}
+  fkata=1;function gantikata(){
+        if(fkata==1){kalimat.innerHTML = "";setTimeout(ngetik,50);}
+        if(fkata==2){kalimat.innerHTML = "";setTimeout(ngetik2,50);fotosatu.style="display:none";fotodua.style="display:inline-flex;"}
+        if(fkata==3){wallpaper.style="transform: scale(1.8)";setTimeout(bawahlagi,1000);kalimat.innerHTML = "";setTimeout(ngetik3,50);fotodua.style="display:none";fototiga.style="display:inline-flex";}
+        setTimeout(tfkata, 300);
+  }
+</script> <!-- Sampai Sini -->
+
+<!-- Ganti Kata², Foto, Lagu di bawah ya
+1) Upload foto ke https://postimages.org
+     buat dapetin linknya
+2) Ganti Lagu Upload ke replit.com
+     atau bisa juga ke mailboxdrive.com -->
+
+<script type="text/javascript">
+       async function menuju(){await swals.fire('Kirim pesan ke WhatsApp aku, ya!');window.location = "https://api.whatsapp.com/send?phone=6283138124986&text=" + pesanwhatsapp;}
+       async function jawab(){
+           var { value: jawaban } = await swals.fire({
+               title: 'Isi Pesan Kamu &#128073;&#128072;', 
+               input: 'text', allowOutsideClick: false, showCancelButton: false,
+           });
+           if(jawaban && jawaban.length < 21){
+           	window.jawaban = jawaban;
+               pesanwhatsapp = jawaban;
+               finalakhir();
+           } else {
+               await swals.fire('Ups!', 'Jawaban tidak boleh kosong atau lebih dari 20 karakter, ya!');jawab();
+           }
+       }
+
+      async function pertama(){
+         audio = new Audio('https://audio.jukehost.co.uk/JbxQS4wTYDYUmZCdzaHohAVMNwd7eyNY');
+         
+         gambar1 = "https://feeldreams.github.io/peach1.gif";
+         gambar2 = "https://feeldreams.github.io/peach2.gif";
+         gambar3 = "https://feeldreams.github.io/peach3.gif";
+         
+         kata1 = "Kamu Tuh Kaya Tanggal Lahir ";
+         kata2 = "Engga Bisa Dilupain ";
+         kata3 = "Ahayy Srepettt :v";
+         
+         emot = "Hehe";
+
+         loadfoto();await swalst.fire('Tunggu');await swals.fire('Selamat datang!', 'Sekarang lihat ini ya :)');setTimeout(showDiv,300);
+       } pertama();
+</script>
+</body>
+</html>
