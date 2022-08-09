@@ -1,636 +1,971 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Beranda - Daffa Pratama</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href="https://feeldreams.github.io/style.css" rel="stylesheet" type="text/css" />
-  <link rel="icon" href="https://i.postimg.cc/PfVgKm3H/Huruf-A-sampai-Z-dengan-Elemen-Api.jpg">
-<style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daffa Pratama</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+
 </head>
+  <meta content='#000000' name='theme-color'/>
+  <meta content='#000000' name='msapplication-navbutton-color'/>
+  <meta content='#000000' name='apple-mobile-web-app-status-bar-style'/>
+  <meta content='yes' name='apple-mobile-web-app-capable'/>
 <style>
-.dlBox{background:#D3D3D3}
+/*  import google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+    text-decoration: none;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+/* custom scroll bar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* all similar content styling codes */
+section{
+    padding: 100px 0;
+}
+.max-width{
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: auto;
+}
+.about, .services, .skills, .teams, .contact, footer{
+    font-family: 'Josefin Sans', sans-serif;
+}
+.about .about-content,
+.services .serv-content,
+.skills .skills-content,
+.contact .contact-content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+section .title{
+    position: relative;
+    text-align: center;color:white;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    font-family: 'Ubuntu', sans-serif;
+}
+section .title::before{
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    width: 150px;
+    height: 3px;
+    background: #fff;
+    transform: translateX(-50%);
+}
+section .title::after{
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    font-size: 20px;
+    color: #0080FF;
+    padding: 0 5px;
+    background: #fff;
+    transform: translateX(-50%);
+}
+
+/* navbar styling */
+.navbar{
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    padding: 30px 25px;
+    font-family: 'Ubuntu', sans-serif;
+    transition: all 0.3s ease;
+}
+.navbar.sticky{
+    padding: 15px 25px;
+    background: #0080FF;
+}
+.navbar .max-width{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar .logo a{
+    color: #fff;
+    font-size: 35px;
+    font-weight: 600;
+}
+.navbar .logo a span{
+    color: #0080FF;
+    transition: all 0.3s ease;
+}
+.navbar.sticky .logo a span{
+    color: #fff;
+}
+.navbar .menu li{
+    list-style: none;
+    display: inline-block;
+}
+.navbar .menu li a{
+    display: block;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 25px;
+    transition: color 0.3s ease;
+}
+.navbar .menu li a:hover{
+    color: #0080FF;
+}
+.navbar.sticky .menu li a:hover{
+    color: #fff;
+}
+
+/* menu btn styling */
+.menu-btn{
+    color: #fff;
+    font-size: 23px;
+    cursor: pointer;
+    display: none;
+}
+.scroll-up-btn{
+    position: fixed;
+    height: 45px;
+    width: 42px;
+    background: #0080FF;
+    right: 30px;
+    bottom: 10px;
+    text-align: center;
+    line-height: 45px;
+    color: #fff;
+    z-index: 9999;
+    font-size: 30px;
+    border-radius: 6px;
+    border-bottom-width: 2px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.scroll-up-btn.show{
+    bottom: 30px;
+    opacity: 1;
+    pointer-events: auto;
+}
+.scroll-up-btn:hover{
+    filter: brightness(90%);
+}
+
+
+/* home section styling */
+.home{
+    display: flex;
+    background: #000;
+    height: 100vh;
+    color: #fff;
+    min-height: 500px;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Ubuntu', sans-serif;
+}
+.home .max-width{
+  width: 100%;
+  display: flex;
+}
+.home .max-width .row{
+  margin-right: 0;
+}
+.home .home-content > *{
+	margin-top:20px;
+	margin-bottom:20px;
+}
+.home .home-content .text-1{
+    font-size: 30px;
+}
+.home .home-content .text-2{
+    font-size: 75px;
+    font-weight: 600;
+    margin-left: -3px;
+}
+.home .home-content .text-3{
+    font-size: 40px;
+    margin: 5px 0;
+}
+.home .home-content .text-3 span{
+    color: #0080FF;
+    font-weight: 500;
+}
+.home .home-content a{
+    display: inline-block;
+    background: none;
+    color: #0080FF;
+    font-size: 25px;
+    padding: 12px 36px;
+    margin-top: 20px;
+    font-weight: 400;
+    border-radius: 6px;
+    border: 2px solid #0080FF;
+    transition: all 0.3s ease;
+}
+.home .home-content a:hover{
+    background: #0080FF;
+    color:white;
+}
+
+/* about section styling */
+.about{background: #111;}
+.about .title::after{
+    content: attr(data-text);
+    background: #111;
+}
+.about .about-content .left{
+    width: 45%;
+}
+.about .about-content .left img{
+    height: 400px;
+    width: 400px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+.about .about-content .right{
+    width: 55%;
+}
+.about .about-content .right .text{
+    font-size: 25px;
+    color:white;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.about .about-content .right .text span{
+    color: #0080FF;
+}
+.about .about-content .right p{
+    text-align: justify;color: #fff;
+}
+.about .about-content .right a{
+    display: inline-block;
+    background: none;
+    color: #0080FF;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 10px 30px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: 2px solid #0080FF;
+    transition: all 0.3s ease;
+}
+.about .about-content .right a:hover{
+    background: #0080FF;
+    color:white;
+}
+
+/* services section styling */
+.services{
+    color:#fff;
+    background: #000;
+}
+.services .title::before,
+.teams .title::before{
+    background: #fff;
+}
+.services .title::after,
+.teams .title::after{
+    background: #000;
+    content: attr(data-text);
+}
+.services .serv-content .card{
+    width: calc(33% - 20px);
+    height:250px;
+    background: #222;
+    text-align: center;
+    border-radius: 6px;
+    padding: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.services .serv-content .card:hover{
+    background: #0080FF;
+}
+.services .serv-content .card .box{
+    transition: all 0.3s ease;display:block;
+}
+.services .serv-content .card:hover .box{
+    transform: scale(1.05);
+}
+.services .serv-content .card i{
+    font-size: 50px;
+    color: #0080FF;
+    transition: color 0.3s ease;
+}
+.services .serv-content .card:hover i{
+    color: #fff;
+}
+.services .serv-content .card .text{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 30px 0 7px 0;
+}
+
+/* skills section styling */
+.skills{color: #fff;background:#111}
+.skills .title::after{
+    content: attr(data-text);background:#111
+}
+.skills .skills-content .column{
+    width: calc(50% - 30px);
+}
+.skills .skills-content .left .text{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.skills .skills-content .left p{
+    text-align: justify;
+}
+.skills .skills-content .left a{
+    display: inline-block;
+    background: none;
+    color: #0080FF;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 16px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: 2px solid #0080FF;
+    transition: all 0.3s ease;
+}
+.skills .skills-content .left a:hover{
+    background: #0080FF;
+    color:white;
+}
+.skills .skills-content .right .bars{
+    margin-bottom: 15px;
+}
+.skills .skills-content .right .info{
+    display: flex;
+    margin-bottom: 5px;
+    align-items: center;
+    justify-content: space-between;
+}
+.skills .skills-content .right span{
+    font-weight: 500;
+    font-size: 18px;
+}
+.skills .skills-content .right .line{
+    height: 5px;
+    width: 100%;
+    background: lightgrey;
+    position: relative;
+}
+.skills .skills-content .right .line::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: #0080FF;
+}
+.skills-content .right .html::before{
+    width: 90%;
+}
+.skills-content .right .css::before{
+    width: 70%;
+}
+.skills-content .right .js::before{
+    width: 80%;
+}
+.skills-content .right .php::before{
+    width: 50%;
+}
+.skills-content .right .mysql::before{
+    width: 70%;
+}
+
+/* teams section styling */
+.teams{
+    color:#fff;
+    background: #000;
+}
+.teams .title::after{
+    content: attr(data-text);background: #000;
+}
+.teams .carousel .card{
+    background: #222;
+    border-radius: 6px;
+    padding: 25px 35px;
+    text-align: center;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+.teams .carousel .card:hover{
+    background: #0080FF;
+}
+.teams .carousel .card .box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+.teams .carousel .card:hover .box{
+    transform: scale(1.05);
+}
+.teams .carousel .card .text{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+}
+.teams .carousel .card img{
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #0080FF;
+    transition: all 0.3s ease;
+}
+.teams .carousel .card:hover img{
+    border-color: #fff;
+}
+.owl-dots{
+    text-align: center;
+    margin-top: 20px;
+}
+.owl-dot{
+    height: 13px;
+    width: 13px;
+    margin: 0 5px;
+    outline: none!important;
+    border-radius: 50%;
+    border: 2px solid #0080FF!important;
+    transition: all 0.3s ease;
+}
+.owl-dot.active{
+    width: 35px;
+    border-radius: 14px;
+}
+.owl-dot.active,
+.owl-dot:hover{
+    background: #0080FF!important;
+}
+
+/* contact section styling */
+.contact{color: #fff;background:#111}
+.contact .title::after{
+    content: attr(data-text);background:#111
+}
+.contact .contact-content .column{
+    width: calc(50% - 30px);
+}
+.contact .contact-content .text{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.contact .contact-content .left p{
+    text-align: justify;
+}
+.contact .contact-content .left .icons{
+    margin: 10px 0;
+}
+.contact .contact-content .row{
+    display: flex;
+    height: 65px;
+    align-items: center;
+}
+.contact .contact-content .row .info{
+    margin-left: 30px;
+}
+.contact .contact-content .row i{
+    font-size: 25px;
+    color: #0080FF;
+}
+.contact .contact-content .info .head{
+    font-weight: 500;
+}
+.contact .contact-content .info .sub-title{
+    margin-top:10px;color: #f1f1f1;
+}
+.contact .right form .fields{
+    display: flex;
+}
+.contact .right form .field,
+.contact .right form .fields .field{
+    height: 45px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+.contact .right form .textarea{
+    height: 80px;
+    width: 100%;
+}
+.contact .right form .name{
+    margin-right: 10px;
+}
+.contact .right form .field input,
+.contact .right form .textarea textarea{
+    height: 100%;
+    width: 100%;
+    border: 1px solid lightgrey;
+    border-radius: 6px;
+    outline: none;
+    padding: 0 15px;
+    font-size: 17px;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+}
+.contact .right form .field input:focus,
+.contact .right form .textarea textarea:focus{
+    border-color: #b3b3b3;
+}
+.contact .right form .textarea textarea{
+  padding-top: 10px;
+  resize: none;
+}
+.contact .right form .button-area{
+  display: flex;
+  align-items: center;
+}
+.right form .button-area button{
+  color: #0080FF;
+  display: block;
+  width: 160px!important;
+  height: 45px;
+  outline: none;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  flex-wrap: nowrap;
+  background: none;
+  border: 2px solid #0080FF;
+  transition: all 0.3s ease;
+}
+.right form .button-area button:hover{
+  background: #0080FF;
+  color:white;
+}
+/* footer section styling */
+footer{
+    background: #111;
+    padding: 15px 23px;
+    height:100px;
+    color: #fff;
+    text-align: center;
+}
+footer span a{
+    color: #0080FF;
+    text-decoration: none;
+}
+footer span a:hover{
+    text-decoration: underline;
+}
+
+
+/* responsive media query start */
+@media (max-width: 1104px) {
+    .about .about-content .left img{
+        height: 350px;
+        width: 350px;
+    }
+}
+
+@media (max-width: 991px) {
+    .max-width{
+        padding: 0 50px;
+    }
+}
+@media (max-width: 947px){
+    .menu-btn{
+        display: block;
+        z-index: 999;
+    }
+    .menu-btn i.active:before{
+        content: "\f00d";
+    }
+    .navbar .menu{
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        left: -100%;
+        top: 0;
+        background: #111;
+        text-align: center;
+        padding-top: 80px;
+        transition: all 0.3s ease;
+    }
+    .navbar .menu.active{
+        left: 0;
+    }
+    .navbar .menu li{
+        display: block;
+    }
+    .navbar .menu li a{
+        display: inline-block;
+        margin: 20px 0;
+        font-size: 25px;
+    }
+    .home .home-content .text-1{
+    font-size: 25px;
+    }
+    .home .home-content .text-2{
+        font-size: 70px;
+    }
+    .home .home-content .text-3{
+        font-size: 35px;
+    }
+    .home .home-content a{
+        font-size: 23px;
+        padding: 10px 20px;
+    }
+    .max-width{
+        max-width: 930px;
+    }
+    .about .about-content .column{
+        width: 100%;color:white;
+    }
+    .about .about-content .left{
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 60px;
+    }
+    .about .about-content .right{
+        flex: 100%;
+    }
+    .services .serv-content .card{
+        width: calc(50% - 10px);
+        margin-bottom: 20px;
+    }
+    .skills .skills-content .column,
+    .contact .contact-content .column{
+        width: 100%;
+        margin-bottom: 35px;
+    }
+}
+
+@media (max-width: 690px) {
+    .max-width{
+        padding: 0 23px;
+    }
+    .home .home-content .text-1{
+    font-size: 22px;
+    }
+    .home .home-content .text-2{
+        font-size: 60px;
+    }
+    .home .home-content .text-3{
+        font-size: 32px;
+    }
+    .home .home-content a{
+        font-size: 17px;
+    }
+    .services .serv-content .card{
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    .home .home-content .text-2{
+        font-size: 50px;
+    }
+    .home .home-content .text-3{
+        font-size: 17px;
+    }
+    .about .about-content .right .text,
+    .skills .skills-content .left .text{
+        font-size: 19px;
+    }
+    .contact .right form .fields{
+        flex-direction: column;
+    }
+    .contact .right form .name,
+    .contact .right form .email{
+        margin: 0;
+    }
+    .right form .error-box{
+       width: 150px;
+    }
+    .scroll-up-btn{
+        right: 15px;
+        bottom: 15px;
+        height: 38px;
+        width: 35px;
+        font-size: 23px;
+        line-height: 38px;
+    }
+} 
 </style>
-<body class="w3-light-grey w3-content" style="max-width:1600px">
-
-<!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
-  <div class="w3-container">
-    <a onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding w3-hover-grey" title="close menu">
-      <i class="fa fa-remove"></i>
-    </a>
-    <img src="https://i.postimg.cc/PfVgKm3H/Huruf-A-sampai-Z-dengan-Elemen-Api.jpg" alt="Daffa Pratama" style="width:45%;" class="w3-round"><br><br>
-    <h4><b>Script HTML Bucin</b></h4>
-    <p class="w3-text-grey">By Daffa Pratama</p>
-  </div>
-  <div class="w3-bar-block">
-    <a href="#beranda" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-th-large fa-fw w3-margin-right"></i>BERANDA</a> 
-    <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>ABOUT</a> 
-    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-envelope fa-fw w3-margin-right"></i>CONTACT</a>
-  </div>
-  <div class="w3-panel w3-large">
-    <i class=""></i>
-    <i class=""></i>
-    <i class=""></i>
-    <i class=""></i>
-    <i class=""></i>
-    <i class=""></i>
-  </div>
-</nav>
-
-<!-- Overlay effect when opening sidebar on small screens -->
-<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-
-<!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:300px">
-
-  <!-- Header -->
-  <header id="portfolio">
-    <a href="https://daffapratamaaa.github.io/"><img src="https://i.postimg.cc/PfVgKm3H/Huruf-A-sampai-Z-dengan-Elemen-Api.jpg" alt="Daffa Pratama" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
-    <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
-    <div class="w3-container">
-    <h1><b>Daffa Pratama Nur Ardiansyah</b></h1>
-    <p>04 - 08 - 2006 🥳</p>
-    <p>Desa Toyareja Rt 02 Rw 03 </p>
-    <p>Script HTML Bucin &#128071;</p>
-  
-  <!-- First Photo Grid-->
-
-<p><div class='dlBox'>
-  <span class='fT'>
-  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEipKXRmdYCw5YOBj2FeLBWa89TqMkYaW9tblmogY1kjc6_bwQgEdMHyyOqbBlFJYho8Pku4eDV3s41smGSyDRWMEA3ECROT9Is-txrAl7iZYlg8RZqZO-hdHQ3aBxaiarxdY5SVHUlgg2emoft3UDKpfP8Giq5oKi8oeE_Jv0bD47v8tIJ-Z7WX1TdQIQ/s1600/IMG_20220801_164348.jpg"/></span>
-  <div class='fN'>
-    <span>Kamu Sayang Engga Sama Aku?</span>
-    <span class='fS'>Seberapa Sayang Emangnya?</span>
-     <div class="buttonInfo">
-      <a class="button" href="https://daffapratamaaa.github.io/2022-08-01/seberapa-sayang-sama-aku.html" target="_blank"><i class="icon demo"></i>Lihat</a>
-     </div>
-  </div>
-</div></p>
-
-<p><div class='dlBox'>
-  <span class='fT'>
-  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhBnjnSENA1rsdj8HY24Uyex3bE4RMqVJR1D9glB4-pD3Z7fj76DsXI2MCeYrO5PnD8Y2PGGNoOWLDmnha3FdnGkaeO4Vy82-zhigmEuyV1CG9IGLzt5XlFHi2FNgaZVoUrGxdeZn-7z5vQJLY9hdbFJYecj5v9KrMASaU962aY5WmQLcyPrwqQga7Sqg/s1600/IMG_20220731_093435.jpg"/></span>
-  <div class='fN'>
-    <span>Aku Sih Ga Suka Jamu</span>
-    <span class='fS'>Soalnya Sukanya Sama Kamu</span>
-     <div class="buttonInfo">
-      <a class="button" href="https://daffapratamaaa.github.io/2022-07-31/soalnya-sukanya-sama-kamu.html" target="_blank"><i class="icon demo"></i>Lihat</a>
-     </div>
-  </div>
-</div></p>
-
-<p><div class='dlBox'>
-  <span class='fT'>
-  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgBMsnCQV3qdtHFG4ExuEe4BplmUF3fndAgApPqkVmwJ5Yl6e1NveShu5scdh9uMdShwCpr-Uyrc8N8zYzShHJnujhBHqZKlpFqDK56hwPhMCknqODVlZuZj_79tLyxjXn-vxFfpLTw-3Tl_ZN_8qRAiNabiWZDjptYKFadYgaVaPC8btXyLKzNq66nOA/s1600/IMG_20220728_105922.jpg"/></span>
-  <div class='fN'>
-    <span>Ngejar Kamu Tuh Susah ya</span>
-    <span class='fS'>Kayak Rukun Islam yang Ke 5, kalo mampu...</span>
-     <div class="buttonInfo">
-      <a class="button" href="https://daffapratamaaa.github.io/2022-07-28/ngejar-kamu-tuh-susah-ya.html" target="_blank"><i class="icon demo"></i>Lihat</a>
-     </div>
-  </div>
-</div></p>
-
-<p><div class='dlBox'>
-  <span class='fT'>
-  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgIG0uzdznLls1IlZ0yKW57KsX0AtALu3OIUa1QqMRebzZmWBFZCrfrkeJjrvLeTJ0_VLMH7D3fVY3jKPLTAzRamm8rtpyMf5OjKXyTnYJu3JKKQf3u7QHpTQyPIn0cACpJU2idzHrFSTE-oAmqcq5fFsuMarT7q4EmROnOf_vUJZRYsHdzYffE9SXYSA/s1600/IMG_20220722_165745.jpg"/></span>
-  <div class='fN'>
-    <span>Beli Kebab Sama Si Adudu</span>
-    <span class='fS'>Your PAP is Canduuuu</span>
-     <div class="buttonInfo">
-      <a class="button" href="https://daffapratamaaa.github.io/2022-07-22/beli-kebab-sama-si-adudu.html" target="_blank"><i class="icon demo"></i>Lihat</a>
-     </div>
-  </div>
-</div></p>
-
-<p><div class='dlBox'>
-  <span class='fT'>
-  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgMRdAuDz2Yk2Tvus1qCeUfKu-XcWt8xvEdUf45FInPKE4tGUjR3C4T7lSRX4qAxGESSXPX9MVcJ8dPGP2tDEjdyO3WB_-PVcP9OKW_cHK9G7HPl_D8z3nW9YT27va9cysAo134NZcsLr3a64NpKG_modQPxoFyIvdmgUzyQ40SOYYluZcisTS-WMPMxg/s1600/IMG_20220717_171142.jpg"/></span>
-  <div class='fN'>
-    <span>Kamu Ultah ya Hari Ini?</span>
-    <span class='fS'>Mau Kado Dariku Gak Nih?</span>
-     <div class="buttonInfo">
-      <a class="button" href="https://daffapratamaaa.github.io/2022-07-17/mau-kado-dariku-gak-nih.html" target="_blank"><i class="icon demo"></i>Lihat</a>
-     </div>
-  </div>
-</div></p>
-
-<p><div class='dlBox'>
-  <span class='fT'>
-  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEihyvzrA3irWJuSCKgnescHUCLKuuICSmWk2qCr4JXX74Gt-tXuxUzKdnnCP_3YC1uzkr6KYfdvNTpsBqhv99TO10j9KTkWHmddvjme0lD-zBWiURenHiar9opHqYEbHVZ5383SoCs6h2wLQLE-OnRqZFiHQsdfZMroogr4xU2NIplMCOeTIpnWxi3kqw/s1600/IMG_20220715_152630.jpg"/></span>
-  <div class='fN'>
-    <span>Script Nembak Terbaru</span>
-    <span class='fS'>Tapi kita akan PUTUS dalam waktu...</span>
-     <div class="buttonInfo">
-      <a class="button" href="https://daffapratamaaa.github.io/2022-07-11/kamu_beneran_jadi_pacar_aku.html" target="_blank"><i class="icon demo"></i>Lihat</a>
-     </div>
-  </div>
-</div></p>
-
-<p><div class='dlBox'>
-  <span class='fT'>
-  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgeIb1wAxYFYpirTjZa4z7F-nMFUK03YUPagnFfKXmJNm4ECG8V0Pm8UsOBoEc3Rxvj0vIh-slmhEVJXXmh7HnGDPZ37Qdwtb7bUqzzaKAPsfrJpeICtcdVq7DZIUCC-P6hdqivFVuhC9d7rUTiA50f-MaZL93hafbDQXE2HIk5OsjqH6DmS4ZtgjzzTQ/s1600/Screenshot_20220707-124239.png"/></span>
-  <div class='fN'>
-    <span>Maaf ya</span>
-    <span class='fS'>Aku Kangen Banget Sama Kamu 🤭❤️</span>
-     <div class="buttonInfo">
-      <a class="button" href="https://daffapratamaaa.github.io/2022-07-07/aku_kangen_banget_sama_kamu.html" target="_blank"><i class="icon demo"></i>Lihat</a>
-     </div>
-  </div>
-</div></p>
-
-<p><div class='dlBox'>
-  <span class='fT'>
-  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh3osS4sCsjC4T9Nd4HE4zpfr0BT4HXN_R53ClP8bNlPpwQcZM9CGnsasJ2yHt7pqhneArl6JEmHhTTEJwWb_kANITKh0cjass6KXuXlOtPT08SVL_w5j0I37bAlpTv-9jzr04TuaVpwpiPhxaFtEBIcSbB24viskYt7LCIygIsQCEHGdqNZdBE5ZoUYw/s1600/Screenshot_20220703-084418.png"/></span>
-  <div class='fN'>
-    <span>Tadi kan Gw Kedapur ya</span>
-    <span class='fS'>Nyari Cuka</span>
-     <div class="buttonInfo">
-      <a class="button" href="https://daffapratamaaa.github.io/2022-07-03/nyari-cuka.html" target="_blank"><i class="icon demo"></i>Lihat</a>
-     </div>
-  </div>
-</div></p>
-
-<p><div class='dlBox'>
-  <span class='fT'>
-  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiYA2X5QiAbsTkno09Lbc_WOtvGxEUsdloYE7THIY4ILiDJz4IYj60uMLsAj8Gg0XoPXwfRsSBYRnkwG8psReO0E0Q67mavhh3dBNVhLVbyetVhVGiGT95Bg6LC6ACFGlYvoZkAdDSRahEwkIm-GMsrfYQ2d4LKhEp8NIHJqR8FpCafMCHGUQ7bh7ZdgQ/s1600/Screenshot_20220630-082649.png"/></span>
-  <div class='fN'>
-    <span>Beli Lilin Isinya Tiga</span>
-    <span class='fS'>Buat Apa Cari yang Lain</span>
-     <div class="buttonInfo">
-      <a class="button" href="https://daffapratamaaa.github.io/2022-06-29/beli-lilin-isinya-tiga.html" target="_blank"><i class="icon demo"></i>Lihat</a>
-     </div>
-  </div>
-</div></p>
-
-<p><div class='dlBox'>
-  <span class='fT'>
-  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgMaveuTHUUEmpgpnikwmXWzLQ9W2SN6u5KPh8vj9vuWu9z_Sw2ADyQC8DWTlj5jDS1UGv2r0M7Dq4woBTFGidgIeVyEcWlzigHpyjZAyhZiXPHOFwrzFPxtSgOTkz0QCpfp6hJPdBfwFr-iBL1M4-qfAVBRLz0yeU5MX95OngDbinncETCS98asPtU3w/s1600/Screenshot_20220628-114717.png"/></span>
-  <div class='fN'>
-    <span>HTML Bucin Kuis Buat Kamu</span>
-    <span class='fS'>Isi nama kamu, Kamu sayang gak sama Aku?</span>
-     <div class="buttonInfo">
-      <a class="button" href="https://daffapratamaaa.github.io/2022-06-28/isi-nama-kamu-yaa.html" target="_blank"><i class="icon demo"></i>Lihat</a>
-     </div>
-  </div>
-</div></p>
-
-<p><div class='dlBox'>
-  <span class='fT'>
-  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj9nEcMfB63K9yx7Sg_aDt35UaXq03wIhVvdKEZ3SrCC0rYC5zDqqBMHs-IyACbfMIpSMwEbWg-ObNEH6pnyX6EQT4k7VT5HPMTWCSX6zSgOJ3Euqfj76jiS-8L-jp7my-SXMbd8qdtkLRwY7cjtVfkzcdWdQdPfPIgJaAXEN2qH-1TSeZVLT5BxCXr9w/s1600/Screenshot_20220623-083344.png"/></span>
-  <div class='fN'>
-    <span>Muka Kamu Kok Kayak Orang Susah Sih</span>
-    <span class='fS'>Susah Dilupain Maksudnya</span>
-     <div class="buttonInfo">
-      <a class="button" href="https://daffapratamaaa.github.io/2022-06-23/kamu-kok.html" target="_blank"><i class="icon demo"></i>Lihat</a>
-     </div>
-  </div>
-</div></p>
-
-<p><div class='dlBox'>
-  <span class='fT'>
-  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhyJPyAkDHIDt3ibA-1D4wSrOGHnJ3f3RYzzSyKPgP1G6Zoh9Dxilu-gNFhU_8adBrtMfpX1oIzaxFKMruh2v9DvcAhUBb-n9N1Jfd16tsqzTcq-Mm8iYrpwkPCRlnKtHD0ZEr9nCW3P-Z8izhjFrtAAXR5MDLkhiu-QI7iTuxv3vYf5_IIXIfoAvyRiA/s1600/Screenshot_20220622-204124.png"/></span>
-  <div class='fN'>
-    <span>Aku Minta Maaf ya</span>
-    <span class='fS'>Kalau aku suka sama kamu, ga sengaja sumpah</span>
-     <div class="buttonInfo">
-      <a class="button" href="https://daffapratamaaa.github.io/2022-06-21/ga-sengaja.html" target="_blank"><i class="icon demo"></i>Lihat</a>
-     </div>
-  </div>
-</div></p>
-
-<p><div class='dlBox'>
-  <span class='fT'>
-  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg06hHjYwF13uikVag8cvSDCrUd3Lt-lOsFBbXmQ5WfR0-wXZVvf1uniYB4oVeXmZiwW9YiEELzkvQ8wFA6mha1I63wj7NCkZYnx1NlY8H49zHH9YpmPpWSU7cv-3Rhi5_zR05SEV5pcY0D2-ilI_AZT7c4wD--Fy3sD0EGmgnrcna07snIQy59EDWvNw/s1600/Screenshot_20220622-203823.png"/></span>
-  <div class='fN'>
-    <span>Aku Boleh Kangen Ga?</span>
-    <span class='fS'>Aku kangenin kamu yaa, dikit aja</span>
-     <div class="buttonInfo">
-      <a class="button" href="https://daffapratamaaa.github.io/2022-06-20/aku-boleh.html" target="_blank"><i class="icon demo"></i>Lihat</a>
-     </div>
-  </div>
-</div></p>
-
-<p><div class='dlBox'>
-  <span class='fT'>
-  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjxNRfhV0TekHaXXDiT-GRSljMoJXOjXOvhK6Xevg_3Lq3i6mD8mZXbVapVqOxZr-aZeEhchK-wD9gMxMFx99ySLvDeulAQaCkEtpOgtwfH73xOcMtXlwCpBFGH4z8WFVLEiwEy8IoaiLEt7t-Vf1ibceRokHvyK6K2KSeCRx2vN0W6-iXqFfYCxLue0w/s1600/Screenshot_20220622-203507.png"/></span>
-  <div class='fN'>
-    <span>Ya Aku Sih Lebih Milih Sirup</span>
-    <span class='fS'>Emang boleh milih kamu jadi pasangan hidup?</span>
-     <div class="buttonInfo">
-      <a class="button" href="https://daffapratamaaa.github.io/2022-06-19/aku-sih-lebih-milih-sirup.html" target="_blank"><i class="icon demo"></i>Lihat</a>
-     </div>
-  </div>
-</div></p>
-
-<p><div class='dlBox'>
-  <span class='fT'>
-  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiuGpSXtVtWpCW4XtpZ6mp94Nwkqo-HLt5PuhbksKriMImZSj5wE0piQuqO0ZuW2Rzr2pd1ERq6KLb7cvspUXPqWwGjRMlQDJ_HUEWSJnRvJd2jsS-BnJQmw93__AgdQqFgFIz7Kq5jOCJIi5ZGWzQTbxRHKwMUdyd_Gg7NZWi18DpHbnnrp9D5OmNv1g/s1600/Screenshot_20220622-202933.png"/></span>
-  <div class='fN'>
-    <span>Ikan Hiu Makan Tomat</span>
-    <span class='fS'>I Love You, Hahaha.</span>
-     <div class="buttonInfo">
-      <a class="button" href="https://daffapratamaaa.github.io/2022-06-18/ikan-hiu-makan-tomat.html" target="_blank"><i class="icon demo"></i>Lihat</a>
-     </div>
-  </div>
-</div></p>
-
-<p><div class='dlBox'>
-  <span class='fT'>
-  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg7cugYr8lm_fShCgkI9vuqLYVC0mDaHBzArOHUrLkmJc7red73hnPDGEnPV_fcGXJ-voZr40aJn-kisGG92RjqekYBsgxtzT3Jx1RH9hhchMuZ00knhUFG_25AX60w8vWVp006YpdTydWrSEAhQs4W6tmlSR84bSRwyE6ljcRHqxlaELocXUNS6szuig/s1600/Screenshot_20220622-202240.png"/></span>
-  <div class='fN'>
-    <span>Aku Sih Ga Ngelarang Kamu</span>
-    <span class='fS'>Suka Sama Siapa²</span>
-     <div class="buttonInfo">
-      <a class="button" href="https://daffapratamaaa.github.io/2022-06-17/aku-sih-ga-ngelarang-kamu.html" target="_blank"><i class="icon demo"></i>Lihat</a>
-     </div>
-  </div>
-</div></p>
-
-<p><div class='dlBox'>
-  <span class='fT'>
-  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiC14-PbHUZ99oOlx6tlvz2gDEANmT12TuHWm4dhHwgHf_nSah8LzeKhNYpo1XQFvltbjIf6V9eAUFt1vxBA9JWi5YXNPPvneSk7n8g5Nk7eSUk76QfmcX_q2iE0UvdlAjsBlVnOwMYEY4-qj1O68pKPFarAJwS9w0tiUYC13E0MM2ZOUdQrZvSDHpIbA/s1600/Screenshot_20220622-201544.png"/></span>
-  <div class='fN'>
-    <span>Daripada Suka Begadang</span>
-    <span class='fS'>Mending Sini Suka Sama Aku</span>
-     <div class="buttonInfo">
-      <a class="button" href="https://daffapratamaaa.github.io/2022-06-15/mending.html" target="_blank"><i class="icon demo"></i>Lihat</a>
-     </div>
-  </div>
-</div></p>
-
-<p><div class='dlBox'>
-   <span class='fT'>
-   <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjPIu2uaal-NJ1fMqtKu27uLj0HwkqWaxCRJqjcArY45F-CWtL_yQTp4rB6LeenW4G9BDmIoVnUrBYsIy_XzLHwGqJp5T5hiBVoTiD31FpgKU7XZyfkhyzSPDFAgnHt_wV-Fa8fUOTf2iMB8s4Kt3c5-6M9ATHS-3kq0MeNc2nnZvwTo4lG9SaLnEAmEQ/s1600/Screenshot_20220614-110227.png"/></span>
-   <div class='fN'>
-   <span>HTML Bucin - Aku Kangen Sama Kamu</span>
-   <span class='fS'>Kamu Kangen Ga Sama Aku?</span>
-   <div class="buttonInfo">
-   <a class="button" href="https://daffapratamaaa.github.io/aku-mau-ngomong-sesuatu-nih.html" target="_blank"><i class="icon demo"></i>Lihat</a>
-   </div>
-  </div>
-</div></p> 
-
-<p><div class='dlBox'>
-   <span class='fT'>
-   <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg6EJLIIld7XtfD-7hKQMwd-AL89n8LsI6TozQ4LzZ6UADikmtYf5amKI1ECNqPSdNik3bMqLRaeWoi-4z-SYFlfJ1MeZ4iuvj5m0lTaMvahb5U_nlXPZUGSkPSVIoIgDw_X8cJN6CCHjyMHNVOsQODT7thL75xGoYOOgSl3kmcTesqTBqyLmJvFRTSUw/s1600/Screenshot_20220612-130732.png"/></span>
-   <div class='fN'>
-     <span>Banyak Sih yang Menarik</span>
-     <span class='fS'>Tapi Tetep Aja Kamu yang Paling Cantik</span>
-     <div class="buttonInfo">
-     <a class="button" href="https://daffapratamaaa.github.io/tetep-aja.html" target="_blank"><i class="icon demo"></i>Lihat</a>
-    </div>
-  </div>
-</div></p> 
-
-<p><div class='dlBox'>
-  <span class='fT'>
-  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj2RR520N13nEZWfF7fumlEsl7IG33Xkxf_KcTEa284-RecTiwGDbz-OHdYWLhNID6jtBW0_xduNi7JO7SGMVOZXtFjQRFbxaMZ3mM_9ruSk5z3FsFcQZky62f6uFgI7mLUKL-Cz1gLSrZrwren_x1sYn8bVyxoXaEukENNwk8UnKeC8QaF6jS_U5F64w/s1600/Screenshot_20220619-144655.png" /></span>
-  <div class='fN'>
-    <span>Masih Disayang Mamah Nih</span>
-    <span class='fS'>Kamunya Kapan Sayang Sama Aku?</span>
-    <div class="buttonInfo">
-    <a class="button" href="https://www.daffapratamaaa.repl.co/kamunya.html" target="_blank"><i class="icon demo"></i>Lihat</a>
-    </div>
-  </div>
-</div></p> 
-
-<p><div class='dlBox'>
-  <span class='fT'>
-  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiG3DeB6aIfHw-0Zhzbi7MNMxaI8a-3pEBmto4sN4hrqpdLK2u6elYb8kPHUyioSDIvur8HQu3ZLo1uy9BH8qls9dCkiTayh-Sa9kcIvexVV6N_GinpemxhG4OilsuUvOL7vh1MczJn4zkICInCNv-QHSr4uPHKQLCL60zaHf-YlU29IzX-8SmBZyhKuQ/s1600/21.png"/></span>
-  <div class='fN'>
-    <span>Pertanyaan Buat Kamu</span>
-    <span class='fS'>Kamu Sayang Gak Sama Aku?</span>
-    <div class="buttonInfo">
-    <a class="button" href="https://sayang.daffapratamaaa.repl.co/" target="_blank"><i class="icon demo"></i>Lihat</a>
-    </div>
-  </div>
-</div></p> 
-
-<p><div class='dlBox'>
-  <span class='fT'>
-  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgW-TrDPqX7FPgdis6jWjd8HXlP0jptPr_8_YVhKDwFAwIcHC-_6yC7yTSHBnWSpzn9O-hfyZPPnDuReQa2hMoJrKsJw8GglAHKdsbokK2hKKKX0HMp9woYcff-zo8c7igD5vNDf3JHp_9Fq2SUIQRhlooc8UJ646Na1sej-z_BZHTCHMC7gBYZj14qzw/s1600/20.png"/></span>
-  <div class='fN'>
-    <span>Cicak Cicak Di Paku</span>
-    <span class='fS'>Yang Nonton Pacar Aku</span>
-     <div class="buttonInfo">
-      <a class="button" href="https://cicak.daffapratamaaa.repl.co/" target="_blank"><i class="icon demo"></i>Lihat</a>
-     </div>
-  </div>
-</div></p>
-
-<p><div class='dlBox'>
-  <span class='fT'>
-  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhpVLV5Hip8iUNTBThrq5A2JUiCE9eJigvYIbSU520ER0w6UiIhUC83ghWUlwfEJswCjMPqrXaAfMV6ruyKRLQSShCGxBxuaY17VsS8MjWtGv2NZo-dF_fefnBmJZo_Yhr3EpZ3OI5NpHYkQBUFB8ZlrIzH6PmVgqS6S9BVd2n98cDsmiiBWQ_GhWMdFw/s1600/19.png"/></span>
-  <div class='fN'>
-    <span>HTML Bucin</span>
-    <span class='fS'>Kenapa Lebah Bikin Madu?</span>
-     <div class="buttonInfo">
-      <a class="button" href="https://kenapa.daffapratamaaa.repl.co/" target="_blank"><i class="icon demo"></i>Lihat</a>
-     </div>
-  </div>
-</div></p>
-
-<p><div class='dlBox'>
-  <span class='fT'>
-  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEik-iMucO8qAqDyB2y0mqzeeGnv9b33xnlWTo-D7aUq-hyUYxMDADahVu5nXHhXId0qsWZCfnvtLdHs0G3qBfW17SsBe3gMPrvzBn6FQiq9qGFspyTFEVppE7IKkBF2yNzKpOUdzYOgZVCuJDm7SCVIPMutPQoM0xfuMOE_5JofYZtJRqUaHPVyXGN7Jw/s1600/18.png"/></span>
-  <div class='fN'>
-    <span>Mohon Dijaga</span>
-    <span class='fS'>Jangan Ditinggalin</span>
-     <div class="buttonInfo">
-      <a class="button" href="https://mohon.daffapratamaaa.repl.co/" target="_blank"><i class="icon demo"></i>Lihat</a>
-     </div>
-  </div>
-</div></p>
-
-<p><div class='dlBox'>
-  <span class='fT'>
-  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhBebHNoKjS_mE-jCfuH-6s7DIvXky_DC0MIHuT-5b9f_WzfEh-dC9DL38gSS01y94G3kfIHSUwgLeSMK7lB0IR9jsEZNP9b8vVsYHwWJICskoFRdU8SHv2MG-EmgUdi-Mtq3K3hud1Qc0Z3HTJ9NmiFKCmrnUDvJ8IqeVr0Lpnu5O9HOGD1eRLgMPEHw/s1600/17.png"/></span>
-  <div class='fN'>
-    <span>THR Udah Dapet</span>
-    <span class='fS'>Tinggal Hati Kamu Aja</span>
-     <div class="buttonInfo">
-      <a class="button" href="https://bukabuka.daffapratamaaa.repl.co/" target="_blank"><i class="icon demo"></i>Lihat</a>
-     </div>
-  </div>
-</div></p>
-
-<p><div class='dlBox'>
-  <span class='fT'>
-  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgx6Fr7cdiGiRkx30LrK4uuH9pZcwk4vVaM3nOtK9Xr8o12TANyycLRNDrdnooSUU8Rz3If7rtqzjpwa0Iv-qFBhhgiKXln74u-clT3QTXzKLJA0r5LVGviOIxwYfhNxHEzAECQir46pINHFlsaDS2uafv8EMKyCareYJrpxkmyV-UvQGfi5ezrnCDVvQ/s1600/16.png"/></span>
-  <div class='fN'>
-    <span>Waduh Waduh Waduh</span>
-    <span class='fS'>Si Tia Membeli Kok</span>
-     <div class="buttonInfo">
-      <a class="button" href="https://waduh.daffapratamaaa.repl.co/" target="_blank"><i class="icon demo"></i>Lihat</a>
-     </div>
-  </div>
-</div></p>
-
-<p><div class='dlBox'>
-  <span class='fT'>
-  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhLSQjtfv6DRrI_Sfv0j20ZlMSJvk9CJsHGCI1WkZ0b7rJEnPbdMdBQNjzJm4tkDs-K3hPHkq2o1ys1Kwrnae97Gple5VuidpQ0AGJs7Hugy4G1hxdFp-Shy-jNqCtAnYKxYeDUNPCpB0ntnOu4E8wtzFCTlCRoTAYSy3Jk8u_fjS1dQkia4QDu4Ef0Kg/s1600/15.png"/></span>
-  <div class='fN'>
-    <span>Lebaran Kurang Beberapa Hari Nih</span>
-    <span class='fS'>Maafin Aku Ya</span>
-     <div class="buttonInfo">
-      <a class="button" href="https://www.daffapratamaaa.repl.co/maaf.html" target="_blank"><i class="icon demo"></i>Lihat</a>
-     </div>
-  </div>
-</div></p>
-
-<p><div class='dlBox'>
-  <span class='fT'>
-  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjy5lVziUYuCv3xcd4Si9cw3muPACREtalpQJHk9qm46hR79V_IWtcsS1hvLjBWMVuqWczkua2u7wFa3RKN8pv8bwiLBdduAaJJFmdNc8iozeg3KMr3Wcn46GpIG0nj5AYSKfpTRvfKxrF89sQeqjxUeZHpfV4e08masRozGFDx4CC87BpqW7B7oSvfPA/s1600/14.png"/></span>
-  <div class='fN'>
-    <span>Jangan Mencari Kenyamanan Dengan Orang Lain, Ya</span>
-    <span class='fS'>Aku Tau Kamu Pasti Setia</span>
-     <div class="buttonInfo">
-      <a class="button" href="https://www.daffapratamaaa.repl.co/maafin.html" target="_blank"><i class="icon demo"></i>Lihat</a>
-     </div>
-  </div>
-</div></p>
-
-<p><div class='dlBox'>
-  <span class='fT'>
-  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjvcc0g_5zalLMr9fonO5e35ydAErQKd8H-RFMIokUXPGSwTBGOZSsodOaotKbOexIFXnmyIsiP_TKsbwB0zkLUsrcshRhUt4NmCAr90MN-gEPbyd4sedt_1X7r9BICGuX6z0xUO9tqsn7VG8HWbDugb7mAgSV1-xQk-RrpFKM11YX-At6nM9CJI_4VsA/s1600/13.png"/></span>
-  <div class='fN'>
-    <span>Minal 'Aidin wal-Faizin</span>
-    <span class='fS'>Gak Ngasih THR Gak Dimaafin</span>
-     <div class="buttonInfo">
-      <a class="button" href="https://bukaini.daffapratamaaa.repl.co/" target="_blank"><i class="icon demo"></i>Lihat</a>
-     </div>
-  </div>
-</div></p>
-
-<p><div class='dlBox'>
-  <span class='fT'>
-  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiZFtgz0byeMqeGbMrKTh3oypngsKkye7iGJhfdSkmDm2il9EjZrzzZ5oM6ggQ5mMnK2TfBeH36-Q_h7X9-xUiP04l0B1juT0KV1siXJ5Zlyi_FCwfYMh38LET37c0GV_KTbrLBm0gmD2C2OgLJbQPBxmjTgEF2kspyU4J5KeXNdURdO6K37f-5rtLieA/s1600/12.png"/></span>
-  <div class='fN'>
-    <span>Diantara Menu Sahur dan Menu Buka</span>
-    <span class='fS'>Aku Lebih Suka Menua Bersamamu</span>
-     <div class="buttonInfo">
-      <a class="button" href="https://antara.daffapratamaaa.repl.co/" target="_blank"><i class="icon demo"></i>Lihat</a>
-     </div>
-  </div>
-</div></p>
-
-<p><div class='dlBox'>
-  <span class='fT'>
-  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhdnpEYYN35Qbc-7MqyyaKUnyYAGT0bg5RXk2IzOvFdh71X_3fJGKIp7iy9zI-YpnisKcz0eeVuxOs3DOvVkwDVW5NWYBVl9vdBhIw34wAQuu9okXkrLaa1N8fQ_GNV9lt-j2s2NrvLmLVWzXk2Yg_Vb5VZZf_T0tLdLpZ2vrfl2V_MGpalsZttIrjDdA/s1600/11.png"/></span>
-  <div class='fN'>
-    <span>Kalau Mau Manja Ke Aku Aja Yah</span>
-    <span class='fS'>Jangan Ke Orang Lain</span>
-     <div class="buttonInfo">
-      <a class="button" href="https://kalaukamu.daffapratamaaa.repl.co/" target="_blank"><i class="icon demo"></i>Lihat</a>
-     </div>
-  </div>
-</div></p>
-
-<p><div class='dlBox'>
-  <span class='fT'>
-  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhM97rkHbK_zCXLPAZnWHqQwniGFsQ7G1bDzv7m5AET7InZkz8dPkjCQ3oiUj0WNy6qgf_zet9gtoYqaGD7-LEG0R0X6BgadpkGqGsAVZRfsuJseulrG5TrdDOGvxrEhgu7OlszJ87tUmhz9WIXXzRYCOidL0LbBXVxxL9PdS_RO5nUSV1ZGIQLKpamRw/s1600/10.png"/></span>
-  <div class='fN'>
-    <span>Jika Nanti Aku Ulang Tahun</span>
-    <span class='fS'>Bolehkah Kadonya Kamu Tetap Bersamaku?</span>
-     <div class="buttonInfo">
-      <a class="button" href="https://www.daffapratamaaa.repl.co/geserin.html" target="_blank"><i class="icon demo"></i>Lihat</a>
-     </div>
-  </div>
-</div></p>
-
-<p><div class='dlBox'>
-  <span class='fT'>
-  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhfXxo9thEoU7wPpIsXgJsf17l_Zg2lNPtEgdSVjsJoQF8tkZzhoN9S8Qq1ntAMGu9xL232jP94ej6YFvJRVKDTxcR2VeGx0KiUvt3ogcqnjHiKAYAhFHnftk_XlBm_K0OhOiFqAa-Pfg-HtW4iIkjfZ0ppQRmgEVqtPE8oC_3jqS_co4_We1FMRQF_Wg/s1600/9.png"/></span>
-  <div class='fN'>
-    <span>Banyak Yang Selalu Ada</span>
-    <span class='fS'>Tapi Kalo Aku Suka Kamu Gimana</span>
-     <div class="buttonInfo">
-      <a class="button" href="https://www.daffapratamaaa.repl.co/forkamu.html" target="_blank"><i class="icon demo"></i>Lihat</a>
-     </div>
-  </div>
-</div></p>
-
-<p><div class='dlBox'>
-  <span class='fT'>
-  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg_u1y3AWxZeADGwtT7vt8ll6n7cmv2xbTA7rSgxK752NmSWX-JPh8ZU-8DZWYQVdCLao3r3SJV68UfugQktEDryJr9IgPfCDY2CV3_36uhLYcvb6ANYOzOeTo1c_U8Q9L0gAImbUJDb4KZVV9gEheaDPwYHogWswcPDIgIQCTKJMhYb1VVuQFW4mgt3g/s1600/8.png"/></span>
-  <div class='fN'>
-    <span>Gw Suka Sama Lu</span>
-    <span class='fS'>Lu Nya Suka Sama Dia</span>
-     <div class="buttonInfo">
-      <a class="button" href="https://geser.daffapratamaaa.repl.co/" target="_blank"><i class="icon demo"></i>Lihat</a>
-     </div>
-  </div>
-</div></p>
-
-<p><div class='dlBox'>
-  <span class='fT'>
-  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgj2-iQWVJ2TehGrRR8Gr5L_XHTIe2W81kPLbY3oGGCe9ufFeHBHjLft_vbPPzXklM03PbeC9LmngYQfyqdHJcW1SPm9crdL8HK3pYxZoy0wWx6eGZ59eF23lloJL7rBzPOQ6ruTxln9o_KgFu0pxWc8iatnx_KzrmAxJrEGlfXXR9uPPK01CeXHeBh1w/s1600/7.png"/></span>
-  <div class='fN'>
-    <span>Gimana Puasanya? Masih Kuat, kan? 😂</span>
-    <span class='fS'>Semangat Puasanya Ya!</span>
-     <div class="buttonInfo">
-      <a class="button" href="https://buatkamu.daffapratamaaa.repl.co/" target="_blank"><i class="icon demo"></i>Lihat</a>
-     </div>
-  </div>
-</div></p>
-  
-<p><div class='dlBox'>
-  <span class='fT'>
-  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg4SYAB2v_zt77QALYITf4HeoMfxK53VUc4mYxn_egWhGv3N1N_niQDKJcqEIzREg7n0Wfn4kbZBCpBMNFphxMhMa8qOqffMcEqk7mmauFShzJuIoIcJwzuGv2sODuN1RjYmQNBoLELn0-JmAfcl-qu107PR9r-Gs5w3gN8rh19xS5m_pz2d8LVYQisrA/s1600/6.png"/></span>
-  <div class='fN'>
-    <span>Script HTML Bucin</span>
-    <span class='fS'>Semangat Terus Ya!</span>
-     <div class="buttonInfo">
-      <a class="button" href="https://cobain.daffapratamaaa.repl.co/" target="_blank"><i class="icon demo"></i>Lihat</a>
-     </div>
-  </div>
-</div></p>
-
-<p><div class='dlBox'>
-  <span class='fT'>
-  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiPUO0FgIWNj3yQ0ED1VBhhkibbbKdM_P3tHIXEe6yol-K_60TgwYdkzKfjvcGQLhh9N9SglPAdhqZwVdPzdObwZCtnxwwOIi1b99n8s_5CNoUv3AZTLROrOx-AxNyQeUeh4AynHpDh1X7USbsYJeDf6bsf2E57C9HLxOYBcJ_YZTN3AXytLj9N2DB9zg/s1600/5.png"/></span>
-  <div class='fN'>
-    <span>Script HTML Bucin</span>
-    <span class='fS'>Masih Ingat Aku kan?</span>
-     <div class="buttonInfo">
-      <a class="button" href="https://coba.daffapratamaaa.repl.co/" target="_blank"><i class="icon demo"></i>Lihat</a>
-     </div>
-  </div>
-</div></p>
-
-<p><div class='dlBox'>
-  <span class='fT'>
-  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjWaMXBka2PaWS-io3NEo8qQYjFw0hDGvt7uHu9wo_ryLVXgFkb6Mv5v4Q1lVQiznNj7ZwTmS66oMm0cMm2LM2mChUUSmPyHqR8anyodwa_iTiKDyxY6juOPb0_hcIU9UORnX6HXFTqTdyTSWEntU7amsKF4ht5zV6dH-z26GwgMEGebvAKpm1RXMJS5A/s1600/4.png"/></span>
-  <div class='fN'>
-    <span>Padahal Cuma Temenan</span>
-    <span class='fS'>Gimana Kalo Kita Jadian Aja? 🤭</span>
-     <div class="buttonInfo">
-      <a class="button" href="https://untukkamu.daffapratamaaa.repl.co/" target="_blank"><i class="icon demo"></i>Lihat</a>
-     </div>
-  </div>
-</div></p>
-
-<p><div class='dlBox'>
-  <span class='fT'>
-  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjCH6lnrwi6G5YFS8GCiChjP7dbdPH7dZxmcIoAMAqNGcOw2yug34i7RuHNgwWGtHvZPm_w7OZneub14IalC0QV5iN9cEDs7OaesHaoZjRdjmJmWzqs8B9QOEL5GEL2oeybGZhgLwZispB0kX2D1-CzbeEJDxLux8bOJlkbqaKRJkZ5zNVyVUjyFTCaCA/s1600/3.png"/></span>
-  <div class='fN'>
-    <span>Script HTML Bucin</span>
-    <span class='fS'>Nembak Cewe Auto Diterima</span>
-     <div class="buttonInfo">
-      <a class="button" href="https://haikamu.daffapratamaaa.repl.co/" target="_blank"><i class="icon demo"></i>Lihat</a>
-     </div>
-  </div>
-</div></p>
-
-<p><div class='dlBox'>
-  <span class='fT'>
-  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiRTylZtUHdzwC6iD86jQgZEQEb0tExv0P2jyObAgBqu-hv9PmT-IgZ50k7WvI000rdguizZ5pzfrPLWCmjePPl-kj9NWHKB31_vlau6DlHPE5qJT4hNLEiicvANWa2S6iiwSxn3Fzed_3Sb0EAM-7JJPFDyHzgGUywVIanHZ9v1Rkg0Y8fgwGNVuIiCA/s1600/2.png"/></span>
-  <div class='fN'>
-    <span>Gapapa Aku Nunggu</span>
-    <span class='fS'>Biar Kamu Tau</span>
-     <div class="buttonInfo">
-      <a class="button" href="https://gpp.daffapratamaaa.repl.co/" target="_blank"><i class="icon demo"></i>Lihat</a>
-     </div>
-  </div>
-</div></p>
-
-<p><div class='dlBox'>
-  <span class='fT'>
-  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhm-Ag_hVFCY-4DbX82U6XmzY46gb4OizBgCJg_RrzLq0nHSV_b4yJ6Y4WRhsWC4dBHcBx0YNvKkXPpc2yipqkeNNPH3vU9Bj0gBYlijWSLub-df8BQSTLMZAfkwIO4UaZ3gnisJsJklt-2YK7jdFhELDwJr1VGGrtamIQXC6TqlWM3zbhLa3xrboN0gA/s1600/1.png"/></span>
-  <div class='fN'>
-    <span>Jika Nanti Aku Ulang Tahun</span>
-    <span class='fS'>Bolehkah Kadonya Kamu Menjadi Milikku</span>
-     <div class="buttonInfo">
-      <a class="button" href="https://bolehkah.daffapratamaaa.repl.co/" target="_blank"><i class="icon demo"></i>Lihat</a>
-     </div>
-  </div>
-</div></p>
-      </div>
-    </div>
-  </div>
-
-  
-  <!-- Images of Me -->
-  <div class="w3-row-padding w3-padding-16" id="about">
-    <div class="w3-col m6">
-      <img src="https://daffapratamaaa.github.io/1080x1920_170703_592.jpg" alt="Contoh Background" style="width:100%">
-      </div>
-      <div class="w3-col m6">
-      <img src="https://daffapratamaaa.github.io/wp.jpg" alt="Contoh Background" style="width:100%">
-    </div>
-  </div>
-
-  <div class="w3-container w3-padding-large" style="margin-bottom:32px">
-    <h4><b>About Me</b></h4>
-    <p>Mohon Maaf Saya Jarang Upload Dikarenakan Saya Sedang Sibuk 🙏🏻</p>
-    <hr>
-    
-      
-      
-  
-  <!-- Contact Section -->
-  <div class="w3-container w3-padding-large w3-grey">
-    <h4 id="contact"><b>Contact Me</b></h4>
-     <div class="w3-row-padding w3-center w3-padding-24" style="margin:0 -16px">
-      <div class="w3-third w3-dark-grey">
-       <p><i class="fa fa-envelope w3-xxlarge w3-text-light-grey"></i></p>
-        <p><a href="mailto:daffapratama@mail.com" target="_blank">daffapratama@mail.com</a></p>
-        <p>atau</a></p>
-        <p><a href="mailto:daffapratamaaa.github@gmail.com" target="_blank">daffapratamaaa.github@gmail.com</a></p>
+<body>
+    <!--<div class="scroll-up-btn">
+        <i class="fas fa-angle-up"></i>
+    </div>-->
+    <nav class="navbar">
+    	<div class="menu-btn">
+            <i class="fas fa-bars"></i>
         </div>
-       <div class="w3-third w3-teal">
-      <p><i class="fa fa-map-marker w3-xxlarge w3-text-light-grey"></i></p>
-    <p><a href="https://maps.app.goo.gl/4HuQbhCo7eKxdvAx8" target="_blank">Purbalingga, Jawa Tengah, Indonesia</a></p>
-   </div>
-  <div class="w3-third w3-dark-grey">
-  <p><i class="fa fa-whatsapp w3-xxlarge w3-text-light-grey"></i></p>
-    <p><p><a href="https://api.whatsapp.com/send?phone=6283138124986" target="_blank">083138124986</a></p>
-     </div>
-      <div class="w3-third w3-dark-grey">
-     <p><i class="fa fa-facebook w3-xxlarge w3-text-light-grey"></i></p>
-    <p><a href="https://www.facebook.com/profile.php?id=100037989095501" target="_blank">Daffa Pratama</a></p>
-   </div>
-  <div class="w3-third w3-dark-grey">
-    <p><i class="fa fa-instagram w3-xxlarge w3-text-light-grey"></i></p>
-      <p><a href="https://www.instagram.com/daffapratamanurardiansyah" target="_blank">daffapratamanurardiansyah</a></p>
-       </div>
-       <div class="w3-third w3-dark-grey">
-     <p><i class="fa fa-pinterest w3-xxlarge w3-text-light-grey"></i></p>
-    <p><a href="https://www.pinterest.com/daffapratamanurardiansyah" target="_blank">daffapratamanurardiansyah</a></p>
-   </div>
-  <div class="w3-third w3-dark-grey">
-   <p><i class="fa fa-youtube w3-xxlarge w3-text-light-grey"></i></p>
-    <p><a href="https://youtube.com/channel/UC476xQPeg40ZAi2kC63OyEg" target="_blank">Daffa Pratama Official</a></p>
-     </div>
-    </div>
-  </div>
+        <div class="max-width">
+            <div class="logo"><a href="">Daffa <span>Pratama</span></a></div>
+            <ul class="menu">
+                <li><a href="" class="menu-btn">Kembali</a></li>
+                <li><a href="#about" class="menu-btn">About</a></li>
+                <li><a href="https://daffapratamaaa.github.io/p/script-html-bucin" class="menu-btn">Script HTML Bucin</a></li>
+                <li><a href="#skills" class="menu-btn">Skills</a></li>
+                <li><a href="#contact" class="menu-btn">Contact</a></li>
+            </ul>
+            
+        </div>
+    </nav>
 
-  </div>
-  </footer>
-  
-  <div class="w3-black w3-center w3-padding-24">© 2022 • <a href="https://daffapratamaaa.github.io" title="Daffa Pratama" target="_blank" class="w3-hover-opacity">Daffa Pratama</a></bdi> &#8231; All rights reserved.
+    <!-- home section start -->
+    <section class="home" id="home">
+        <div class="max-width">
+            <div class="home-content">
+                <div class="text-1">Hello, I am</div>
+                <div class="text-2">Daffa Pratama</div>
+                <div class="text-3">Saya adalah seorang <span class="typing"></span></div>
+                <a href="#about">Selengkapnya</a>
+            </div>
+        </div>
+    </section>
 
-<!-- End page content -->
-</div>
+    <!-- about section start -->
+    <section class="about" id="about">
+        <div class="max-width">
+            <h2 class="title" data-text="siapa saya">About me</h2>
+            <div class="about-content">
+                <div class="column left">
+                    <!--<img src="images/profile-1.jpeg" alt="">-->
+                </div>
+                <div class="column right">
+                    <div class="text">I'm Daffa Pratama and I'm a <span class="typing-2"></span></div>
+                    <p></p>
+                    <a href="https://daffapratamaaa.github.io/p/script-html-bucin">Script HTML Bucin</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<script>
-// Script to open and close sidebar
-function w3_open() {
-    document.getElementById("mySidebar").style.display = "block";
-    document.getElementById("myOverlay").style.display = "block";
-}
- 
-function w3_close() {
-    document.getElementById("mySidebar").style.display = "none";
-    document.getElementById("myOverlay").style.display = "none";
-}
-</script>
+    <!-- services section start -->
+    <section class="services" id="services">
+        <div class="max-width">
+            <h2 class="title" data-text="layananku">My services</h2>
+            <div class="serv-content">
+                <div class="card">
+                    <div class="box">
+                        <i class="fas fa-paint-brush"></i>
+                        <div class="text">Web Design</div>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <i class="fas fa-chart-line"></i>
+                        <div class="text">Advertising</div>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <i class="fas fa-code"></i>
+                        <div class="text">Apps Design</div>
+                        <p></p>
+                    </div>
+                </div>
+               </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- skills section start -->
+    <section class="skills" id="skills">
+        <div class="max-width">
+            <h2 class="title" data-text="passion">My skills</h2>
+            <div class="skills-content">
+                <div class="column left">
+                    <div class="text"></div>
+                    <p></p>
+                    
+                </div>
+                <div class="column right">
+                    <div class="bars">
+                        <div class="info">
+                            <span>HTML</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="line html"></div>
+                    </div>
+                    <div class="bars">
+                        <div class="info">
+                            <span>CSS</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="line css"></div>
+                    </div>
+                    <div class="bars">
+                        <div class="info">
+                            <span>JavaScript</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="line js"></div>
+                    </div>
+                    <div class="bars">
+                        <div class="info">
+                            <span>PHP</span>
+                            <span>50%</span>
+                        </div>
+                        <div class="line php"></div>
+                    </div>
+                    <div class="bars">
+                        <div class="info">
+                            <span>MySQL</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="line mysql"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- teams section start -->
+    
+
+    <!-- contact section start -->
+    <section class="contact" id="contact">
+        <div class="max-width">
+            <h2 class="title" data-text="kontak saya">Contact me</h2>
+            <div class="contact-content">
+                <div class="column left">
+                    <div class="text">Get in Touch</div>
+                    <p>Mari berkenalan lebih dekat denganku.</p>
+                    <div class="icons">
+                        <div class="row">
+                            <i class="fas fa-user"></i>
+                            <div class="info">
+                                <div class="head">Nama</div>
+                                <div class="sub-title">Daffa Pratama Nur Ardiansyah</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="info">
+                                <div class="head">Alamat</div>
+                                <div class="sub-title"><a href="https://maps.app.goo.gl/4HuQbhCo7eKxdvAx8" target="_blank">Purbalingga, Jawa Tengah, Indonesia</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <i class="fas fa-envelope"></i>
+                            <div class="info">
+                                <div class="head">Email</div>
+                                <div class="sub-title"><a href="mailto:daffapratama@mail.com" target="_blank">daffapratama@mail.com</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+             </section>
+
+    <!-- footer section start -->
+    <footer>
+        <span>My blog: <a href="https://daffapratamaaa.github.io">Daffa Pratama</a> | <span class="far fa-copyright"></span> 2022 All rights reserved.</span>
+    </footer>
+
+    <script>
+$(document).ready(function(){
+    $(window).scroll(function(){
+        // sticky navbar on scroll script
+        if(this.scrollY > 20){
+            $('.navbar').addClass("sticky");
+        }else{
+            $('.navbar').removeClass("sticky");
+        }
+        
+        // scroll-up button show/hide script
+        if(this.scrollY > 500){
+            $('.scroll-up-btn').addClass("show");
+        }else{
+            $('.scroll-up-btn').removeClass("show");
+        }
+    });
+
+    // slide-up script
+    $('.scroll-up-btn').click(function(){
+        $('html').animate({scrollTop: 0});
+        // removing smooth scroll on slide-up button click
+        $('html').css("scrollBehavior", "auto");
+    });
+
+    $('.navbar .menu li a').click(function(){
+        // applying again smooth scroll on menu items click
+        $('html').css("scrollBehavior", "smooth");
+    });
+
+    // toggle menu/navbar script
+    $('.menu-btn').click(function(){
+        $('.navbar .menu').toggleClass("active");
+        $('.menu-btn i').toggleClass("active");
+    });
+
+    // typing text animation script
+    var typed = new Typed(".typing", {
+        strings: ["Blogger", "Web Developer", "Freelancer"],
+        typeSpeed: 100,
+        backSpeed: 60,
+        loop: true
+    });
+
+    var typed = new Typed(".typing-2", {
+        strings: ["Blogger", "Web Developer", "Freelancer"],
+        typeSpeed: 100,
+        backSpeed: 60,
+        loop: true
+    });
+
+    // owl carousel script
+    $('.carousel').owlCarousel({
+        margin: 20,
+        loop: true,
+        autoplay: true,
+        autoplayTimeOut: 2000,
+        autoplayHoverPause: true,
+        responsive: {
+            0:{
+                items: 1,
+                nav: false
+            },
+            600:{
+                items: 2,
+                nav: false
+            },
+            1000:{
+                items: 3,
+                nav: false
+            }
+        }
+    });
+});</script>
 </body>
 </html>
