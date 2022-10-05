@@ -158,7 +158,31 @@ p{margin:1.5em 0;transition:all .3s ease;}
 
 <body>
 
-<body oncontextmenu='return false;' onkeydown='return false;' onmousedown='return false;'>
+  <!-- Dilarang copy paste -->
+<script language='JavaScript1.2'>
+function disableselect(e){
+return false
+}
+function reEnable(){
+return true
+}
+document.onselectstart=new Function ("return false")
+if (window.sidebar){
+document.onmousedown=disableselect
+document.onclick=reEnable
+}
+</script>
+
+<div class='clear'></div>
+<div class='widget HTML' data-version='1' id='HTML2'>
+<div class='widget-content'>
+<script> var message="Dilarang Copy Paste!";
+///////////////////////////////////
+function clickIE4(){if (event.button==2){alert(message);return false;}} function clickNS4(e){if (document.layers||document.getElementById&&!document.all){if (e.which==2||e.which==3){alert(message);return false;}}} if (document.layers){document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS4;} else if (document.all&&!document.getElementById){document.onmousedown=clickIE4;} document.oncontextmenu=new Function("alert(message);return false")</script>
+
+<div class='clear'></div></div></div>
+
+<!-- <body oncontextmenu='return false;' onkeydown='return false;' onmousedown='return false;'> -->
 
   <!-- Ganti Audio di sini --><audio id="linkmp3">https://daffapratamaaa.github.io/7101212264560216858.mp3</audio>
 
