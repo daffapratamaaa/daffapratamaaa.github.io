@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script type='text/javascript'>
-var d='';
-d=d.replace(/.*\/\/[^\/]*/, '');
-location.href = 'https://www.daffaa.my.id' + window.location.pathname;
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beranda - Daffa Pratama</title>
@@ -904,6 +899,98 @@ footer span a:hover{
     <footer>
         <span>My blog: <a href="https://daffapratamaaa.github.io">Daffa Pratama</a> | <span class="far fa-copyright"></span> 2022 All rights reserved.</span>
     </footer>
+
+<style>
+/* login fitur by wendy code */
+.wendyloginwrap{width:100%;height:100%;position:fixed;left:0;top:0;z-index:9999999999;background:linear-gradient(-45deg,#23a6d5,#23d5ab,#f09800,#e6af19);background-size:400% 400%;animation:gradient 10s ease infinite}
+@keyframes gradient{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.wendyloginwrap.hidden{display: none}
+#wendylogin{position:absolute;border-radius:8px;width:400px;padding:30px;display:block;transform:translate(-50%,-50%);top:50%;left:50%;background:rgba(255,255,255,0.1);backdrop-filter:blur(5px);border-radius:10px;box-shadow:0 25px 45px rgba(0,0,0,0.2);color:#fff}
+.wendyjudul{font-size:25px;font-weight: bold;}
+#wendylogin input[type="text"],#wendylogin input[type="password"]{padding:10px;border-radius:5px;margin:10px 0;width:95%;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.2);color:#fff}
+#username::-webkit-input-placeholder,#password::-webkit-input-placeholder{color:#fff;}
+#wendylogin input[type="text"]:focus,#wendylogin input[type="password"]:focus{outline:none}
+button.login{color:#000;font-weight:bold;padding:10px;border-radius:5px;border:none;outline:none;border: 1px solid rgba(255, 255, 255, 0.2);background:#fff;transition: 1.5s}
+button.login:hover{background: rgba(255, 255, 255, 0.2);color:#fff;transition: .5s}
+.icon1{position:absolute;margin-top:20px;right:55px;z-index: 1}
+.icon2{position:absolute;margin-top:20px;right:55px;opacity: 0}
+svg.wendy{width:24px;height::24px;fill:#fff}
+@media screen and (max-width:480px){#wendylogin{width:350px}}
+</style>
+
+<dv class="wendyloginwrap">
+<div id='wendylogin'>
+  <div class='wendyjudul'>Login</div>
+    <p>Jika tidak tahu username sama password silahkan minta ke Daffa Pratama Nur Ardiansyah</p>
+    <input id='username' type='text' placeholder='Username' autocomplete='off'/><br/>
+    <input id='password' type='password' placeholder='Password'/>
+    <svg class="wendy icon1" viewBox="0 0 24 24" onclick="show()">
+    <path d="M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17M12,4.5C7,4.5 2.73,7.61 1,12C2.73,16.39 7,19.5 12,19.5C17,19.5 21.27,16.39 23,12C21.27,7.61 17,4.5 12,4.5Z" /></svg>
+    <svg class="wendy icon2" viewBox="0 0 24 24">
+    <path d="M11.83,9L15,12.16C15,12.11 15,12.05 15,12A3,3 0 0,0 12,9C11.94,9 11.89,9 11.83,9M7.53,9.8L9.08,11.35C9.03,11.56 9,11.77 9,12A3,3 0 0,0 12,15C12.22,15 12.44,14.97 12.65,14.92L14.2,16.47C13.53,16.8 12.79,17 12,17A5,5 0 0,1 7,12C7,11.21 7.2,10.47 7.53,9.8M2,4.27L4.28,6.55L4.73,7C3.08,8.3 1.78,10 1,12C2.73,16.39 7,19.5 12,19.5C13.55,19.5 15.03,19.2 16.38,18.66L16.81,19.08L19.73,22L21,20.73L3.27,3M12,7A5,5 0 0,1 17,12C17,12.64 16.87,13.26 16.64,13.82L19.57,16.75C21.07,15.5 22.27,13.86 23,12C21.27,7.61 17,4.5 12,4.5C10.6,4.5 9.26,4.75 8,5.2L10.17,7.35C10.74,7.13 11.35,7 12,7Z" />
+</svg>
+    <br/>
+    <button class='login' onclick='startlog()'>Login</button>
+    <p id='akses'></p>
+</div>
+
+<script>
+//<![CDATA[
+// multi login fitur post by www.wendycode.com
+// last update 20-04-2022 + localStroge
+var storeS = localStorage.getItem("users");
+if(storeS==null){
+  var users = [
+    { username: "Daffa", password: "123456" },
+    { username: "Daffa Pratama", password: "123456" },
+    { username: "Daffa Pratama Nur Ardiansyah", password: "123456"}
+];
+    localStorage.setItem("users",JSON.stringify(users));
+}
+function getUserUsername(username) {
+    return JSON.parse(localStorage.getItem('users')).filter(users => users.username === username)
+}
+function ceklog(){
+  var login = localStorage.getItem("login");
+  if(login!=null && login=="true"){
+document.querySelector(".wendyloginwrap").classList.add("hidden");        
+      }
+    }
+ceklog();
+
+function startlog(){
+  var username= document.querySelector("#username").value;
+  var password= document.querySelector("#password").value;
+   
+ if(getUserUsername(username.trim()).length>0){
+   var user = getUserUsername(username.trim())[0];
+   if(user.password == password.trim()){
+     document.querySelector(".wendyloginwrap").classList.add("hidden");
+     localStorage.setItem("login","true");
+     }else{       
+       document.querySelector("#akses").innerHTML = "username atau password salah!";
+      }
+    }else{
+      document.querySelector("#akses").innerHTML = "user tidak terdaftar";
+    }
+  }
+  
+const show = () =>{
+  var password = document.querySelector("#password");
+  var sandi = document.querySelector(".icon1");
+  var sandidua = document.querySelector(".icon2");
+  if (password.type === "password"){
+    password.type = "text";
+    sandidua.style.opacity = "1";
+    sandi.style.opacity = "0";
+  }else{
+    password.type = "password";
+    sandidua.style.opacity = "0";
+    sandi.style.opacity = "1";
+  }
+}
+//]]> 
+</script>
 
     <script>
 $(document).ready(function(){
