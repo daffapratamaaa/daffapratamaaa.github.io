@@ -3,7 +3,7 @@
   <a href="https://instagram.com/daffapratamanurardiansyah"><img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white"/> 
   <a href="https://wa.me/6283138124986"><img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
   <a href="https://t.me/daffapratamanurardiansyah"><img src="https://img.shields.io/badge/Telegram-%230088cc.svg?&style=for-the-badge&logo=telegram&logoColor=white" /> <br>
-  <a href="https://youtube.com/channel/UC476xQPeg40ZAi2kC63OyEg"><img src="https://img.shields.io/badge/YouTube-Naze -ff0000?style=for-the-badge&logo=youtube&logoColor=ff0000&link=https://youtube.com/channel/UCl77jQD3nSFp__z1oRxm-fA" /><br>
+  <a href="https://youtube.com/channel/UC476xQPeg40ZAi2kC63OyEg"><img src="https://img.shields.io/badge/YouTube-Daffa Pratama -ff0000?style=for-the-badge&logo=youtube&logoColor=ff0000&link=https://youtube.com/channel/UCl77jQD3nSFp__z1oRxm-fA" /><br>
   <a name=Daffa Pratama&label=VIEWS&style=flat-square&color=orange" />
   <a href="https://github.com/daffapratamaaa"><img src="https://img.shields.io/badge/-GitHub-black?style=flat-square&logo=github" />
 </p>
