@@ -1,5 +1,5 @@
 <?php
-
+ 
 class Helper
 {
   public static function finalUrl($url)
@@ -34,7 +34,7 @@ class Helper
       curl_close($ch);
       return $final;
   }
-
+ 
   public static function normalize($string)
   {
       $string = preg_replace("/([^a-z0-9])/", "-", strtolower($string));
@@ -42,7 +42,7 @@ class Helper
       $string = preg_replace("/([-]+){2,}/", "-", strtolower($string));
       return $string;
   }
-
+ 
   public static function parseData($items = [])
   {
       $final = [];
@@ -98,12 +98,12 @@ class Helper
               "itemCommentStatus" => @$item->itemInfos->commentStatus,
               "showNotPass"       => @$item->itemInfos->showNotPass,
               "vl1"               => false,
-
+ 
           ];
       }
       return $final;
   }
-
+ 
   public static function string_between($string, $start, $end)
   {
       $string = ' ' . $string;
@@ -111,7 +111,7 @@ class Helper
       if (0 == $ini) {
           return '';
       }
-
+ 
       $ini += strlen($start);
       $len = strpos($string, $end, $ini) - $ini;
       return substr($string, $ini, $len);
@@ -125,19 +125,19 @@ class Helper
           $index = rand(0, strlen($characters) - 1);
           $randomString .= $characters[$index];
       }
-
+ 
       return "68" . $randomString;
   }
 }
-
+ 
 class DownloadClass {
   const API_BASE = "https://www.tiktok.com/node/";
   private $_config = [];
-  
+ 
   private $cacheEngine;
-
+ 
   private $cacheEnabled = false;
-  
+ 
   private $defaults = [
       "user-agent"     => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36',
       "proxy-host"     => false,
@@ -148,20 +148,20 @@ class DownloadClass {
       "nwm_endpoint"   => false,
       "api_key"   => false
   ];
-  
+ 
   protected $buffer_size = 1000000;
-  
+ 
   public function __construct($config = array(), $cacheEngine = false)
   {
-    
+ 
       $this->_config = array_merge(['cookie_file' => sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'tiktok.txt'], $this->defaults, $config);
-
+ 
       if ($cacheEngine) {
           $this->cacheEnabled = true;
           $this->cacheEngine        = $cacheEngine;
       }
   }
-  
+ 
   private function generateName()
   {
     $characters = '0123456789AaBbCcDd';
@@ -171,11 +171,11 @@ class DownloadClass {
         $index = rand(0, strlen($characters) - 1);
         $randomString .= $characters[$index];
     }
-    
+ 
     return "FbazTiktok_" . $randomString;
-    
+ 
   }
-  
+ 
   private function remote_call($url = "", $isJson = true, $headers = ['Referer: https://www.tiktok.com/foryou?lang=en'])
   {
       $ch      = curl_init();
@@ -196,7 +196,7 @@ class DownloadClass {
           CURLOPT_COOKIEJAR      => $this->_config['cookie_file'],
           CURLOPT_COOKIEFILE => $this->_config['cookie_file'],
       ];
-
+ 
       curl_setopt_array($ch, $options);
       if (defined('CURLOPT_IPRESOLVE') && defined('CURL_IPRESOLVE_V4')) {
           curl_setopt($ch, CURLOPT_IPRESOLVE, CURL_IPRESOLVE_V4);
@@ -214,7 +214,7 @@ class DownloadClass {
       }
       return $data;
   }
-  
+ 
   private function file_size($url)
   {
       $ch = curl_init($url);
@@ -227,7 +227,7 @@ class DownloadClass {
       ]);
       curl_setopt($ch, CURLOPT_USERAGENT, $this->config['user-agent']);
       curl_setopt($ch, CURLOPT_REFERER, "https://www.tiktok.com/");
-
+ 
       curl_setopt($ch, CURLOPT_COOKIEFILE, $this->config['cookie_file']);
       curl_setopt($ch, CURLOPT_COOKIEJAR, $this->config['cookie_file']);
       $data = curl_exec($ch);
@@ -235,7 +235,7 @@ class DownloadClass {
       curl_close($ch);
       return (int) $size;
   }
-
+ 
   public function Downloadurl($url, $file_name = "tiktok-video", $ext = "mp4")
   {
       $file_size = $this->file_size($url);
@@ -245,7 +245,7 @@ class DownloadClass {
       header("Content-Transfer-Encoding: binary");
       header('Expires: 0');
       header('Pragma: public');
-
+ 
       if ($file_size > 100) {
           header('Content-Length: ' . $file_size);
       }
@@ -258,7 +258,7 @@ class DownloadClass {
       @ini_set('zlib.output_compression', false);
       @ini_set('implicit_flush', true);
       $ch = curl_init();
-
+ 
       curl_setopt($ch, CURLOPT_HEADER, 0);
       curl_setopt($ch, CURLOPT_URL, $url);
       curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
@@ -274,7 +274,7 @@ class DownloadClass {
       echo $output;
       exit;
   }
-
+ 
   private function getVideoByUrl($url = "")
   {
     try {
@@ -320,22 +320,22 @@ class DownloadClass {
       ];
     }
   }
-  
+ 
   private function failure()
   {
-
+ 
       @unlink($this->_config['cookie_file']);
       return false;
   }
-  
+ 
   public function Data($url) 
   {
     $result = $this->getVideoByUrl($url);
     $err = $result["err"];
-    
+ 
     if( $err == "true" ) {
       return $result;
-      
+ 
     } elseif ( $err == "false") {
       $result = $result["result"];
       $title = $result->items[0]->desc;
@@ -347,7 +347,7 @@ class DownloadClass {
       $playAddr = $result->items[0]->video->playAddr;
       $idVideo =  $result->items[0]->id;
       $embedVid = '<blockquote class="tiktok-embed" cite="https://www.tiktok.com/@' . $uniqueId . '/video/' . $idVideo . '" data-video-id="' . $idVideo . '" style="max-width: 605px;min-width: 325px;"><section></section></blockquote><script async src="https://www.tiktok.com/embed.js"></script>';
-      
+ 
       return [
         "idVideo"  => $idVideo,
         "title"    => $title,
@@ -360,7 +360,7 @@ class DownloadClass {
         "err"      => "false",
       ];
     }
-    
+ 
   }
-  
+ 
 }
