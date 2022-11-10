@@ -26,11 +26,10 @@
   <script>
   Swal.fire({
   title: 'Submit your Github username',
-  input: 'text',
+  input: 'text', allowOutsideClick: false,
   inputAttributes: {
     autocapitalize: 'off'
   },
-  allowOutsideClick: false,
   showCancelButton: false,
   confirmButtonText: 'OK',
   showLoaderOnConfirm: true,
