@@ -1,0 +1,52 @@
+baseurl: 'https://daffa-pratama.pages.dev'
+title: Daffa Pratama
+theme: pargo
+googleAnalytics: UA-54154424-1
+disqusShortname: daffapratama
+
+permalinks:
+  post: '/blog/:slug/'
+  page: '/:slug/'
+
+params:
+  author: Dian
+  description: 'Hello, saya Daffa Pratama. Blog ini belum jadi. Sabar ya...'
+
+frontmatter:
+  date:
+    - date
+    - publishDate
+    - lastmod
+  lastmod:
+    - ':git'
+    - lastmod
+    - date
+    - publishDate
+  publishDate:
+    - publishDate
+    - date
+  expiryDate:
+    - expiryDate
+
+menu:
+  main:
+    - identifier: about
+      name: About
+      url: /about/
+      weight: 1
+    - identifier: art
+      name: Art
+      url: ''
+      weight: 2
+    - identifier: twitter
+      name: Twitter
+      url: ''
+      weight: 3
+    - identifier: github
+      name: Github
+      url: 'https://github.com/daffapratamaaa'
+      weight: 4
+    - identifier: rss
+      name: RSS
+      url: ''
+      weight: 5
