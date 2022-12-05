@@ -316,7 +316,7 @@ function clickIE4(){if (event.button==2){alert(message);return false;}} function
 
   function akhiran(){fungsi=1;Tombol.style="transition:all 0s ease;opacity:0;transform: scale(.1);";imgakhir.style="opacity:1;height:100px;";Content.style = "opacity:1;margin-top:5vh;animation:none 3s infinite;";bodyblur.style="opacity:.4;animation:none";beneranblur.style="-webkit-backdrop-filter:blur(5px); backdrop-filter:blur(5px)";wallpaper.style="transform: scale(1.6)";pergeseran.style="display:none";idgeser.innerHTML = "";idgeser.style = "opacity:1;transform: scale(1);font-weight:400;margin-top:15px;";setTimeout(aksiakhir,800);}
 
-  async function menuju(){await swals.fire('OK!', 'Kirim pesan ke WhatsApp aku, ya!', 'success');window.location = "https://api.whatsapp.com/send?phone=6283138124986&text=" + pesanwhatsapp;}
+  async function menuju(){await swals.fire('OK!', 'Kirim pesan ke WhatsApp aku, ya!', 'success');window.location = "https://api.whatsapp.com/send?phone=&text=" + pesanwhatsapp;}
 
   var aa=0,akhirkata;var ai=0,pesanterakhir;function aksiakhir() {if(aa<akhirkata.length){idgeser.innerHTML += akhirkata.charAt(aa);aa++;setTimeout(aksiakhir,65);}
 
