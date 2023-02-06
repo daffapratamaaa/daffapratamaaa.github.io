@@ -1,3 +1,6 @@
+pesanAkhir1 = inip[iden];
+pesanAkhir3 = "<br>thank you, and i love uuu";
+
 document.getElementById("loveIn").onclick = function() {
       if(fungsiAwal==0){
         loveIn.style="transition:all .8s ease;transform:scale(15);opacity:0";
