@@ -1,15 +1,15 @@
 baseurl: 'https://daffa-pratama.pages.dev'
 title: Daffa Pratama
 theme: pargo
-googleAnalytics: UA-54154424-1
-disqusShortname: daffapratama
+googleAnalytics: -
+disqusShortname: -
 
 permalinks:
   post: '/blog/:slug/'
   page: '/:slug/'
 
 params:
-  author: Dian
+  author: Daffa Pratama
   description: 'Hello, saya Daffa Pratama. Blog ini belum jadi. Sabar ya...'
 
 frontmatter:
