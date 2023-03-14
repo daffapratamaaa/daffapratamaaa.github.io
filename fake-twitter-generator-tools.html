@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<meta charset='UTF-8'/>
+<meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5' name='viewport'/>
+<meta content='IE=edge' http-equiv='X-UA-Compatible'/>
+<head>
+<link href='https://cdn.statically.io/gh/rulnoveid/CodeBlog/main/fake%20tweet%20generator%20tools/css/style0.css' rel='stylesheet'/>
+<title>Fake Twitter Generator Tools</title>
+<link rel="icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/daffapratamaaa/daffapratamaaa.github.io/favicon.ico">
+</head>
+<body>
+<div class='form'>
+<h2>Details</h2>
+<div class='form-control upload'>
+<label for='avatar'>Upload Profile Picture<input accept='image/png, image/jpeg' class='file' id='avatar' name='avatar' type='file'/></label>
+<p class='file-name' id='file-name'></p>
+<button class='reset' id='reset' type='button'>Reset</button>
+</div>
+<div class='form-control'>
+<label for='name'>Name</label>
+<input id='name' type='text'/>
+<small><span class='count'>0</span>/50 characters</small>
+</div>
+<div class='form-control'>
+<label for='username'>Username</label>
+<div class='username_input'>@<input id='username' type='text'/></div>
+<small><span class='count'>0</span>/15 characters. Only numbers, letters
+            or _ characters</small>
+</div>
+<div class='form-control'>
+<label for='message'>Message</label>
+<textarea id='message' rows='3'></textarea>
+<small><span class='count'>0</span>/280 characters</small>
+</div>
+<div class='form-control'>
+<label for='time'>Time</label>
+<input id='time' type='text'/>
+<small>hh:mm format</small>
+</div>
+<div class='form-control'>
+<label for='date'>Date</label>
+<input id='date' type='text'/>
+<small>mmm dd, yyyy format</small>
+</div>
+<div class='form-control'>
+<label for='client'>Client</label>
+<input id='client' type='text'/>
+<small>Twitter for iPhone, Twitter for Android, Twitter Web App,
+            etc.</small>
+</div>
+<div class='form-control'>
+<label for='retweets'>Retweets Count</label>
+<input id='retweets' type='number'/>
+</div>
+<div class='form-control'>
+<label for='quotes'>Quote Tweets Count</label>
+<input id='quotes' type='number'/>
+</div>
+<div class='form-control'>
+<label for='likes'>Likes Count</label>
+<input id='likes' type='number'/>
+</div>
+<div class='form-control'>
+<p>Theme</p>
+<div class='group'>
+<label class='radio_container'>Light
+              <input checked='checked' name='theme_radio' type='radio' value='light'/>
+<span class='radio_mark'></span>
+</label>
+<label class='radio_container'>Dim
+              <input name='theme_radio' type='radio' value='dim'/>
+<span class='radio_mark'></span>
+</label>
+<label class='radio_container'>Dark
+              <input name='theme_radio' type='radio' value='dark'/>
+<span class='radio_mark'></span>
+</label>
+</div>
+</div>
+<div class='form-control'>
+<p>Verified Badge</p>
+<div class='group'>
+<label class='radio_container'>Show
+              <input name='verified_radio' type='radio' value='show'/>
+<span class='radio_mark'></span>
+</label>
+<label class='radio_container'>Hide
+              <input checked='checked' name='verified_radio' type='radio' value='hide'/>
+<span class='radio_mark'></span>
+</label>
+</div>
+</div>
+</div>
+<div class='tweet-desk'>
+<h2>Preview</h2>
+<div class='tweet_box' id='tweet_box'>
+<div class='tweet' id='tweet'>
+<div class='head'>
+<div class='title'>
+<img alt='avatar' height='48' id='tweet_avatar' src='https://cdn.statically.io/gh/rulnoveid/CodeBlog/main/fake%20tweet%20generator%20tools/assets/silhoutte.png' width='48'/>
+<div class='text'>
+<div class='top'>
+<span class='tweet_name' id='tweet_name'>Name</span>
+<svg class='verified hide' fill='currentColor' height='18' id='tweet_verified' viewBox='0 0 24 24' width='18' xmlns='http://www.w3.org/2000/svg'>
+<g>
+<path d='M22.5 12.5c0-1.58-.875-2.95-2.148-3.6.154-.435.238-.905.238-1.4 0-2.21-1.71-3.998-3.818-3.998-.47 0-.92.084-1.336.25C14.818 2.415 13.51 1.5 12 1.5s-2.816.917-3.437 2.25c-.415-.165-.866-.25-1.336-.25-2.11 0-3.818 1.79-3.818 4 0 .494.083.964.237 1.4-1.272.65-2.147 2.018-2.147 3.6 0 1.495.782 2.798 1.942 3.486-.02.17-.032.34-.032.514 0 2.21 1.708 4 3.818 4 .47 0 .92-.086 1.335-.25.62 1.334 1.926 2.25 3.437 2.25 1.512 0 2.818-.916 3.437-2.25.415.163.865.248 1.336.248 2.11 0 3.818-1.79 3.818-4 0-.174-.012-.344-.033-.513 1.158-.687 1.943-1.99 1.943-3.484zm-6.616-3.334l-4.334 6.5c-.145.217-.382.334-.625.334-.143 0-.288-.04-.416-.126l-.115-.094-2.415-2.415c-.293-.293-.293-.768 0-1.06s.768-.294 1.06 0l1.77 1.767 3.825-5.74c.23-.345.696-.436 1.04-.207.346.23.44.696.21 1.04z'></path>
+</g>
+</svg>
+</div>
+<div class='bottom'>
+                    @<span id='tweet_username'>username</span>
+</div>
+</div>
+</div>
+<div class='dots'>
+<svg fill='currentColor' height='19' viewBox='0 0 24 24' width='19' xmlns='http://www.w3.org/2000/svg'>
+<g>
+<circle cx='5' cy='12' r='2'></circle>
+<circle cx='12' cy='12' r='2'></circle>
+<circle cx='19' cy='12' r='2'></circle>
+</g>
+</svg>
+</div>
+</div>
+<div class='content'>
+<div class='message' id='tweet_message'>
+                Fake Tweet Generator Tools Twitter Free!
+              </div>
+<div class='tweet_info'>
+<div id='tweet_time'>4:38 PM</div>
+                &nbsp;&centerdot;&nbsp;
+                <div id='tweet_date'>Jul 7, 2021</div>
+                &nbsp;&centerdot;&nbsp;
+                <div class='tweet_client' id='tweet_client'>
+                  Twitter Web App
+                </div>
+</div>
+</div>
+<div class='stats'>
+<div class='stat'>
+<span class='count' id='tweet_retweets'>100</span> Retweets
+              </div>
+<div class='stat'>
+<span class='count' id='tweet_quotes'>89</span> Quote Tweets
+              </div>
+<div class='stat'>
+<span class='count' id='tweet_likes'>453</span> Likes
+              </div>
+</div>
+<div class='tail'>
+<svg fill='currentColor' height='22' viewBox='0 0 24 24' width='22' xmlns='http://www.w3.org/2000/svg'>
+<g>
+<path d='M14.046 2.242l-4.148-.01h-.002c-4.374 0-7.8 3.427-7.8 7.802 0 4.098 3.186 7.206 7.465 7.37v3.828c0 .108.044.286.12.403.142.225.384.347.632.347.138 0 .277-.038.402-.118.264-.168 6.473-4.14 8.088-5.506 1.902-1.61 3.04-3.97 3.043-6.312v-.017c-.006-4.367-3.43-7.787-7.8-7.788zm3.787 12.972c-1.134.96-4.862 3.405-6.772 4.643V16.67c0-.414-.335-.75-.75-.75h-.396c-3.66 0-6.318-2.476-6.318-5.886 0-3.534 2.768-6.302 6.3-6.302l4.147.01h.002c3.532 0 6.3 2.766 6.302 6.296-.003 1.91-.942 3.844-2.514 5.176z'></path>
+</g>
+</svg>
+<svg fill='currentColor' height='22' viewBox='0 0 24 24' width='22' xmlns='http://www.w3.org/2000/svg'>
+<g>
+<path d='M23.77 15.67c-.292-.293-.767-.293-1.06 0l-2.22 2.22V7.65c0-2.068-1.683-3.75-3.75-3.75h-5.85c-.414 0-.75.336-.75.75s.336.75.75.75h5.85c1.24 0 2.25 1.01 2.25 2.25v10.24l-2.22-2.22c-.293-.293-.768-.293-1.06 0s-.294.768 0 1.06l3.5 3.5c.145.147.337.22.53.22s.383-.072.53-.22l3.5-3.5c.294-.292.294-.767 0-1.06zm-10.66 3.28H7.26c-1.24 0-2.25-1.01-2.25-2.25V6.46l2.22 2.22c.148.147.34.22.532.22s.384-.073.53-.22c.293-.293.293-.768 0-1.06l-3.5-3.5c-.293-.294-.768-.294-1.06 0l-3.5 3.5c-.294.292-.294.767 0 1.06s.767.293 1.06 0l2.22-2.22V16.7c0 2.068 1.683 3.75 3.75 3.75h5.85c.414 0 .75-.336.75-.75s-.337-.75-.75-.75z'></path>
+</g>
+</svg>
+<svg fill='currentColor' height='22' viewBox='0 0 24 24' width='22' xmlns='http://www.w3.org/2000/svg'>
+<g>
+<path d='M12 21.638h-.014C9.403 21.59 1.95 14.856 1.95 8.478c0-3.064 2.525-5.754 5.403-5.754 2.29 0 3.83 1.58 4.646 2.73.814-1.148 2.354-2.73 4.645-2.73 2.88 0 5.404 2.69 5.404 5.755 0 6.376-7.454 13.11-10.037 13.157H12zM7.354 4.225c-2.08 0-3.903 1.988-3.903 4.255 0 5.74 7.034 11.596 8.55 11.658 1.518-.062 8.55-5.917 8.55-11.658 0-2.267-1.823-4.255-3.903-4.255-2.528 0-3.94 2.936-3.952 2.965-.23.562-1.156.562-1.387 0-.014-.03-1.425-2.965-3.954-2.965z'></path>
+</g>
+</svg>
+<svg fill='currentColor' height='22' viewBox='0 0 24 24' width='22' xmlns='http://www.w3.org/2000/svg'>
+<g>
+<path d='M17.53 7.47l-5-5c-.293-.293-.768-.293-1.06 0l-5 5c-.294.293-.294.768 0 1.06s.767.294 1.06 0l3.72-3.72V15c0 .414.336.75.75.75s.75-.336.75-.75V4.81l3.72 3.72c.146.147.338.22.53.22s.384-.072.53-.22c.293-.293.293-.767 0-1.06z'></path>
+<path d='M19.708 21.944H4.292C3.028 21.944 2 20.916 2 19.652V14c0-.414.336-.75.75-.75s.75.336.75.75v5.652c0 .437.355.792.792.792h15.416c.437 0 .792-.355.792-.792V14c0-.414.336-.75.75-.75s.75.336.75.75v5.652c0 1.264-1.028 2.292-2.292 2.292z'></path>
+</g>
+</svg>
+</div>
+</div>
+</div>
+<button class='btn' id='download' type='button'>Download</button>
+</div>
+</main>
+<div class='bar'></div>
+<script src='https://cdn.statically.io/gh/rulnoveid/CodeBlog/main/fake%20tweet%20generator%20tools/js/html2canvas.min.js'></script>
+<script src='https://cdn.statically.io/gh/rulnoveid/CodeBlog/main/fake%20tweet%20generator%20tools/js/app.js'></script>
+<div class='no-items section' id='fixelements'></div>
+</script>
+</body>
+</html>
