@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<meta charset='UTF-8'/>
+<meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5' name='viewport'/>
+<meta content='IE=edge' http-equiv='X-UA-Compatible'/>
+<link href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css' rel='stylesheet'/>
+<!--[ <link href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css' rel='stylesheet'/> ]-->
+<link href='//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css' rel='stylesheet'/>
+<head>
+<title>Google Drive Direct Link Generator</title>
+<link rel="icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/daffapratamaaa/daffapratamaaa.github.io/favicon.ico">
+</head>
+<body>
+<div class='progress blue lighten-3 hide' id='progress'>
+<div class='indeterminate blue'></div>
+</div>
+<main class='container valign-wrapper'>
+<div class='row' id='main'>
+<div class='col 12 center' id='title'>
+<h1>Google Drive Direct Link Generator</h1>
+</div>
+<div class='col s12'>
+<form action='#' id='direct-link-form'>
+<div class='input-field col s12'>
+<textarea class='materialize-textarea' id='url'></textarea>
+<label for='url'>Tempelkan Link Google Drive disini</label>
+<span class='max-lines'>Max <span id='max-lines'></span> lines</span>
+</div>
+<div class='right-align'>
+<button class='waves-effect waves-light btn blue' id='submit' type='submit'>
+                Get Direct Link
+              </button>
+</div>
+</form>
+</div>
+</div>
+</main>
+<div class='container section hide' id='result'>
+<ul id='data'></ul>
+<div class='row'>
+<div class='col s12 right-align'>
+<button class='btn blue' data-clipboard-target='#data' id='copy-btn'>
+            Copy to clipboard
+          </button>
+</div>
+</div>
+</div>
+<div class='nav-wrapper container'>
+<blockquote>
+<!--<p>This toolwill only work for files that you <b>UPLOAD</b> to Google Drive and uses the following permissions to share: "<b>Public on the web</b>" or "<b>Anyone with the link</b>.<br/>
+This tool will not work for Google Documents (Documents, Spreadsheets, Presentations, etc.) that created inside Google Drive. If you want to create a direct link for Google Documents (Documents, Spreadsheets, Presentations, etc.) that created inside Google Drive, first download them to your computer then upload that file back on to Google Drive.</p>-->
+</blockquote>
+</div>
+<script src='https://code.jquery.com/jquery-1.12.0.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.12/clipboard.min.js'></script>
+<script src='https://cdn.statically.io/gh/rulnoveid/CodeBlog/main/gdrive.js'></script>
+</script>
+</body>
+</html>
