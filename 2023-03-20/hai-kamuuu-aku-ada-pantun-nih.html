@@ -310,7 +310,7 @@ function clickIE4(){if (event.button==2){alert(message);return false;}} function
     iniakhir.style="opacity:0";setTimeout(bqmuncul,400);
   }
   
-  teksAkhir = "di jalan ada lampu,<br>di kuburan ada hantu,<br>di kerajaan ada ratu,<br>tapi di hatiku...<br>cuma ada kamu, jiakhhh<3333";
+  teksAkhir = "";
   function kalimatakhir(){
   	//fotostiker.style.animation="rto .8s infinite alternate";
   	//setInterval(berjatuhan,250);
@@ -360,7 +360,7 @@ function clickIE4(){if (event.button==2){alert(message);return false;}} function
   ftganti=10;ftmuncul();setInterval(berjatuhan,250);
   pesanAkhir.style="position:relative;opacity:1;visibility:visible;transform: scale(1)";
   new TypeIt("#pesanAkhir", {
-  strings: ["i love uuu ><"], startDelay: 100, speed: 50, cursor: false, deleteSpeed: 20, breakLines: false, waitUntilVisible: true, lifelike: true,
+  strings: ["" + pesanAkhir2], startDelay: 100, speed: 50, cursor: false, deleteSpeed: 20, breakLines: false, waitUntilVisible: true, lifelike: true,
   afterComplete: function(){
   	  pesanAkhir.style.animation="rto .8s infinite alternate";
   },}).go();
