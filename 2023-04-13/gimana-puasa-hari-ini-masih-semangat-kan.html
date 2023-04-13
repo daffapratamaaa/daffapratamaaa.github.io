@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<meta charset='UTF-8'/>
+<meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5' name='viewport'/>
+<meta content='IE=edge' http-equiv='X-UA-Compatible'/>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+  <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
+  <script src="https://kit.fontawesome.com/4f3ce16e3e.js" crossorigin="anonymous"></script>
+  
+<head>
+<title>Aku Mau Nanya Nih</title>
+<link rel="icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/daffapratamaaa/daffapratamaaa.github.io/favicon.ico">
+<meta name="description" content="Daffa Pratama Nur Ardiansyah">
+<!-- 
+  Made with love by Daffa Pratama!
+  
+     Blog: https://www.daffa-pratama.my.id
+     Instagram: @daffapratamanurardiansyah
+     TikTok: @daffa_pratama_
+     Email: admin@daffa-pratama.my.id
+     
+  Thanks to all <3
+-->
+</head>
+<style>
+:root {
+--warna-bg: rgba(0, 0, 0, .7); 
+--warna-teks: #fff;
+--warna-bingkai: #fff;
+--bingkai: 8px;
+--bingkai-kiri: 2px solid var(--warna-bingkai);
+--bingkai-kanan: 2px solid var(--warna-bingkai);
+--gaya-font: 'Quicksand', sans-serif;
+--gaya-font2: 'Dancing Script', sans-serif;
+}
+@keyframes fanim {0% {background-position: 0% 0%;}25% {background-position: 100% 100%;} 50% {background-position: 0% 100%;} 75% {background-position: 50% 50%;} 100% {background-position: 0% 0%;}}
+body{background-color:#000;font-family:var(--gaya-font);padding: 20px 25px;-webkit-user-select: none; -ms-user-select: none; user-select: none;} a{text-decoration:none;}
+body::before{content:"\00A9  Daffa Pratama Nur Ardiansyah";color:white;opacity:.3;font-size:11px;position:fixed;bottom:25px;right:25px;z-index:2}
+#bodyblur{opacity:.5;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.3);transition:all 1s ease;} 
+#wallpaper{animation: jj 7s infinite;width:100%;height:100%;transform: scale(1);transition:all 1.3s ease;}
+#beneranblur{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.3);-webkit-backdrop-filter:blur(0); backdrop-filter:blur(0);transition:all 3s ease;}
+
+@keyframes jj{0%  {transform: scale(1);} 50% {transform: scale(1.3);} 100% {transform: scale(1);}}
+@keyframes rts{from {transform:scale(.1);} to {transform:scale(1);}}
+@keyframes rto{from {transform:scale(1);} to {transform:scale(1.1);}}
+@keyframes aniopa{0% {transform: scale(1);} 50% {transform: scale(.75);} 100% {transform: scale(1);}}
+@keyframes rtf{from {transform: rotate(0deg);} to {transform: rotate(360deg);}} @keyframes rt{from {transform: scale(.9);/* transform: rotate(-5deg); */} to {transform: scale(1);/* transform: rotate(5deg); */}}
+@keyframes kont{0%  {left:-1px; top:-3px;} 50% {left:1px; top:3px;} 100% {left:-1px; top:-3px;}}
+
+blockquote{position:absolute;opacity:0;visibility:hidden;margin-top:100px;background:var(--warna-bg);border-radius:8px;box-shadow: rgba(255,255,255, 0.3) 0px 7px 29px 0px;transform: scale(.1);transition:all 1s ease;margin-top:120px;margin-left:0;margin-right:0;color:var(--warna-teks);text-shadow: 0px 2px 2px rgba(0, 0, 0, .8);}
+blockquote{width:400px;text-align:center;line-height:1.3em;padding:10px 20px;}
+blockquote::before{content: "";position: absolute;border: 1px solid #fff;border-radius:8px;top: -8px;bottom: -8px;left: -8px;right: -8px;}
+blockquote p{font-size:16px;font-weight:700;line-height:1.4em;transition:all .5s ease;}
+
+#waktu{display:none}
+#kado1, #kado2, #kado3{font-size:16px;font-weight:400;}
+#kalimatAkhir{transform:scale(.1);}
+#kado1{position:absolute;opacity:0}
+#kalove{font-size:25px;line-height:0;}
+.kolombar .inibar{position:absolute;opacity:0;visibility:hidden;background-color:#fff;height:5px;width:100%}
+
+#Tombol{position:relative;opacity:0;margin:0;display:flex;align-items:left;list-style:none;transform: scale(.1);transition:all 1s ease;}
+#Tombol a{cursor:pointer;display:inline-flex;align-items:center; margin:0;margin:12px 0 12px 0;transition:all .2s ease;padding:10px;outline:0;border-right:var(--bingkai-kanan);border-left:var(--bingkai-kiri);border-radius:4px;line-height:15px;background:var(--warna-bg);color:var(--warna-teks);font-size:14px;font-weight:700;white-space:nowrap;overflow:hidden;box-shadow: rgba(255,255,255, 0.3) 0px 7px 29px 0px;z-index:1} 
+#Bn{margin:12px 0 12px 12px !important}
+#By{}
+
+#Content{animation-name:none;animation-duration: 3s;animation-iteration-count: infinite;position:relative;opacity:0;margin-top:50px;width:100%;height:180px;transition:all .7s ease;}
+#Content > *{display:flex;align-items:center;text-align:center;justify-content:center;margin-top:1px;}
+.kumpulanstiker > img{display:none;background: rgba(255, 255, 255, 0.3);box-shadow: 0 4px 30px rgba(255,255,255, 0.3);backdrop-filter: blur(5px);-webkit-backdrop-filter: blur(5px);border: 1px solid rgba(255, 255, 255, 0.3);border-radius:8%;padding:10px;width:90px;height:90px;margin:20px 0;}
+#fotostiker{opacity:.1;transition:all 1.2s ease;transform: scale(.1);}
+#halo{font-size:19px !important;position:relative;margin:15px 0 30px 0}
+
+#fotolove img{transition:all .5s ease;width:75px;height:75px;padding:0;background:none}
+#kadoIn img{display:inline-flex;background:none;width:130px;height:130px;transition:all .3s ease;} 
+#ket, #halo, #pesan{text-shadow: 0px 2px 2px rgba(0, 0, 0, .8);font-size:17px;font-weight:700;color:white}
+#ket{margin-top:25px !important;font-weight:400;}
+#kadoIn img:hover{transform:scale(.9);}
+#pesan{position:absolute;font-size:15px;font-weight:700 !important;}
+
+#kolombaru{position:absolute;opacity:0;display:flex;transform:scale(.1);transition:all 1s ease;align-items:center;text-align:center;justify-content:center;}
+#kolombaru > li{margin: 10px;padding: 10px;list-style-type: none;}
+#kolombaru li img{display:flex;width:40px;height:40px}
+#kolombaru li img:hover{transform: scale(1.15);transition:all .3s ease;}
+
+.kolomrange{padding:0;background:none;position:relative;z-index:1;display:none;transition:all 1s ease;align-items:center;}
+.kolomrange .inirange{width:100%;height:40px;margin-right:15px;display:flex;align-items:center;text-align:center;justify-content:center;}
+.kolomrange .inirange input{height:10px;width:100%;-webkit-appearance:none;outline:none;background:#f2f2f2;border-radius:25px;box-shadow:inset 0px 0px 4px rgba(0,0,0,0.2);}
+.kolomrange .inirange input::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:20px;height:20px;border-radius:50%;border:3px solid #006FFF;background:white;transition:all .2s ease;}
+.kolomrange .inirange input::-webkit-slider-thumb:hover{border:5px solid #006FFF;}
+.kolomrange .inivalue{color:white;font-size:20px}
+
+.swal2-modal > *{font-size:16px;color:white}
+.swal2-title{line-height:1.3em;font-size:18px;text-align:center;padding:15px 30px 0 30px;}
+.swal2-container.swal2-backdrop-show{background: rgba(0,0,0,.5);}
+.swal2-timer-progress-bar-container > *{opacity:.7;background:#00B6FF;margin:0 2px}
+.swal2-modal{box-shadow: rgba(255,255,255, 0.3) 0px 7px 29px 0px;background:rgba(0,0,0,.9);max-width:320px;border-right:var(--bingkai-kanan);border-left:var(--bingkai-kiri);border-radius:4px;top:-50px;}
+
+.fa-heart {opacity:.15;color:white;font-size: 22px;position: absolute;animation:  heartMove linear 1;top: -10vh;z-index: 0;}
+@keyframes heartMove {0%{transform: translateY(-10vh) ;} 100%{transform: translateY(100vh) ;}}
+.sembunyi, #kado2, #kado3{display:none !important}
+
+/* Pop-Up Box (Style 2) by Daffa Pratama */ .popSc{position:fixed;top:0;bottom:0;left:0;right:0;padding:20px;background:rgba(255, 255, 255, 0.1);z-index:99980;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);display:flex;justify-content:center;align-items:center} .popSc.hidden{display:none} .popSc .popBo{position:relative;background:rgba(255, 255, 255, 0.8);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);max-width:400px;display:flex;justify-content:center;align-items:center;flex-direction:column;padding:30px;border-radius:20px;box-shadow:0 5px 25px rgb(0 0 0 / 20%)} .popSc .popBo svg{display:block;width:50px;height:50px;fill:none !important;stroke:#08102b;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5} .popSc .popBo h2{margin:10px 0 15px 0;font-size:1.2rem;font-weight:800;color:#08102b} .popSc .popBo p{margin:0;line-height:1.7em;font-size:0.9rem;color:#08102b} .popSc .popBo .popBtn{display:inline-flex;justify-content:center;align-items:center;height:50px;width:50px;outline:none;border:none;background:#482dff;border-radius:50%;margin-top:20px;transition:all .2s ease;-webkit-transition:all .2s ease} .popSc .popBo .popBtn:hover{transform:scale(1.05);-webkit-transform:scale(1.05)} .popSc .popBo .popBtn svg{width:24px;height:24px;stroke:#fff;flex-shrink:0} .popSc .popBo .popBtn svg.r{animation:rotateIcn 1.5s infinite linear;-webkit-animation:rotateIcn 1.5s infinite linear} .popSc{animation:popupBlur .3s ease-in; -webkit-animation:popupBlur .3s} .popSc >*{animation:popupScale .3s ease-in; -webkit-animation:popupScale .3s} .darkMode .popSc{background:rgba(0, 0, 0, 0.1)} .darkMode .popSc .popBo{background:rgba(50, 50, 50, 0.8)} .darkMode .popSc .popBo svg{stroke:#fefefe} .darkMode .popSc .popBo p, .darkMode .popSc .popBo h2{color:#fefefe} @keyframes popupBlur {from{opacity:0}to{opacity:1}} @-webkit-keyframes popupBlur{from{opacity:0}to{opacity:1}} @keyframes popupScale{from{transform:scale(0);animation-timing-function:ease-in;opacity:0}to{transform:scale(1);opacity:1}} @-webkit-keyframes popupScale{from{-webkit-transform:scale(0);-webkit-animation-timing-function: ease-in;opacity:0}to{-webkit-transform:scale(1);opacity:1}} @keyframes rotateIcn{from{transform:rotate(0deg)} to{transform:rotate(359deg)}} @-webkit-keyframes rotateIcn{from{-webkit-transform:rotate(0deg)} to{-webkit-transform:rotate(359deg)}}
+/* Toast Notification by Daffa Pratama */ .tNtf span{position:fixed;left:24px;bottom:-70px;display:inline-flex;align-items:center;text-align:center;justify-content:center;margin-bottom:20px;z-index:99981;background:#323232;color:rgba(255,255,255,.8);font-size:14px;font-family:inherit;border-radius:3px;padding:13px 24px; box-shadow:0 5px 35px rgba(149,157,165,.3);opacity:0;transition:all .1s ease;animation:slideinwards 2s ease forwards;-webkit-animation:slideinwards 2s ease forwards} @media screen and (max-width:500px){.tNtf span{margin-bottom:20px;left:20px;right:20px;font-size:13px}} @keyframes slideinwards{0%{opacity:0}20%{opacity:1;bottom:0}50%{opacity:1;bottom:0}80%{opacity:1;bottom:0}100%{opacity:0;bottom:-70px;visibility:hidden}} @-webkit-keyframes slideinwards{0%{opacity:0}20%{opacity:1;bottom:0}50%{opacity:1;bottom:0}80%{opacity:1;bottom:0}100%{opacity:0;bottom:-70px;visibility:hidden}} .darkMode .tNtf span{box-shadow:0 10px 40px rgba(0,0,0,.2)}
+/* RGB Effect */.stwRainbow,.stwBlurRainbow{position:fixed;width:100%;bottom:0;left:0;right:0;height:3px;z-index:23;background:linear-gradient(-45deg, #4086F4, #31A952, #FBBE01, #EB4132,#4086F4, #31A952, #FBBE01, #EB4132);background-size:200%;-webkit-animation:animeBar 5s linear infinite;animation:animeBar 5s linear infinite}.stwBlurRainbow{height:10px;z-index:22;filter:blur(10px);opacity:.7}@-webkit-keyframes animeBar{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}@keyframes animeBar{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}.iFxd.ts{top:auto;bottom:5;right:auto;left:0} .aNm.t{background:rgba(255,255,255,.8);padding:6px} .aNm.t .im{width:16px;height:16px;margin-right:4px} .aNm.t .nm{font-size:13px;color:var(--bodyC)}
+</style>
+<body>
+	
+<script language='JavaScript1.2'>
+function disableselect(e){
+return false
+}
+function reEnable(){
+return true
+}
+document.onselectstart=new Function ("return false")
+if (window.sidebar){
+document.onmousedown=disableselect
+document.onclick=reEnable
+}
+</script>
+<div class='clear'></div>
+<div class='widget HTML' data-version='1' id='HTML2'>
+<div class='widget-content'>
+<script> var message="Dilarang Copy Paste!";
+///////////////////////////////////
+function clickIE4(){if (event.button==2){alert(message);return false;}} function clickNS4(e){if (document.layers||document.getElementById&&!document.all){if (e.which==2||e.which==3){alert(message);return false;}}} if (document.layers){document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS4;} else if (document.all&&!document.getElementById){document.onmousedown=clickIE4;} document.oncontextmenu=new Function("swals.fire('Ups!' , 'Dilarang copy paste, ya!' , 'warning');return false")</script>
+<div class='clear'></div></div></div>
+<div id='toastNotif' class='tNtf'></div>
+<script>/*<![CDATA[*/ /* No Internet Connection Script by Daffa Pratama */ function pageReload(){var n=document.querySelector("#noInternet .popBo .popBtn svg");null!=n&&n.classList.add("r"),setTimeout(function(){window.location.reload()},500)};window.addEventListener("offline",function(){document.querySelector("#noInternet").classList.remove("hidden"),document.querySelector("#toastNotif").innerHTML="<span>Tidak ada koneksi internet!</span>"}),window.addEventListener("online",function(){document.querySelector("#noInternet").classList.add("hidden"),document.querySelector("#toastNotif").innerHTML="<span>Kembali online!</span>"}); /*]]>*/</script>
+<div class='stwRainbow'></div>
+<div class='stwBlurRainbow'></div>
+	
+   <!-- Ganti Audio di sini -->
+   <audio src="https://daffapratamaaa.github.io/so-am-i.mp3" id="linkmp3" class="sembunyi"></audio>
+   
+   <div id="bodyblur">
+     <!-- Wallpaper --><img src="https://daffapratamaaa.github.io/IMG-20230327-WA0003.jpg" id="wallpaper"/>
+   </div>
+   
+   <div id='Content'>
+
+     <div id="kadoIn" onClick="memulai();">
+       <!-- Tombol Surat --><img src="https://feeldreams.github.io/kadoin.png"/>
+     </div>
+     <p id="ket">Klik Kadonya!</p>
+
+     <div class="kumpulanstiker">
+         <!-- Stiker untuk Konten -->
+         <img src="https://feeldreams.github.io/bunga.gif" id="fotostiker" onClick="aksistiker()"/>
+         <img src="https://feeldreams.github.io/pandaketawa2.gif" id="fotostiker2"/>
+         <img src="https://feeldreams.github.io/pandacoklat.gif" id="fotostiker3"/>
+         <!--<img src="https://feeldreams.github.io/pandakuning.gif" id="fotostiker4"/>-->
+         <img src="https://feeldreams.github.io/pandacium.gif" id="fotostiker5"/>
+     </div>
+     <p id="pesan"></p>
+     <p id="halo">Hai, </p>
+     
+     <div><blockquote id='bq'>
+
+       <!-- Konten Pembukaan -->
+       <p id="kalimat" class="kal">Gimana Puasa Hari Ini, Masih Semangat, kan? 😂❤️</p>
+       <p id="kalimatb" class="kal">Aku Mau Nanya Nih 😆❤️</p>
+       <p id="kalimatc" class="kal">Kamu Pilih Warna Apa? 🤭❤️</p>
+       <p id="kalimatd" class="kal">Kalo kamu pilih warna<br><span id="wrna1"></span> berarti mau dong<br>bukber sama aku?😆❤️</p>
+       <p id="kalimate" class="kal">Yeyyy! Pokoknya kamu harus mau bukber sama aku yyy🤣❤️</p>
+       <p id="kalimatf" class="kal">Oh ya,<br>Coba klik Stiker di Atas 😆❤️</p>
+       
+     </blockquote></div>
+
+     <!-- Tombol Multifungsi -->
+     <div id="Tombol">
+       <a id="By" onClick="multifungsi()">&#128140; Balas</a>
+       <a id="Bn" onClick="ditolak()">Engga</a>
+     </div>
+     
+     <!-- Pesan Ditolak -->
+     <div id="pesanditolak" class="sembunyi">
+       <img id="stikerditolak" src="https://feeldreams.github.io/weee.gif"/>
+       <p id="kataditolak">Harus mau wlee😜</p>
+     </div>
+
+   </div>
+
+<!-- Jangan Edit Bagian Ini --><script>
+  
+inikuis=0;ftganti=0;flag=1;flagg=1;fungsi=0;ftfungsi=0;fungsiAwal=0;fungsitimer=0;vketikhalo=halo.innerHTML;
+  halo.innerHTML = "";var ahalo=0,vketikhalo;defby=By.innerHTML;deffotostiker=fotostiker.src;
+  Content.style = "opacity:1;margin-top:16vh;";
+  
+  function memulai(){if(fungsiAwal==0){fungsiAwal=1;kadoIn.style="transition:all .8s ease;transform:scale(10);opacity:0";wallpaper.style="transform: scale(1.5);";ket.style="display:none";setTimeout(mulainama,700)}}
+  
+  async function mulainama() {
+           kadoIn.style="display:none";ket.style="display:none";
+           nama = "Kamu";
+           vketikhalo += nama + "! ✨";
+           audio.play();
+           Content.style = "opacity:1;margin-top:2vh";
+           fotostiker.style="display:inline-flex;";
+           setTimeout(ftmuncul,200);
+           setTimeout(kethalo,500);
+  }
+  
+  function ftmuncul(){
+    if(ftganti==0){fotostiker.src = deffotostiker;fotostiker.style="display:inline-flex;opacity:1;transform:scale(1)";}
+    if(ftganti==1){fotostiker.src = fotostiker2.src;fotostiker.style="display:inline-flex;opacity:1;transition:all .7s ease;transform:scale(1);";}
+    if(ftganti==2){fotostiker.src = fotostiker3.src;fotostiker.style="display:inline-flex;opacity:1;transition:all .7s ease;transform:scale(1);";}
+    if(ftganti==3){fotostiker.src = fotostiker4.src;fotostiker.style="display:inline-flex;opacity:1;transition:all .7s ease;transform:scale(1);";}
+    if(ftganti==4){fotostiker.src = fotostiker5.src;fotostiker.style="display:inline-flex;opacity:1;transition:all .7s ease;transform:scale(1);";}
+    //if(ftganti==3){fotostiker.src = fotostiker4.src;fotostiker.style="display:inline-flex;opacity:1;transition:all .7s ease;transform:scale(1);box-shadow:none;backdrop-filter: blur(0);-webkit-backdrop-filter: blur(0);background:none;border:0;width:150px;height:150px";setTimeout(jjfoto,400);}
+  }
+  function fthilang(){fotostiker.style="display:inline-flex;opacity:1;transition:all .7s ease;transform:scale(.1)";}
+  function jjfoto(){fotostiker.style.animation="rto .8s infinite alternate";setInterval(createHeart,200);}
+  function kethalo(){if(ahalo<vketikhalo.length){halo.innerHTML += vketikhalo.charAt(ahalo);ahalo++;setTimeout(kethalo,60);}if(ahalo==vketikhalo.length){setTimeout(bqmuncul,200);}}
+  function bqmuncul(){bq.style = "position:relative;opacity:1;visibility:visible;transform: scale(1);margin-top:0";gantikalimat3();fungsi=1;}
+  
+  async function menuju(){Tombol.style="transition:all .3s ease;transform: scale(0);opacity:0";setTimeout(thiswin,300)}
+  function thiswin(){Tombol.style="opacity:1;transform: scale(1);";window.location = "https://api.whatsapp.com/send?phone=&text=" + pesanwhatsapp;}
+  
+  const body = document.querySelector("body");const swalst = Swal.mixin({timer: 2777, allowOutsideClick: false, showConfirmButton: false, timerProgressBar: true, imageHeight: 90,}); audio = new Audio('' + linkmp3.innerHTML);const swals = Swal.mixin({allowOutsideClick: false, cancelButtonColor: '#FF0040', imageWidth: 100, imageHeight: 100,}); const style = document.createElement('style'); var today = new Date();var dd = String(today.getDate()).padStart(2, '0');var mm = String(today.getMonth() + 1).padStart(2, '0');var yyyy = today.getFullYear();const monthNames = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];today = dd + ' ' + monthNames[today.getMonth()] + ' ' + yyyy;
+  audio = new Audio('' + linkmp3.src);audio.loop=true;audio.addEventListener('ended', function() {this.currentTime = 0;this.play();}, false);
+  
+vketik1=kalimat.innerHTML;kalimat.innerHTML = "";var aa=0,vketik1;
+function mulaiketik1(){
+  if(aa<vketik1.length){
+    kalimat.innerHTML += vketik1.charAt(aa);aa++;
+    setTimeout(mulaiketik1,120);
+  }
+  if(aa==vketik1.length){setTimeout(befanim,1200);setTimeout(gantikalimat2,1500);}
+}
+
+  vketik2=kalimatb.innerHTML;kalimatb.innerHTML = "";
+  vketik3=kalimatc.innerHTML;kalimatc.innerHTML = "";
+  vketik4=kalimatd.innerHTML;kalimatd.innerHTML = "";
+  vketik5=kalimate.innerHTML;kalimate.innerHTML = "";
+  vketik6=kalimatf.innerHTML;kalimatf.innerHTML = "";
+  ktwrna = "";wrna="";
+  const inikal = document.querySelectorAll(".kal");
+  
+  function gantikalimat2(){setTimeout(anim,100);kalimat.innerHTML = "";kalimatb.innerHTML=vketik2;setTimeout(befanim,2000);setTimeout(gantikalimat3,2300);}
+  function gantikalimat3(){setTimeout(anim,300);kalimatb.innerHTML = "";kalimatc.innerHTML=vketik3;inikuis=1;setTimeout(tombol,500);}
+  function gantikalimat4(){fthilang();ftganti=1;setTimeout(ftmuncul,300);setTimeout(anim,100);kalimatc.innerHTML = "";kalimatd.innerHTML=vketik4;wrna1.innerHTML=ktwrna;wrna1.style.color=wrna;inikuis=2;setTimeout(tombol,700)}
+  function gantikalimat5(){fthilang();ftganti=2;setTimeout(ftmuncul,300);setTimeout(anim,100);kalimatd.innerHTML = "";kalimate.innerHTML=vketik5;inikuis=3;setTimeout(tombol,700)}
+  function gantikalimat6(){fthilang();ftganti=3;ftfungsi=1;setTimeout(ftmuncul,300);setTimeout(anim,100);setTimeout(anim,100);kalimate.innerHTML = "";kalimatf.innerHTML=vketik6;}
+  
+  function befanim(){
+    for (let i = 0; i < inikal.length; i++) {
+      inikal[i].style="opacity:0;transition:all .3 ease;";
+    }
+  } 
+  
+  function anim() {
+    for (let i = 0; i < inikal.length; i++) {
+      inikal[i].style="";
+    }
+  }
+  
+  function tombol(){
+   Tombol.style="opacity:1;transform: scale(1);";Bn.style="";
+   if(inikuis==0){Bn.style="display:none";By.innerHTML=defby;} 
+   if(inikuis==1){By.innerHTML = "Merah";By.style.background="#F42111";Bn.innerHTML="Biru";Bn.style.background="#004ABA";} 
+   if(inikuis==2){By.innerHTML="Mau";Bn.innerHTML="Engga";clearstyle()}
+   if(inikuis==3){Bn.style="display:none";By.innerHTML="Lanjut";} 
+   if(inikuis==50){Bn.style="display:none";By.innerHTML=defby;Tombol.style="opacity:1;transform: scale(1);margin-top:30px"}
+  }
+  function clearstyle(){By.style.background="";Bn.style.background="";}
+
+  function multifungsi(){
+    if(inikuis==1){befanim();setTimeout(gantikalimat4,400);Tombol.style="transition:all .3s ease;opacity:0";ktwrna="Merah";wrna="#F42111";inikuis=0;}
+    if(inikuis==2){befanim();setTimeout(gantikalimat5,400);Tombol.style="transition:all .3s ease;opacity:0";inikuis=0;}
+    if(inikuis==3){befanim();fthilang();ftganti=3;ftfungsi=1;Tombol.style="transition:all .3s ease;opacity:0";aksistiker();inikuis=0;}
+    if(inikuis==50){menuju();}
+  }
+  
+  async function ditolak(){
+  	if(inikuis==1){befanim();setTimeout(gantikalimat4,400);Tombol.style="transition:all .3s ease;opacity:0";ktwrna="Biru";wrna="#004ABA";inikuis=0;}
+      if(inikuis==2){Tombol.style="transition:all .3s ease;opacity:0";await swalst.fire({title: '' + kataditolak.innerHTML, timer: 2000, imageUrl: '' + stikerditolak.src,});tombol();}
+   }
+   
+   function mulaict(){
+    var timeleft = 3;
+    var downloadTimer = setInterval(function(){
+    timeleft--;document.getElementById("ctimer").textContent = timeleft;
+    if(timeleft <= 0)
+      clearInterval(downloadTimer);
+      if(timeleft==0){
+       befanim();setTimeout(gantikalimat10,400);
+      }
+    },1000);
+  }
+  
+  vketikpesan="Semangat Puasanya yaa,<br>Jangan bolong kan mau<br>bukber sama aku 🤣❤️";
+  function mulaiketikakhir(){
+  	bq.style="display:none";
+      setInterval(createHeart,300);
+      halo.innerHTML="";
+      pesan.style="position:relative;margin:30px 0 0 0;";
+      new TypeIt("#pesan", {
+      strings: ["" + vketikpesan], startDelay: 1, speed: 48, cursor: false,
+      afterComplete: function(){
+         pesan.innerHTML = vketikpesan;
+         inikuis=50;setTimeout(tombol,400);
+      },}).go();
+  }
+  vketikakhir="Hehehe ><";
+  function mulaiketikakhir2(){
+      new TypeIt("#halo", {
+      strings: ["" + vketikakhir], startDelay: 10, speed: 50, cursor: true,
+      afterComplete: function(){
+         halo.innerHTML = vketikakhir;
+         inikuis=50;setTimeout(tombol,1500);
+      },}).go();
+  }
+  
+  function aksistiker(){
+  	if(ftfungsi==1){
+  	bq.style = "position:relative;";
+      halo.style="transform: scale(0);opacity:0;";
+      fthilang();ftganti=4;setTimeout(ftmuncul,300);
+      ftfungsi=0;setTimeout(mulaiketikakhir,500);
+      pesanwhatsapp = "ayo bukber><";
+      }
+  }
+  
+  function createHeart() {const heart = document.createElement("div"); heart.className = "fas fa-heart"; heart.style.left = (Math.random() * 90)+"vw"; heart.style.animationDuration = (Math.random()*3)+2+"s"; body.appendChild(heart);} setInterval(function name(params) {var heartArr = document.querySelectorAll(".fa-heart"); if (heartArr.length > 100) {heartArr[0].remove()}},100);
+</script>
+<div id='noInternet' class='popSc hidden'> <div class='popBo'> <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><line x1='1' x2='23' y1='1' y2='23' /><path d='M16.72 11.06A10.94 10.94 0 0 1 19 12.55' /><path d='M5 12.55a10.94 10.94 0 0 1 5.17-2.39' /><path d='M10.71 5.05A16 16 0 0 1 22.58 9' /><path d='M1.42 9a15.91 15.91 0 0 1 4.7-2.88' /><path d='M8.53 16.11a6 6 0 0 1 6.95 0' /><line x1='12' x2='12.01' y1='20' y2='20' /></svg> <h2>Oops! No Internet!</h2> <p>Sepertinya ada yang salah dengan koneksi internet Anda.<br />Sambungkan ke internet dan mulai menjelajah lagi.</p> <button class='popBtn' onclick='pageReload()'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><polyline points='23 4 23 10 17 10' /><path d='M20.49 15a9 9 0 1 1-2.12-9.36L23 10' /></svg></button> </div> </div>
+</body>
+</html>
