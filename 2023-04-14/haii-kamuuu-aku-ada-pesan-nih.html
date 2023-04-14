@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<meta charset='UTF-8'/>
+<meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5' name='viewport'/>
+<meta content='IE=edge' http-equiv='X-UA-Compatible'/>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+  <script src="https://kit.fontawesome.com/4f3ce16e3e.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
+  
+<head>
+<title>Haii kamuuu aku ada pesan nih</title>
+<meta name="description" content="Daffa Pratama Nur Ardiansyah">
+<!-- 
+  Made with love by Daffa Pratama!
+  
+     Blog: https://www.daffa-pratama.my.id
+     Instagram: @daffapratamanurardiansyah
+     TikTok: @daffa_pratama_
+     Email: admin@daffa-pratama.my.id
+     
+  Thanks to all <3
+-->
+</head>
+<style>
+:root {
+--warna-bg: rgba(0, 0, 0, .3); 
+--tombol-teks: #fff;
+--tombol-bingkai: #fff;
+--bingkai: 18px;
+--bingkai-kiri: 1.3px solid var(--tombol-bingkai);
+--bingkai-kanan: 1.3px solid var(--tombol-bingkai);
+--gaya-font: 'Nunito Sans', sans-serif;
+}
+body{font-family:var(--gaya-font);background:#000;padding: 20px 25px;-webkit-user-select: none; -ms-user-select: none; user-select: none;} a{text-decoration:none;}
+body::before{content:"\00A9  Daffa Pratama Nur Ardiansyah";color:white;opacity:.5;font-size:10px;position:fixed;bottom:25px;right:25px;z-index:2}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.slider {
+  display:none;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+  touch-action: pan-y;
+}
+
+.slide {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity .8s ease-in-out;
+}
+
+.slide {
+  background-image: url();
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+  transition:all 1s ease;
+}
+
+.slide::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Nilai alpha 0.5 membuat lapisan transparan 50% */
+  z-index: 1;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.akhir h1{margin-top:50px}
+
+/*.red {
+  background-color: red;
+}
+
+.green {
+  background-color: green;
+}
+
+.pink {
+  background-color: pink;
+}*/
+
+.content {
+  position: absolute;
+  width:100%;
+  top:220px;
+  margin-left:auto;
+  margin-right:auto;
+  text-align: center;z-index: 2;
+}
+
+.inilove:hover{transition:all .3s ease;opacity:.5}
+
+.content button{font-family:var(--gaya-font);margin-top:30px;font-size:11px;color:white;background:rgba(0,0,0,.4);border:none;border-radius:4px;padding:5px 8px;transition:all .4s ease}
+
+h1 {
+  font-size: 13px;
+  font-weight:700;
+  font-family:var(--gaya-font);
+  margin: 0;
+  color: white;
+  text-shadow: 2px 2px #000;
+  text-transform: none;
+  letter-spacing: 0.1em;
+  transition:all .4s ease
+}
+
+p{margin-top:-23px;margin-left:90px;margin-right:90px;font-size: 14px;font-family:var(--gaya-font);color: white;text-shadow: 0px 2px 2px rgba(0, 0, 0, .8);}
+
+.dots {
+  position: absolute;
+  bottom: 35%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  z-index: 2;
+}
+
+.dot {
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  margin: 0 5px;
+  background-color: #aaa;
+  cursor: pointer;
+  opacity:.4;
+}
+
+.dot.active {
+  background-color: #fff;
+  opacity:1;
+}
+
+.fa-heart {opacity:.2;color:white;font-size: 20px;position: absolute;animation:  heartMove linear 1;top: -10vh;z-index: 3;}
+@keyframes heartMove {0%{transform: translateY(-10vh) ;} 100%{transform: translateY(100vh) ;}}
+
+#Content{animation-name:none;animation-duration: 3s;animation-iteration-count: infinite;position:relative;margin-top:130px;width:100%;height:180px;transition:all .7s ease;}
+#Content > *{display:flex;align-items:center;text-align:center;justify-content:center;margin-top:1px;}
+
+#ftAwal > img{width:130px;height:130px;margin-bottom:50px;}
+.lovein{background:#fff;border-radius:50%;width:40px;height:40px;padding:10px;font-size:30px;display:flex;align-items:center;text-align:center;justify-content:center;transition:all .3s ease;}
+.lovein:hover{transform: scale(.9);}
+#ket{margin-top:20px;font-size:12px}
+
+.swal2-modal > *{font-size:16px;font-weight:700;color:white}
+.swal2-title{line-height:1.3em;font-size:17px;text-align:center;padding:15px 30px 0 30px;}
+.swal2-timer-progress-bar-container > *{opacity:.7;background:#00B6FF;margin:0 2px}
+.swal2-modal{background: rgba(0,0,0, 0.7);box-shadow: 0 4px 30px rgba(255,255,255, 0.3);backdrop-filter: blur(2px);-webkit-backdrop-filter: blur(2px);border: 1px solid rgba(255, 255, 255, 0.3);border-radius: 8px;max-width:330px;top:-60px;}
+.swal2-image{background: rgba(255, 255, 255, 0.5);box-shadow: 0 4px 30px rgba(255,255,255, 0.3);backdrop-filter: blur(5px);-webkit-backdrop-filter: blur(5px);border: 1px solid rgba(255, 255, 255, 0.3);border-radius: 8px;padding:10px;}
+.swal2-styled.swal2-confirm, .swal2-styled.swal2-cancel{position: relative;background-color: #4839eb;color: #fff;border-radius:18px;z-index: 1;transition: all 0.2s;}
+.fa-heart {opacity:.5;color:white;font-size: 20px;position: absolute;animation:  heartMove linear 1;top: -10vh;z-index: 0;}
+@keyframes heartMove {0%{transform: translateY(-10vh) ;} 100%{transform: translateY(100vh) ;}}
+
+/* Pop-Up Box (Style 2) by Daffa Pratama */ .popSc{position:fixed;top:0;bottom:0;left:0;right:0;padding:20px;background:rgba(255, 255, 255, 0.1);z-index:99980;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);display:flex;justify-content:center;align-items:center} .popSc.hidden{display:none} .popSc .popBo{position:relative;background:rgba(255, 255, 255, 0.8);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);max-width:400px;display:flex;justify-content:center;align-items:center;flex-direction:column;padding:30px;border-radius:20px;box-shadow:0 5px 25px rgb(0 0 0 / 20%)} .popSc .popBo svg{display:block;width:50px;height:50px;fill:none !important;stroke:#08102b;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5} .popSc .popBo h2{margin:10px 0 15px 0;font-size:1.2rem;font-weight:800;color:#08102b} .popSc .popBo p{margin:0;line-height:1.7em;font-size:0.9rem;color:#08102b} .popSc .popBo .popBtn{display:inline-flex;justify-content:center;align-items:center;height:50px;width:50px;outline:none;border:none;background:#482dff;border-radius:50%;margin-top:20px;transition:all .2s ease;-webkit-transition:all .2s ease} .popSc .popBo .popBtn:hover{transform:scale(1.05);-webkit-transform:scale(1.05)} .popSc .popBo .popBtn svg{width:24px;height:24px;stroke:#fff;flex-shrink:0} .popSc .popBo .popBtn svg.r{animation:rotateIcn 1.5s infinite linear;-webkit-animation:rotateIcn 1.5s infinite linear} .popSc{animation:popupBlur .3s ease-in; -webkit-animation:popupBlur .3s} .popSc >*{animation:popupScale .3s ease-in; -webkit-animation:popupScale .3s} .darkMode .popSc{background:rgba(0, 0, 0, 0.1)} .darkMode .popSc .popBo{background:rgba(50, 50, 50, 0.8)} .darkMode .popSc .popBo svg{stroke:#fefefe} .darkMode .popSc .popBo p, .darkMode .popSc .popBo h2{color:#fefefe} @keyframes popupBlur {from{opacity:0}to{opacity:1}} @-webkit-keyframes popupBlur{from{opacity:0}to{opacity:1}} @keyframes popupScale{from{transform:scale(0);animation-timing-function:ease-in;opacity:0}to{transform:scale(1);opacity:1}} @-webkit-keyframes popupScale{from{-webkit-transform:scale(0);-webkit-animation-timing-function: ease-in;opacity:0}to{-webkit-transform:scale(1);opacity:1}} @keyframes rotateIcn{from{transform:rotate(0deg)} to{transform:rotate(359deg)}} @-webkit-keyframes rotateIcn{from{-webkit-transform:rotate(0deg)} to{-webkit-transform:rotate(359deg)}}
+/* Toast Notification by Daffa Pratama */ .tNtf span{position:fixed;left:24px;bottom:-70px;display:inline-flex;align-items:center;text-align:center;justify-content:center;margin-bottom:20px;z-index:99981;background:#323232;color:rgba(255,255,255,.8);font-size:14px;font-family:inherit;border-radius:3px;padding:13px 24px; box-shadow:0 5px 35px rgba(149,157,165,.3);opacity:0;transition:all .1s ease;animation:slideinwards 2s ease forwards;-webkit-animation:slideinwards 2s ease forwards} @media screen and (max-width:500px){.tNtf span{margin-bottom:20px;left:20px;right:20px;font-size:13px}} @keyframes slideinwards{0%{opacity:0}20%{opacity:1;bottom:0}50%{opacity:1;bottom:0}80%{opacity:1;bottom:0}100%{opacity:0;bottom:-70px;visibility:hidden}} @-webkit-keyframes slideinwards{0%{opacity:0}20%{opacity:1;bottom:0}50%{opacity:1;bottom:0}80%{opacity:1;bottom:0}100%{opacity:0;bottom:-70px;visibility:hidden}} .darkMode .tNtf span{box-shadow:0 10px 40px rgba(0,0,0,.2)}
+/* RGB Effect */.stwRainbow,.stwBlurRainbow{position:fixed;width:100%;bottom:0;left:0;right:0;height:3px;z-index:23;background:linear-gradient(-45deg, #4086F4, #31A952, #FBBE01, #EB4132,#4086F4, #31A952, #FBBE01, #EB4132);background-size:200%;-webkit-animation:animeBar 5s linear infinite;animation:animeBar 5s linear infinite}.stwBlurRainbow{height:10px;z-index:22;filter:blur(10px);opacity:.7}@-webkit-keyframes animeBar{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}@keyframes animeBar{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}.iFxd.ts{top:auto;bottom:5;right:auto;left:0} .aNm.t{background:rgba(255,255,255,.8);padding:6px} .aNm.t .im{width:16px;height:16px;margin-right:4px} .aNm.t .nm{font-size:13px;color:var(--bodyC)}
+</style>
+<body>
+	
+<script language='JavaScript1.2'>
+function disableselect(e){
+return false
+}
+function reEnable(){
+return true
+}
+document.onselectstart=new Function ("return false")
+if (window.sidebar){
+document.onmousedown=disableselect
+document.onclick=reEnable
+}
+</script>
+<div class='clear'></div>
+<div class='widget HTML' data-version='1' id='HTML2'>
+<div class='widget-content'>
+<script> var message="Dilarang Copy Paste!";
+///////////////////////////////////
+function clickIE4(){if (event.button==2){alert(message);return false;}} function clickNS4(e){if (document.layers||document.getElementById&&!document.all){if (e.which==2||e.which==3){alert(message);return false;}}} if (document.layers){document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS4;} else if (document.all&&!document.getElementById){document.onmousedown=clickIE4;} document.oncontextmenu=new Function("swals.fire('Ups!' , 'Dilarang copy paste, ya!' , 'warning');return false")</script>
+<div class='clear'></div></div></div>
+<div id='toastNotif' class='tNtf'></div>
+<script>/*<![CDATA[*/ /* No Internet Connection Script by Daffa Pratama */ function pageReload(){var n=document.querySelector("#noInternet .popBo .popBtn svg");null!=n&&n.classList.add("r"),setTimeout(function(){window.location.reload()},500)};window.addEventListener("offline",function(){document.querySelector("#noInternet").classList.remove("hidden"),document.querySelector("#toastNotif").innerHTML="<span>Tidak ada koneksi internet!</span>"}),window.addEventListener("online",function(){document.querySelector("#noInternet").classList.add("hidden"),document.querySelector("#toastNotif").innerHTML="<span>Kembali online!</span>"}); /*]]>*/</script>
+<div class='stwRainbow'></div>
+<div class='stwBlurRainbow'></div>
+	
+   <!-- Ganti Audio di sini -->
+   <audio src="https://pesanforyou.feeldream.repl.co/hua.mp3" id="linkmp3" style="display:none"></audio>
+   
+   <div id='Content'>
+   	<div id="ftAwal">
+       <!-- Stiker Pembuka -->
+       <img src="https://feeldreams.github.io/pandaputih.gif" id="ftoAwal"/>
+     </div>
+
+     <div id="loveIn">
+       <!-- Tombol LOVE --><label class='lovein'>&#10084;</label>
+     </div>
+     <p id="ket">Sentuh LOVEnya!</p>
+   </div>
+   
+   <div id="inislider" class="slider">
+  <div class="slide" style="background-image: url(https://i.ibb.co/SKKcdC1/a228bd66dcd213a2e257789b54bb0968.jpg);">
+    <div class="content">
+      <h1>haii kamuuu<br>aku ada pesan nih,</h1>
+    </div>
+  </div>
+  <div class="slide" style="background-image: url(https://feeldreams.github.io/akuharap/3.jpg);">
+    <div class="content">
+      <h1>buat kamu,<br>semangat terus yaa!</h1>
+    </div>
+  </div>
+  <div class="slide" style="background-image: url(https://feeldreams.github.io/akuharap/4.jpg);">
+    <div class="content">
+      <h1>semangat ngejalanin<br>hari-harinya..</h1>
+    </div>
+  </div>
+  <div class="slide" style="background-image: url(https://feeldreams.github.io/akuharap/1.jpg);">
+    <div class="content">
+      <h1>meskipun akan ada<br>hari² yang berat,<br>tapi aku percaya kamu<br>pasti bisa melewatinya</i></h1>
+    </div>
+  </div>
+  <div id="iniakhir" class="slide" style="background-image: url(https://i.ibb.co/xf2MVY4/ttt.jpg);">
+    <div class="content">
+      <h1 id="textin">oh yaa satu lagi,<br>coba klik love ini <label class="inilove" onclick="klikini();">❤️</label></h1>
+    </div>
+  </div>
+  <div id="dots" class="dots"></div>
+</div>
+
+<script>
+const body = document.querySelector("body"); function berjatuhan() {const heart = document.createElement("div"); heart.className = "fas fa-heart"; heart.style.left = (Math.random() * 90)+"vw"; heart.style.animationDuration = (Math.random()*3)+2+"s"; body.appendChild(heart);} setInterval(function name(params) {var heartArr = document.querySelectorAll(".fa-heart"); if (heartArr.length > 100) {heartArr[0].remove()}},100);
+const swals = Swal.mixin({/*timer: 2500, */allowOutsideClick: false, showConfirmButton: true, timerProgressBar: true, imageHeight: 90,}); audio = new Audio('' + linkmp3.src);
+const slides = document.querySelectorAll('.slide');
+const dotsContainer = document.querySelector('.dots');
+let currentSlide = 0;
+
+kliklove=0;document.getElementById("loveIn").onclick = function() {
+    inislider.style.display="block";
+    Content.style.display="none";
+    kliklove=1;
+    createDots();
+    showSlide(currentSlide);
+	audio.play();
+}
+
+if(currentSlide!==100){
+function showSlide(n) {
+  slides[currentSlide].classList.remove('active');
+  currentSlide = (n + slides.length) % slides.length;
+  slides[currentSlide].classList.add('active');
+
+  const dots = dotsContainer.querySelectorAll('.dot');
+  dots[currentSlide].classList.add('active');
+  for (let i = 0; i < dots.length; i++) {
+    if (i !== currentSlide) {
+      dots[i].classList.remove('active');
+    }
+  }
+}
+
+function createDots() {
+  for (let i = 0; i < slides.length; i++) {
+    const dot = document.createElement('div');
+    dot.classList.add('dot');
+    dot.addEventListener('click', function() {
+      showSlide(i);
+    });
+    dotsContainer.appendChild(dot);
+  }
+}
+
+let startX = null;
+let startY = null;
+
+document.addEventListener('touchstart', function(e) {
+  startX = e.touches[0].clientX;});
+
+document.addEventListener('touchmove', function(e) {
+if (!startX) {
+return;
+}
+
+const moveX = e.touches[0].clientX;
+const diffX = startX - moveX;
+
+if (Math.abs(diffX) > 20) {
+if (diffX > 0) {
+showSlide(currentSlide + 1);
+} else {
+showSlide(currentSlide - 1);
+}
+startX = null;
+startY = null;
+}
+
+e.preventDefault();
+});
+
+}
+
+/*setInterval(function() {
+showSlide(currentSlide + 1);
+}, 1000);*/
+
+const popjudul = "Dan yang paling penting,";
+const poptext = "Jangan sampe sakit :(<br/><i>okaayy?</i>😍❤️";
+const popstiker1 = "https://feeldreams.github.io/ngumpet.gif";
+const popstiker2 = "https://feeldreams.github.io/pusn.gif";
+const popstiker3 = "https://feeldreams.github.io/ciumin.gif";
+async function klikini(){
+	textin.innerHTML="";
+	await swals.fire({title: '', html: 'Kalo capek,<br>jangan lupa istirahat ya', imageUrl: '' + popstiker1});
+	await swals.fire({title: '', html: 'Jangan lupa buat<br>jaga kesehatan juga<3', imageUrl: '' + popstiker2});
+	await swals.fire({title: '' + popjudul, html: '' + poptext, imageUrl: '' + popstiker3});
+    
+    new TypeIt("#textin", {
+      strings: ["Sehat sehat ya cantik,<br><br>aku sayang banget<br>sama kamu<333<br><br><i>i love youuuu</i><br><br>❤️❤️❤️❤️❤️"], startDelay: 100, speed: 50, cursor: true, deleteSpeed: 20, breakLines: false, waitUntilVisible: true, lifelike: true,
+      afterComplete: function(){
+      	setInterval(berjatuhan,150);
+  	    //textin.innerHTML = "" + pesanAkhir2;
+    },}).go();
+}
+</script>
+<div id='noInternet' class='popSc hidden'> <div class='popBo'> <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><line x1='1' x2='23' y1='1' y2='23' /><path d='M16.72 11.06A10.94 10.94 0 0 1 19 12.55' /><path d='M5 12.55a10.94 10.94 0 0 1 5.17-2.39' /><path d='M10.71 5.05A16 16 0 0 1 22.58 9' /><path d='M1.42 9a15.91 15.91 0 0 1 4.7-2.88' /><path d='M8.53 16.11a6 6 0 0 1 6.95 0' /><line x1='12' x2='12.01' y1='20' y2='20' /></svg> <h2>Oops! No Internet!</h2> <p>Sepertinya ada yang salah dengan koneksi internet Anda.<br />Sambungkan ke internet dan mulai menjelajah lagi.</p> <button class='popBtn' onclick='pageReload()'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><polyline points='23 4 23 10 17 10' /><path d='M20.49 15a9 9 0 1 1-2.12-9.36L23 10' /></svg></button> </div> </div>
+</body>
+</html>
