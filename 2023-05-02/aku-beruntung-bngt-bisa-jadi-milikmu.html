@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<meta charset='UTF-8'/>
+<meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5' name='viewport'/>
+<meta content='IE=edge' http-equiv='X-UA-Compatible'/>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!--
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+  -->
+  <script src="https://kit.fontawesome.com/4f3ce16e3e.js" crossorigin="anonymous"></script>
+  
+  <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script><!--<link href="https://feeldreams.github.io/dibacayuk/style.css" rel="stylesheet" type="text/css" />-->
+  <script src="https://unpkg.com/scrollreveal"></script>
+  
+<head>
+<title>Script HTML buat Kamu</title>
+<meta name="description" content="Daffa Pratama Nur Ardiansyah">
+<!-- 
+  Made with love by Daffa Pratama!
+  
+     Blog: www.daffa-pratama.my.id
+     Instagram: @daffapratamanurardiansyah
+     TikTok: @daffa_pratama_
+     Email: admin@daffa-pratama.my.id
+     
+  Thanks to all <3
+-->
+</head>
+<style>
+:root {
+--gaya-font: 'Quicksand', sans-serif;
+--gaya-font2: 'Nunito Sans', sans-serif;
+--gaya-font3: 'Caveat', cursive;
+}
+body {overflow:hidden;background:#000;font-family:var(--gaya-font); margin: 0;}
+body::before{content:"\00A9  Daffa Pratama Nur Ardiansyah";color:white;opacity:.5;font-size:10px;position:fixed;bottom:25px;right:25px;z-index:150}
+@keyframes jj{0%  {transform: scale(1.2);} 50% {transform: scale(1.5);} 100% {transform: scale(1);}}
+@keyframes rto{from {transform:scale(1);} to {transform:scale(1.1);}}
+
+section {position:relative;z-index:99;padding: 0;height: 100vh;display: flex; flex-direction: column;align-items:center;text-shadow: 0px 2px 2px rgba(0, 0, 0, .8);border-top:2px dashed #fff}
+section {background:#000;background-image: var(--bg);background-attachment: fixed;background-position: center;background-repeat: no-repeat;background-size: cover;}
+section.first{border-top:0 dashed #fff}
+section.first > img{opacity:0}
+section:nth-child(even) {color:white}
+section:nth-child(odd) {color:white}
+section > :first-child {margin-top:150px}
+
+.stiker{box-shadow: 0 4px 30px rgba(255,255,255, 0.3);backdrop-filter: blur(5px);-webkit-backdrop-filter: blur(5px);width:90px;height:90px;background: rgba(255, 255, 255, 0.7);border: 1px solid rgba(255, 255, 255, 0.3);border-radius: 10%;padding:10px;margin-bottom:25px}
+section .wp img{position:absolute;top:0;left:0;width:100%;height:100%;padding:0;background:none;border:none}
+section .wp::after{content:"";position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.7);}
+
+h1 {font-size: 2rem;}
+.lingkar{font-weight:400;border-bottom:1px solid #FF0900;}
+h1, h2, h3,h4,h5{margin: 0;text-align: center;margin: 1rem 0;}
+p{font-size:15px;font-family:var(--gaya-font2);line-height:1.5em;text-align:center}
+a {color:white;text-decoration: none;transition: all 0.3s ease-in-out;&:hover, &:focus, &:active {color: #f1e8d9;}}
+#hsatu{transition: all .3s ease}
+#judulakhir{z-index:100;font-size:17px;font-family:var(--gaya-font2);transition:all .5s ease}
+#kalimatakhir{z-index:100;margin-right:50px;margin-left:50px;font-size:14px;font-family:var(--gaya-font2);}
+.tipeA{font-family:var(--gaya-font);}
+
+svg{vertical-align: middle;width: 22px;height: 22px;fill: #fff}
+.menu{position: fixed;bottom: 15vh;width:100%;z-index: 999;display:flex;justify-content:center;align-items:center;transition: all 1s ease}
+.tombol{background-color: rgba(255,255,255,.25);border-radius: 50px;overflow: hidden;display: flex;align-items: center;justify-content: center;width: 45px;height: 45px;-webkit-transition: all .2s ease-out;transition: all .2s ease-out}
+.tombol svg{margin: auto;fill: #fff}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:#000;
+  z-index:100;
+}
+
+.loading-message {
+  font-size: 13px;
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, .8);
+  color:white;
+  text-align: center;
+}
+
+.fa-heart {opacity:.3;color:white;font-size: 20px;position: fixed;animation:  heartMove linear 1;top: -10vh;z-index: 999;}
+@keyframes heartMove {0%{transform: translateY(-10vh) ;} 100%{transform: translateY(100vh) ;}}
+
+/* Pop-Up Box (Style 2) by Daffa Pratama */ .popSc{position:fixed;top:0;bottom:0;left:0;right:0;padding:20px;background:rgba(255, 255, 255, 0.1);z-index:99980;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);display:flex;justify-content:center;align-items:center} .popSc.hidden{display:none} .popSc .popBo{position:relative;background:rgba(255, 255, 255, 0.8);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);max-width:400px;display:flex;justify-content:center;align-items:center;flex-direction:column;padding:30px;border-radius:20px;box-shadow:0 5px 25px rgb(0 0 0 / 20%)} .popSc .popBo svg{display:block;width:50px;height:50px;fill:none !important;stroke:#08102b;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5} .popSc .popBo h2{margin:10px 0 15px 0;font-size:1.2rem;font-weight:800;color:#08102b} .popSc .popBo p{margin:0;line-height:1.7em;font-size:0.9rem;color:#08102b} .popSc .popBo .popBtn{display:inline-flex;justify-content:center;align-items:center;height:50px;width:50px;outline:none;border:none;background:#482dff;border-radius:50%;margin-top:20px;transition:all .2s ease;-webkit-transition:all .2s ease} .popSc .popBo .popBtn:hover{transform:scale(1.05);-webkit-transform:scale(1.05)} .popSc .popBo .popBtn svg{width:24px;height:24px;stroke:#fff;flex-shrink:0} .popSc .popBo .popBtn svg.r{animation:rotateIcn 1.5s infinite linear;-webkit-animation:rotateIcn 1.5s infinite linear} .popSc{animation:popupBlur .3s ease-in; -webkit-animation:popupBlur .3s} .popSc >*{animation:popupScale .3s ease-in; -webkit-animation:popupScale .3s} .darkMode .popSc{background:rgba(0, 0, 0, 0.1)} .darkMode .popSc .popBo{background:rgba(50, 50, 50, 0.8)} .darkMode .popSc .popBo svg{stroke:#fefefe} .darkMode .popSc .popBo p, .darkMode .popSc .popBo h2{color:#fefefe} @keyframes popupBlur {from{opacity:0}to{opacity:1}} @-webkit-keyframes popupBlur{from{opacity:0}to{opacity:1}} @keyframes popupScale{from{transform:scale(0);animation-timing-function:ease-in;opacity:0}to{transform:scale(1);opacity:1}} @-webkit-keyframes popupScale{from{-webkit-transform:scale(0);-webkit-animation-timing-function: ease-in;opacity:0}to{-webkit-transform:scale(1);opacity:1}} @keyframes rotateIcn{from{transform:rotate(0deg)} to{transform:rotate(359deg)}} @-webkit-keyframes rotateIcn{from{-webkit-transform:rotate(0deg)} to{-webkit-transform:rotate(359deg)}}
+/* Toast Notification by Daffa Pratama */ .tNtf span{position:fixed;left:24px;bottom:-70px;display:inline-flex;align-items:center;text-align:center;justify-content:center;margin-bottom:20px;z-index:99981;background:#323232;color:rgba(255,255,255,.8);font-size:14px;font-family:inherit;border-radius:3px;padding:13px 24px; box-shadow:0 5px 35px rgba(149,157,165,.3);opacity:0;transition:all .1s ease;animation:slideinwards 2s ease forwards;-webkit-animation:slideinwards 2s ease forwards} @media screen and (max-width:500px){.tNtf span{margin-bottom:20px;left:20px;right:20px;font-size:13px}} @keyframes slideinwards{0%{opacity:0}20%{opacity:1;bottom:0}50%{opacity:1;bottom:0}80%{opacity:1;bottom:0}100%{opacity:0;bottom:-70px;visibility:hidden}} @-webkit-keyframes slideinwards{0%{opacity:0}20%{opacity:1;bottom:0}50%{opacity:1;bottom:0}80%{opacity:1;bottom:0}100%{opacity:0;bottom:-70px;visibility:hidden}} .darkMode .tNtf span{box-shadow:0 10px 40px rgba(0,0,0,.2)}
+/* RGB Effect */.stwRainbow,.stwBlurRainbow{position:fixed;width:100%;bottom:0;left:0;right:0;height:3px;z-index:23;background:linear-gradient(-45deg, #4086F4, #31A952, #FBBE01, #EB4132,#4086F4, #31A952, #FBBE01, #EB4132);background-size:200%;-webkit-animation:animeBar 5s linear infinite;animation:animeBar 5s linear infinite}.stwBlurRainbow{height:10px;z-index:22;filter:blur(10px);opacity:.7}@-webkit-keyframes animeBar{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}@keyframes animeBar{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}.iFxd.ts{top:auto;bottom:5;right:auto;left:0} .aNm.t{background:rgba(255,255,255,.8);padding:6px} .aNm.t .im{width:16px;height:16px;margin-right:4px} .aNm.t .nm{font-size:13px;color:var(--bodyC)}
+/* WhatsApp */.hidden{display: none !important;}svg.line{fill: none!important;stroke: #08102b;stroke-linecap: round;stroke-linejoin: round;stroke-width: 1;width: 20px;display: block;height: 20px;}.toTopB.vsbl {bottom: 80px;} .faMs{position:fixed;bottom:50px;right:20px;background:#0043ff;box-shadow:0 0 15px rgba(0,0,0,.2);border-radius:50px;z-index:5;overflow:hidden;display:flex;align-items:center;justify-content:center;width:45px;height:45px;-webkit-transition:all .2s ease,margin 1s ease;transition:all .2s ease,margin 1s ease;cursor:pointer} .faMs:active{transition:all .2s ease;transform: scale(0.9);} .faMs svg{width: 18px;height: 18px;margin: auto;} .faMs svg.line{stroke-width: 1.5;} .faMs .svg-2{display: none;} .fMs:checked + .faMs .svg-2{display: block;} .fMs:checked + .faMs .svg-1{display: none;} .fMs:checked + .faMs::after{display: none;} .fMs:checked + .faMs::before{display: none;} .faMs::after{content: '';z-index: 2;display: block;width: 7px;height: 7px;background: #eaff00;border-radius: 50%;position: absolute;top: 10.5px;left: 13.5px;animation: indicator 1s ease infinite;} .faMs::before{content: '';z-index: 1;display: block;width: 14.5px;height: 14.5px;background: #0043ff;border-radius: 50%;position: absolute;top: 5px;left: 9px;} .chatbox-message-profile span::after{content: '';z-index: 2;display: block;width: 8px;height: 8px;background: #41B375;border-radius: 50%;position: absolute;top: 55px;left: 43.5px;animation: indicator 1s ease infinite;} .chatbox-message-profile span::before{content: '';z-index: 1;display: block;width: 16px;height: 16px;background: #0a5f54;border-radius: 50%;position: absolute;top: 52px;left: 40.5px;}img{max-width: 100%;display: block;} .chatbox-message-image {width: 45px;height: 45px;object-fit: cover;border-radius: 50%;} .chatbox-message-name {font-size: 1.15rem;} .chatbox-message-status {font-size: 12px;opacity: 0.8;} .chatbox-message-dropdown, .minF{position: relative;border-radius: 50%;padding: 5px;background: rgba(0,0,0,0.1);cursor: pointer;}.chatbox-message-dropdown:hover, .minF:hover{background: rgba(0,0,0,0.15);} .kk{display: flex;justify-content: flex-end;align-items: center;position: relative;}.chatbox-message-name, .chatbox-message-status{margin: 0;color: #fff;}.fM{border-radius: 10px;position:fixed;bottom:105px;right:-100%;max-width: 320px;width: 100%;height: auto;box-shadow:0 0 15px rgba(0,0,0,.2);overflow: hidden;z-index: 10;transition: .1s;opacity: 0;visibility: hidden;} .fM:after{content: '';z-index: 100;background: #ffffff;box-shadow: 4px 20px 20px 5px rgba(0,0,0,.15);width: 15px;height: 15px;display: block;border-radius: 3px;transform: rotate(45deg);bottom: 100px;right: 35px;position: fixed;}.fMs:checked ~ .fM{right: 20px;opacity: 1;visibility: visible;} .fsM:checked ~ .faM .famU{opacity: 1;visibility: visible;transform: scale(1);}.fcK::before{content:'';width:15px;height:15px;background:#fff;display:block;position:absolute;border-radius:2px;transform:rotate(45deg);left:31px;}.fcK{background-color:#fff;display:inline-block;margin:20px 20px 10px 38px;padding:10px;border-radius:10px 10px 2px 5px;}.fcK.k-2{margin:0 20px 20px 38px;border-radius:5px 2px 10px 10px;}.hkMn .ctbI{height:20px;width:20px;position:absolute;top:109px;border-radius:50%;margin:5px;}.hkMn .mgI{top:198px;}.famU{position:absolute;background:#fff;z-index:100;box-shadow:0 0 15px rgba(0,0,0,.1);right:5px;top:35px;border-radius:8px;padding:.5rem 0;width:100px;transition:.1s;opacity:0;visibility:hidden;transform:scale(0);transform-origin:top right;}.famU span a{font-size:.875rem;font-weight:500;color:inherit;text-decoration:none;padding:.5rem 1rem;color:#000000;display:block;}.famU span a:hover{background:rgba(0,0,0,.06);}.fmL{display:flex;position:relative;justify-content:center;align-items:center;background: #fff;}.fmL a:hover{opacity:0.9;transition:opacity .1s;}.fM-1{padding:20px 12px;display:flex;align-items:center;justify-content:space-between;background:#0a5f54;color:#fff;}.chatM, .chat{background:#fff;border-radius:10px 10px 4px 4px;box-shadow:0 0 15px rgba(0,0,0,.1);padding:15px;margin:10px;width:80%;}.chatM{width:60%;border-radius:4px 4px 10px 10px;}.ctB{display:flex;align-items:center;}.ctB .ctbI{width:15px;height:15px;border-radius:50%;margin:0 0 0 5px;position:relative;bottom:6px;}.chatM::before, .chat::before{content:'';z-index:100;display:block;width:10px;height:10px;background:#ffffff;border-radius:3px;transform:rotate(45deg);position:absolute;top:110px;left:25px;}.chatM::before{top:177px;}.chatbox-message-profile{display:flex;align-items:center;grid-gap:.5rem;}
+</style>
+<body>
+	
+<script language='JavaScript1.2'>
+function disableselect(e){
+return false
+}
+function reEnable(){
+return true
+}
+document.onselectstart=new Function ("return false")
+if (window.sidebar){
+document.onmousedown=disableselect
+document.onclick=reEnable
+}
+</script>
+<div class='clear'></div>
+<div class='widget HTML' data-version='1' id='HTML2'>
+<div class='widget-content'>
+<script> var message="Dilarang Copy Paste!";
+///////////////////////////////////
+function clickIE4(){if (event.button==2){alert(message);return false;}} function clickNS4(e){if (document.layers||document.getElementById&&!document.all){if (e.which==2||e.which==3){alert(message);return false;}}} if (document.layers){document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS4;} else if (document.all&&!document.getElementById){document.onmousedown=clickIE4;} document.oncontextmenu=new Function("swals.fire('Ups!' , 'Dilarang copy paste, ya!' , 'warning');return false")</script>
+<div class='clear'></div></div></div>
+<div id='toastNotif' class='tNtf'></div>
+<script>/*<![CDATA[*/ /* No Internet Connection Script by Daffa Pratama */ function pageReload(){var n=document.querySelector("#noInternet .popBo .popBtn svg");null!=n&&n.classList.add("r"),setTimeout(function(){window.location.reload()},500)};window.addEventListener("offline",function(){document.querySelector("#noInternet").classList.remove("hidden"),document.querySelector("#toastNotif").innerHTML="<span>Tidak ada koneksi internet!</span>"}),window.addEventListener("online",function(){document.querySelector("#noInternet").classList.add("hidden"),document.querySelector("#toastNotif").innerHTML="<span>Kembali online!</span>"}); /*]]>*/</script>
+<div class='stwRainbow'></div>
+<div class='stwBlurRainbow'></div>
+	
+   <div class="overlay">
+     <div class="loading-message">Hai kamu!<br>Tunggu dulu ya..</div>
+   </div>
+
+   <!-- Ganti Audio di sini -->
+   <audio src="https://dilihatyuk2.feeldream.repl.co/seandainya.mp3" id="linkmp3" class="sembunyi"></audio>
+   
+   <section class="first" onclick="playaud();">
+       <div class="wp"><img src="https://feeldreams.github.io/pics/awan4.jpg"/></div>
+       <img id="first_stiker" class="stiker fade-in" src="https://feeldreams.github.io/peach6.gif"/>
+       <h1 class="title">Hey Kamuu!</h1>
+       <p class="slide-up">Aku ada pesan untukmu,<br>dibaca sampai akhir ya ☺️</p>
+  </section>
+  
+  <section>
+      <div class="wp"><img src="https://feeldreams.github.io/pics/awan3.jpg"/></div>
+      <h2 class="title">Kamu Tau?</h2>
+      <p class="slide-right">Seberapa beruntungnya aku<br>saat bertemu <b class="lingkar">denganmu</b>?<br></p>
+      <p class="flip"><i>Scroll terus ke bawah ya :)</i></p>
+  </section>
+  
+  <section>
+  	<div class="wp"><img src="https://feeldreams.github.io/pics/awan8.jpg"/></div>
+      <img class="stiker fade-in" src="https://feeldreams.github.io/peachhug.gif"/>
+      <h3 class="title slide-right">Aku Beruntung Bngt<br>Bisa Jadi Milikmu ✨</h3>
+      <p class="slide-up"><b class="lingkar">Kamu</b> udah menjadi yang<br>terbaik buat aku, <i>makasii yaa..</i></p>
+  </section>
+  
+  <section>
+  	<div class="wp"><img src="https://feeldreams.github.io/pics/awan1.jpg"/></div>
+      <h4 class="title">Kalo Kamu Tanya Kenapa<br>Aku Cuma Mau Sama Kamu,</h4>
+      <p class="slide-right">Singkat saja, karena aku telah<br>menemukan <b class="lingkar">hal indah</b> saat<br>dekat denganmu..</p>
+  </section>
+  
+  <section id="iniakhir">
+  	<div class="wp" id="wpakhir"><img src="https://feeldreams.github.io/pics/awan6.jpg"/></div>
+      <h1 id="judulakhir"></h1>
+      <p id="kalimatakhir"></p>
+  </section>
+  
+  <div id="initom" class="menu">
+  <a class='tombol' onclick="tes()">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/> </svg>
+  </a>
+  </div>
+
+<!--[ WhatsApp ]-->
+<div class='faMn'>
+  <input class='fMs hidden' id='offfaMs' type='checkbox'/>
+  <label class='faMs' for='offfaMs'><svg class='svg-1' style='fill:#fff;width: 20px;height: 20px;' viewBox='0 0 64 64'><path d='M6.9,48.4c-0.4,1.5-0.8,3.3-1.3,5.2c-0.7,2.9,1.9,5.6,4.8,4.8l5.1-1.3c1.7-0.4,3.5-0.2,5.1,0.5 c4.7,2.1,10,3,15.6,2.1c12.3-1.9,22-11.9,23.5-24.2C62,17.3,46.7,2,28.5,4.2C16.2,5.7,6.2,15.5,4.3,27.8c-0.8,5.6,0,10.9,2.1,15.6 C7.1,44.9,7.3,46.7,6.9,48.4z M21.3,19.8c0.6-0.5,1.4-0.9,1.8-0.9s2.3-0.2,2.9,1.2c0.6,1.4,2,4.7,2.1,5.1c0.2,0.3,0.3,0.7,0.1,1.2 c-0.2,0.5-0.3,0.7-0.7,1.1c-0.3,0.4-0.7,0.9-1,1.2c-0.3,0.3-0.7,0.7-0.3,1.4c0.4,0.7,1.8,2.9,3.8,4.7c2.6,2.3,4.9,3,5.5,3.4 c0.7,0.3,1.1,0.3,1.5-0.2c0.4-0.5,1.7-2,2.2-2.7c0.5-0.7,0.9-0.6,1.6-0.3c0.6,0.2,4,1.9,4.7,2.2c0.7,0.3,1.1,0.5,1.3,0.8 c0.2,0.3,0.2,1.7-0.4,3.2c-0.6,1.6-2.1,3.1-3.2,3.5c-1.3,0.5-2.8,0.7-9.3-1.9c-7-2.8-11.8-9.8-12.1-10.3c-0.3-0.5-2.8-3.7-2.8-7.1 C18.9,22.1,20.7,20.4,21.3,19.8z'></path></svg><svg class='svg-2 line' style='fill:#fff;stroke: #fff;' viewBox='0 0 24 24'><line x1='18' x2='6' y1='6' y2='18'></line><line x1='6' x2='18' y1='6' y2='18'></line></svg>
+</label>
+  <div class='fM'>
+  <div class='fM-1'>
+  <div class='chatbox-message-profile'>
+  <span><img class='chatbox-message-image' src='https://cdn.jsdelivr.net/gh/daffapratamaaa/daffapratamaaa.github.io/favicon.ico' title='Daffa Pratama'/></span>
+<div>
+  <h2 class='chatbox-message-name'>Daffa Pratama</h2>
+  <p class='chatbox-message-status'>Online</p>
+ </div>
+</div>
+ <div class='kk'>
+ </div>
+</div>
+  <div class='hkMn' style='background: url("https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png");'>
+  <span><img class='ctbI' src='https://cdn.jsdelivr.net/gh/daffapratamaaa/daffapratamaaa.github.io/favicon.ico' title='Daffa Pratama'/></span>
+<div class='fcK'>
+  <div id='whatsappChatWidgetBrandPreview2' style='font-size: 10px; font-weight: 700; line-height: 18px;opacity: 0.5;'>Daffa Pratama</div>
+  <div id='whatsappChatWidgetWelcomeTextPreview' style='font-size: 14px; line-height: 19px; margin-top: 4px; color: rgb(17, 17, 17);'>Halo!<br/> Saya Daffa Pratama!</div>
+</div>
+ <span><img class='ctbI mgI' src='https://cdn.jsdelivr.net/gh/daffapratamaaa/daffapratamaaa.github.io/favicon.ico' title='Daffa Pratama'/></span>
+<div class='fcK k-2'>
+ <div style='font-size: 10px; font-weight: 700; line-height: 18px;opacity: 0.5;'>Daffa Pratama</div><div style='font-size: 14px; line-height: 19px; margin-top: 4px; color: rgb(17, 17, 17);'>Apa yang bisa saya bantu?</div>
+</div>
+</div>
+  <div class='fmL'>
+  <a href='https://api.whatsapp.com/send?phone=6283138124986' id='whatsappChatWidgetStartChat' rel='noreferrer noopener' role='button' style='text-decoration: none; color: rgb(255, 255, 255); font-size: 15px; font-weight: 700; line-height: 20px; cursor: pointer; position: relative; display: flex; justify-content: center; align-items: center; padding: 8px 12px; border-radius: 25px; border: none; background-color: #41B375; margin: 15px; overflow: hidden;width: 100%;' target='_blank'>
+  <svg fill='none' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' style='fill: none;width: 16px; height: 16px;stroke: #fff' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path d='M7.39999 6.32003L15.89 3.49003C19.7 2.22003 21.77 4.30003 20.51 8.11003L17.68 16.6C15.78 22.31 12.66 22.31 10.76 16.6L9.91999 14.08L7.39999 13.24C1.68999 11.34 1.68999 8.23003 7.39999 6.32003Z'></path><path d='M10.11 13.6501L13.69 10.0601'></path></svg>
+  <span id='whatsappChatWidgetButtonTextPreview' style='margin-left: 8px; margin-right: 8px; z-index: 1; color: rgb(255, 255, 255);'>Mulai Chat</span></a>
+</div>
+
+<script>
+var date = new Date();
+var days = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+var months = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
+var hours = date.getHours();
+var minutes = date.getMinutes();
+
+// Tambahkan awalan nol jika jam atau menit kurang dari 10
+if (hours < 10) {hours = "0" + hours;}
+if (minutes < 10) {minutes = "0" + minutes;}
+
+var day = days[date.getDay()];
+var dateNum = date.getDate();
+var month = months[date.getMonth()];
+var year = date.getFullYear();
+
+console.log(hours + "." + minutes + " WIB - " + day + ", " + dateNum + " " + month + " " + year);
+// Dapatkan elemen yang ingin ditambahkan watermark
+var element = document.querySelector("body");
+
+// Buat elemen baru untuk menampung watermark
+var watermark = document.createElement("div");
+
+// Setel teks watermark dan propertinya
+watermark.textContent = day + ", " + dateNum + " " + month + " " + year;
+watermark.style = "color:white;opacity:.5;font-size:10px;position:fixed;bottom:25px;left:25px;z-index:150";
+
+// Tambahkan elemen watermark ke dalam elemen utama
+element.appendChild(watermark);
+
+//////////////////////////////////////////////////
+
+teksjudulakhir = "Terakhir,<br>Aku Mau Bilang:";
+tekskalimatakhir = "Makasii udah hadir di hidupku,<br>aku tau kamu punya dunia sendiri,<br>dan di situ bukan hanya aku,<br>tapi kamu mau nerima aku<br>apa adanya, <i>makasii yaa..</i><br><br><b><i>i'm very lucky to have u ✨</i></b><br><br><i>`ku harap sekarang, besok,<br>minggu depan, bulan depan,<br>tahun depan, dan seterusnya<br>kita akan selalu bersama..`</i><br><br><b>Stay with Me</b> Terus yaa! ❤️";
+
+const body = document.querySelector("body"); audio = new Audio('' + linkmp3.src); function berjatuhan() {const heart = document.createElement("div"); heart.className = "fas fa-heart"; heart.style.left = (Math.random() * 90)+"vw"; heart.style.animationDuration = (Math.random()*3)+2+"s"; body.appendChild(heart);} setInterval(function name(params) {var heartArr = document.querySelectorAll(".fa-heart"); if (heartArr.length > 100) {heartArr[0].remove()}},100);
+
+fungsi=0;fungsiklik=0;
+
+function aksiakhir() {
+  if(fungsiklik==0){
+    //hsatu.style="opacity:0";
+    //kalimat.style="opacity:0";
+    wpakhir.style="opacity:.75;transition:all 1s ease;";
+    fungsiklik=1;
+    setTimeout(katajudul,300)
+  }
+}
+
+function katajudul(){
+  	new TypeIt("#judulakhir", {
+      strings: ["" + teksjudulakhir], startDelay: 50, speed: 55, cursor: true,
+      afterComplete: function(){
+      	judulakhir.innerHTML = teksjudulakhir;
+          setTimeout(katakata,200);
+      },}).go();
+}
+function katakata(){
+	  new TypeIt("#kalimatakhir", {
+      strings: ["" + tekskalimatakhir], startDelay: 50, speed: 50, cursor: true,
+      afterComplete: function(){
+      	kalimatakhir.innerHTML = tekskalimatakhir;
+          judulakhir.style="opacity:0;transform:scale(0);";
+          setTimeout(teksmuncul,350);
+          setInterval(berjatuhan,200);
+      },}).go();
+}
+function teksmuncul(){
+	judulakhir.innerHTML="I Love You";
+	judulakhir.style="font-family:var(--gaya-font3);font-size:27px";
+	setTimeout(jjteksnim,400);
+}
+function jjteksnim(){judulakhir.style.animation="rto .8s infinite alternate";}
+
+let tinggi = iniakhir.offsetHeight;
+console.log(tinggi);
+
+fungsiAud=0;function playaud(){if(fungsiAud==0){fungsiAud=1;audio.play();}}
+
+function tes(){
+  if(fungsi==0){
+    initom.style.animation="jj .3s";
+    window.scrollBy({top: tinggi,behavior: 'smooth'});
+    fungsi = 1;
+    setTimeout(smn,1000);
+  }
+}
+  function smn(){fungsi=0}
+  initom.style="opacity:0;bottom:0;transition:none";
+  
+  window.addEventListener("load", (event) => {
+    window.scrollTo(0, 0);
+    var overlay = document.querySelector(".overlay");
+    overlay.style.display = "none";
+    initom.style="";
+    first_stiker.style="opacity:1;transition:all 2s ease";
+    ScrollReveal({ reset: true });
+    ScrollReveal().reveal(".show-once", { reset: false});
+    ScrollReveal().reveal(".title", {duration: 2500,origin: "top",distance: "50px", easing: "cubic-bezier(0.5, 0, 0, 1)", rotate: { x: 20, z: -10 }});
+    ScrollReveal().reveal(".fade-in", {delay: 200, duration: 2500,move: 0});
+    ScrollReveal().reveal(".scaleUp", {duration: 2500, scale: 0.85});
+    ScrollReveal().reveal(".flip", {delay: 200, duration: 2000, rotate: { x: 20, z: 20}});
+    ScrollReveal().reveal(".slide-right", {duration: 1000,origin: "left",distance: "300px",easing: "ease-in-out"});
+    ScrollReveal().reveal(".slide-up", {duration: 1500, origin: "bottom", distance: "100px", easing: "cubic-bezier(.37,.01,.74,1)", opacity: 0, scale: 0.5});
+    
+    document.addEventListener('scroll', function(e) {
+        let documentHeight = document.body.scrollHeight;
+        let currentScroll = window.scrollY + window.innerHeight;
+        // When the user is [modifier]px from the bottom, fire the event.
+        let modifier = 200; 
+        if(currentScroll + modifier > documentHeight) {
+            console.log('Sudah sampai bawah!');
+            initom.style="opacity:0;bottom:0";
+            setTimeout(aksiakhir,10);
+        } else {
+            initom.style="";
+        }
+    })
+})
+</script>
+<div id='noInternet' class='popSc hidden'> <div class='popBo'> <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><line x1='1' x2='23' y1='1' y2='23' /><path d='M16.72 11.06A10.94 10.94 0 0 1 19 12.55' /><path d='M5 12.55a10.94 10.94 0 0 1 5.17-2.39' /><path d='M10.71 5.05A16 16 0 0 1 22.58 9' /><path d='M1.42 9a15.91 15.91 0 0 1 4.7-2.88' /><path d='M8.53 16.11a6 6 0 0 1 6.95 0' /><line x1='12' x2='12.01' y1='20' y2='20' /></svg> <h2>Oops! No Internet!</h2> <p>Sepertinya ada yang salah dengan koneksi internet Anda.<br />Sambungkan ke internet dan mulai menjelajah lagi.</p> <button class='popBtn' onclick='pageReload()'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><polyline points='23 4 23 10 17 10' /><path d='M20.49 15a9 9 0 1 1-2.12-9.36L23 10' /></svg></button> </div> </div>
+</body>
+</html>
