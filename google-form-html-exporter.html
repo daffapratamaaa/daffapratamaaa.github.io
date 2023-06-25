@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="Build a standard HTML5 <form> using any Google Forms">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="https://daffapratamaaa.github.io/favicon.ico">
+<title>Google Forms HTML Exporter</title>
+<link rel="stylesheet" href="https://stefano.brilli.me/google-forms-html-exporter/styles/main.css">
+<script src="https://stefano.brilli.me/google-forms-html-exporter/scripts/vendor/modernizr.js"></script>
+</head>
+<style>
+.hljs{display:block;overflow-x:auto;padding:.5em;background:#f0f0f0}
+.hljs,.hljs-subst{color:#444}
+.hljs-comment{color:#888}
+.hljs-attribute,.hljs-doctag,.hljs-keyword,.hljs-meta-keyword,.hljs-name,.hljs-selector-tag{font-weight:700}
+.hljs-deletion,.hljs-number,.hljs-quote,.hljs-selector-class,.hljs-selector-id,.hljs-string,.hljs-template-tag,.hljs-type{color:#800}
+.hljs-section,.hljs-title{color:#800;font-weight:700}
+.hljs-link,.hljs-regexp,.hljs-selector-attr,.hljs-selector-pseudo,.hljs-symbol,.hljs-template-variable,.hljs-variable{color:#bc6060}
+.hljs-literal{color:#78a960}
+.hljs-addition,.hljs-built_in,.hljs-bullet,.hljs-code{color:#397300}
+.hljs-meta{color:#1f7199}
+.hljs-meta-string{color:#4d99bf}
+.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}
+</style>
+<body>
+<div class="jumbotron text-center">
+<div class="container">
+<div class="form-fetch">
+<div class="form-group">
+<h4>Tempelkan URL Publik Google Forms Anda</h4>
+<div class="form-group">
+<input tabindex="1" type="text" class="form-control" id="input-url" placeholder="Google Forms URL" data-toggle="tooltip" data-placement="bottom"></div>
+<div class="form-group">
+<button tabindex="2" class="btn btn-primary" type="button" id="button-fetch" data-loading-text="Loading...">Get the HTML</button></div></div>
+<div id="main-area" class="hidden">
+<ul class="nav nav-tabs tab" role="tablist">
+<li role="presentation" class="active tab-item">
+<a href="#tab-demo" aria-controls="example" role="tab" data-toggle="tab">Form</a></li>
+<li role="presentation" class="tab-item">
+<a href="#tab-bootstrap" aria-controls="example" role="tab" data-toggle="tab">Source Code</a></li></ul>
+<div class="tab-content">
+<div role="tabpanel" class="tab-pane active" id="tab-demo">
+<div id="target-demo"></div></div>
+<div role="tabpanel" class="tab-pane" id="tab-bootstrap"><h3>HTML</h3>
+<pre class="html" id="target-bootstrap-html">
+            </pre><h3>JS</h3><pre class="js" id="target-bootstrap-js">
+            </pre></div></div></div><div class="marketing-area"></div>
+<span>&#169;</span>
+<span id='getYear'><script>/*<![CDATA[*/ var d = new Date(); var n = d.getFullYear(); document.getElementById('getYear').innerHTML = n; /*]]>*/</script></span> &#8231; <bdi><a href='https://www.daffa-pratama.my.id/'>Daffa Pratama Nur Ardiansyah</a></bdi> &#8231; All rights reserved.</span>
+<script>!function(e,a,t,n,g,c,o){e.GoogleAnalyticsObject=g,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),o=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",o.parentNode.insertBefore(c,o)}(window,document,"script",0,"ga"),ga("create","UA-60498490-1","auto"),ga("send","pageview")</script>
+<script src="https://stefano.brilli.me/google-forms-html-exporter/scripts/vendor.js"></script>
+<script src="https://stefano.brilli.me/google-forms-html-exporter/scripts/plugins.js"></script>
+<script src="https://stefano.brilli.me/google-forms-html-exporter/scripts/config.js"></script>
+<script src="https://stefano.brilli.me/google-forms-html-exporter/scripts/main.js"></script>
+</script>
+</body>
+</html>
