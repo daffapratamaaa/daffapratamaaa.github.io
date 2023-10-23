@@ -79,7 +79,7 @@ img {
   row-gap: 1.25rem;
   backdrop-filter: blur(20px);
   padding: 2rem;
-  border-radius: 1rem;
+  border-radius: 20px;
 }
 .login__title {
   color: var(--title-color);
