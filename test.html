@@ -344,7 +344,7 @@ table td:first-child {
     
                                <div class="login__box">
                                    <input name="password" type="password" placeholder="Masukkan Password disini" required class="login__input" id="input-pass">
-                                <img src="img/eye-off-fill.svg" class="login__eye" id="input-icon" alt="Eye Icon" onclick="togglePasswordVisibility()">
+                                <img src="/eye-off-fill.svg" class="login__eye" id="input-icon" alt="Eye Icon" onclick="togglePasswordVisibility()">
                              </div>
                              
                      <div>
@@ -364,10 +364,10 @@ table td:first-child {
 
     if (passwordInput.type === "password") {
         passwordInput.type = "text";
-        eyeIcon.src = "img/eye-fill.svg"; // Ganti path ke gambar ikon terbuka
+        eyeIcon.src = "/eye-fill.svg"; // Ganti path ke gambar ikon terbuka
     } else {
         passwordInput.type = "password";
-        eyeIcon.src = "img/eye-off-fill.svg"; // Ganti path ke gambar ikon tertutup
+        eyeIcon.src = "/eye-off-fill.svg"; // Ganti path ke gambar ikon tertutup
     }
 }
 </script>
