@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="expires" content="-1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css">
+    
+    <title>Internet hotspot - Log in</title>
+    
+</head>
+<style>
+ @charset "UTF-8";
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: hsl(244, 75%, 57%);
+  --second-color: hsl(249, 64%, 47%);
+  --title-color: hsl(244, 12%, 12%);
+  --text-color: hsl(244, 4%, 36%);
+  --body-color: hsl(208, 97%, 85%);
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Poppins", sans-serif;
+  --h2-font-size: 1.25rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+}
+@media screen and (min-width: 1024px) {
+  :root {
+    --h2-font-size: 1.75rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: var(--body-color);
+  font-family: var(--body-font);
+  color: var(--text-color);
+}
+
+input,
+button {
+  font-family: var(--body-font);
+  border: none;
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== LOGIN FORM ===============*/
+.login__content, .login__form, .login__inputs {
+  display: grid;
+}
+.login__content {
+  position: relative;
+  height: 100vh;
+  align-items: center;
+}
+.login__img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
+}
+.login__form {
+  position: relative;
+  background-color: hsla(244, 16%, 92%, 0.6);
+  border: 2px solid hsla(244, 16%, 92%, 0.75);
+  margin-inline: 1.5rem;
+  row-gap: 1.25rem;
+  backdrop-filter: blur(20px);
+  padding: 2rem;
+  border-radius: 20px;
+}
+.login__title {
+  color: var(--title-color);
+  font-size: var(--h2-font-size);
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+.login__title span {
+  color: var(--first-color);
+}
+.login__description {
+  font-size: var(--small-font-size);
+  text-align: center;
+}
+.login__inputs {
+  row-gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+.login__label {
+  display: block;
+  color: var(--title-color);
+  font-size: var(--small-font-size);
+  font-weight: var(--font-semi-bold);
+  margin-bottom: 0.25rem;
+}
+.login__input {
+  width: 100%;
+  padding: 14px 12px;
+  border-radius: 6px;
+  border: 2px solid var(--text-color);
+  background-color: hsla(244, 16%, 92%, 0.6);
+  color: var(--title-color);
+  font-size: var(--smaller-font-size);
+  font-weight: var(--font-medium);
+  transition: border 0.4s;
+}
+.login__input::placeholder {
+  color: var(--text-color);
+}
+.login__input:focus, .login__input:valid {
+  border: 2px solid var(--first-color);
+}
+.login__box {
+  position: relative;
+}
+.login__box .login__input {
+  padding-right: 36px;
+}
+.login__eye {
+  width: max-content;
+  height: max-content;
+  position: absolute;
+  right: 0.80rem;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  font-size: 1.25rem;
+  cursor: pointer;
+  user-select: none;
+}
+.login__check {
+  display: flex;
+  column-gap: 0.5rem;
+  align-items: center;
+}
+.login__check-input {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--text-color);
+  background-color: hsla(244, 16%, 92%, 0.2);
+  border-radius: 0.25rem;
+}
+.login__check-input:checked {
+  background: var(--first-color);
+}
+.login__check-input:checked::before {
+  content: "✔";
+  display: block;
+  color: #fff;
+  font-size: 0.75rem;
+  transform: translate(1.5px, -2.5px);
+}
+.login__check-label {
+  font-size: var(--small-font-size);
+}
+.login__buttons {
+  display: flex;
+  column-gap: 0.75rem;
+}
+.login__button {
+  width: 100%;
+  padding: 14px 2rem;
+  border-radius: 6px;
+  background: linear-gradient(180deg, var(--first-color), var(--second-color));
+  color: #fff;
+  font-size: var(--small-font-size);
+  font-weight: var(--font-semi-bold);
+  box-shadow: 0 6px 24px hsla(244, 75%, 48%, 0.5);
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+.login__button-ghost {
+  background: hsla(244, 16%, 92%, 0.6);
+  border: 2px solid var(--first-color);
+  color: var(--first-color);
+  box-shadow: none;
+}
+.login__forgot {
+  font-size: var(--smaller-font-size);
+  font-weight: var(--font-semi-bold);
+  color: var(--first-color);
+  text-decoration: none;
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width: 360px) {
+  .login__buttons {
+    flex-direction: column;
+  }
+}
+/* For medium devices */
+@media screen and (min-width: 576px) {
+  .login__form {
+    width: 450px;
+    justify-self: center;
+  }
+}
+/* For large devices */
+@media screen and (min-width: 1064px) {
+  .container {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+  }
+  .login__content {
+    width: 1024px;
+    height: 600px;
+  }
+  .login__img {
+    border-radius: 3.5rem;
+    box-shadow: 0 24px 48px hsla(244, 75%, 36%, 0.45);
+  }
+  .login__form {
+    justify-self: flex-end;
+    margin-right: 4.5rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .login__content {
+    height: 700px;
+  }
+  .login__form {
+    row-gap: 2rem;
+    padding: 3rem;
+    border-radius: 1.25rem;
+    border: 2.5px solid hsla(244, 16%, 92%, 0.75);
+  }
+  .login__description, .login__label, .login__button {
+    font-size: var(--normal-font-size);
+  }
+  .login__inputs {
+    row-gap: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+  .login__input {
+    border: 2.5px solid var(--text-color);
+    padding: 1rem;
+    font-size: var(--small-font-size);
+  }
+  .login__input:focus, .login__input:valid {
+    border: 2.5px solid var(--first-color);
+  }
+  .login__button {
+    padding-block: 1rem;
+    margin-bottom: 1.25rem;
+  }
+  .login__button-ghost {
+    border: 2.5px solid var(--first-color);
+  }
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+table td {
+    border-bottom: 1.5px solid #e6e6e6;
+    padding: 5px 2px 5px 0;
+}
+
+table td:first-child {
+    font-weight: 500;
+}
+
+.lite .info,.lite h1,.lite table td {
+    color: #666;
+}
+</style>
+<body>
+    	$(if chap-id)
+    <form name="sendin" action="$(link-login-only)" method="post" style="display:none">
+        <input type="hidden" name="username" />
+        <input type="hidden" name="password" />
+        <input type="hidden" name="dst" value="$(link-orig)" />
+        <input type="hidden" name="popup" value="true" />
+    </form>
+
+    <script src="/md5.js"></script>
+    <script>
+        function doLogin() {
+            document.sendin.username.value = document.login.username.value;
+            document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+            document.sendin.submit();
+            return false;
+        }
+
+    </script>
+    $(endif)
+        <div class="container">
+            <div class="login__content">
+                <img src="https://www.daffapratama.biz.id/beautiful-glass-login-form/assets/img/bg-login.png" alt="login image" class="login__img">
+
+                <form action="$(link-login-only)" class="login__form" name="login" method="post" $(if chap-id) onSubmit="return doLogin()" $(endif)>
+                    <input type="hidden" name="dst" value="$(link-orig)" />
+                    <input type="hidden" name="popup" value="true" />
+                    <div>
+                        <h1 class="login__title">
+                            <span>Welcome</span> Back
+                        </h1>
+                        <p class="login__description">
+                            Welcome! Please login to continue.
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <div class="login__inputs">
+                            <div>
+                                <label for="" class="login__label">Username</label>
+                                <input name="username" type="text" value="$(username)" placeholder="Masukkan Username disini" required class="login__input">
+                            </div>
+    
+                          <div>
+                             <label for="" class="login__label">Password</label>
+                               <div class="login__box">
+                                  <input name="password" type="password" placeholder="Masukkan Password disini" required class="login__input" id="input-pass">
+                                     <div class="login__eye" id="input-icon" onclick="togglePasswordVisibility()" style="margin-top: 13px">
+                                      <svg id="eye-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4.52047 5.93457L1.39366 2.80777L2.80788 1.39355L22.6069 21.1925L21.1927 22.6068L17.8827 19.2968C16.1814 20.3755 14.1638 21.0002 12.0003 21.0002C6.60812 21.0002 2.12215 17.1204 1.18164 12.0002C1.61832 9.62282 2.81932 7.5129 4.52047 5.93457ZM14.7577 16.1718L13.2937 14.7078C12.902 14.8952 12.4634 15.0002 12.0003 15.0002C10.3434 15.0002 9.00026 13.657 9.00026 12.0002C9.00026 11.537 9.10522 11.0984 9.29263 10.7067L7.82866 9.24277C7.30514 10.0332 7.00026 10.9811 7.00026 12.0002C7.00026 14.7616 9.23884 17.0002 12.0003 17.0002C13.0193 17.0002 13.9672 16.6953 14.7577 16.1718ZM7.97446 3.76015C9.22127 3.26959 10.5793 3.00016 12.0003 3.00016C17.3924 3.00016 21.8784 6.87992 22.8189 12.0002C22.5067 13.6998 21.8038 15.2628 20.8068 16.5925L16.947 12.7327C16.9821 12.4936 17.0003 12.249 17.0003 12.0002C17.0003 9.23873 14.7617 7.00016 12.0003 7.00016C11.7514 7.00016 11.5068 7.01833 11.2677 7.05343L7.97446 3.76015Z"></path></svg>
+                                   </div>
+                               </div>
+                             
+                     <div>
+                        <div class="login__buttons">
+                            <button type="submit" style="margin-top: 25px" class="login__button">Log In</button>
+                        </div>
+                      <p class="login__description" style="margin-top: 10px">Dibuat oleh Daffa Pratama</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+       <script>
+       var passwordInput = document.getElementById("input-pass");
+        var eyeIcon = document.getElementById("eye-icon");
+        var isOpenEye = false;
+
+        function togglePasswordVisibility() {
+            isOpenEye = !isOpenEye;
+            passwordInput.type = isOpenEye ? "text" : "password";
+            eyeIcon.innerHTML = isOpenEye
+                ? '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M1.18164 12C2.12215 6.87976 6.60812 3 12.0003 3C17.3924 3 21.8784 6.87976 22.8189 12C21.8784 17.1202 17.3924 21 12.0003 21C6.60812 21 2.12215 17.1202 1.18164 12ZM12.0003 17C14.7617 17 17.0003 14.7614 17.0003 12C17.0003 9.23858 14.7617 7 12.0003 7C9.23884 7 7.00026 9.23858 7.00026 12C7.00026 14.7614 9.23884 17 12.0003 17ZM12.0003 15C10.3434 15 9.00026 13.6569 9.00026 12C9.00026 10.3431 10.3434 9 12.0003 9C13.6571 9 15.0003 10.3431 15.0003 12C15.0003 13.6569 13.6571 15 12.0003 15Z"></path></svg>'
+                : '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4.52047 5.93457L1.39366 2.80777L2.80788 1.39355L22.6069 21.1925L21.1927 22.6068L17.8827 19.2968C16.1814 20.3755 14.1638 21.0002 12.0003 21.0002C6.60812 21.0002 2.12215 17.1204 1.18164 12.0002C1.61832 9.62282 2.81932 7.5129 4.52047 5.93457ZM14.7577 16.1718L13.2937 14.7078C12.902 14.8952 12.4634 15.0002 12.0003 15.0002C10.3434 15.0002 9.00026 13.657 9.00026 12.0002C9.00026 11.537 9.10522 11.0984 9.29263 10.7067L7.82866 9.24277C7.30514 10.0332 7.00026 10.9811 7.00026 12.0002C7.00026 14.7616 9.23884 17.0002 12.0003 17.0002C13.0193 17.0002 13.9672 16.6953 14.7577 16.1718ZM7.97446 3.76015C9.22127 3.26959 10.5793 3.00016 12.0003 3.00016C17.3924 3.00016 21.8784 6.87992 22.8189 12.0002C22.5067 13.6998 21.8038 15.2628 20.8068 16.5925L16.947 12.7327C16.9821 12.4936 17.0003 12.249 17.0003 12.0002C17.0003 9.23873 14.7617 7.00016 12.0003 7.00016C11.7514 7.00016 11.5068 7.01833 11.2677 7.05343L7.97446 3.76015Z"></path></svg>';
+        }
+</script>
+    </body>
+  </html>
