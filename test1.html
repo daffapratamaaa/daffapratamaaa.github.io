@@ -297,6 +297,21 @@ table td:first-child {
 }
 
 svg{width:24px;height:24px;}
+    
+/* Define the animation keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Apply the animation to the login form */
+.login__form {
+  animation: fadeIn 1s ease-in-out;
+}
 </style>
 <body>
     	$(if chap-id)
@@ -322,7 +337,7 @@ svg{width:24px;height:24px;}
             <div class="login__content">
                 <img src="https://www.daffapratama.biz.id/beautiful-glass-login-form/assets/img/bg-login.png" alt="login image" class="login__img">
 
-                <form action="$(link-login-only)" class="login__form" name="login" method="post" $(if chap-id) onSubmit="return doLogin()" $(endif)>
+                <form action="$(link-login-only)" class="login__form fade-in" name="login" method="post" $(if chap-id) onSubmit="return doLogin()" $(endif)>
                     <input type="hidden" name="dst" value="$(link-orig)" />
                     <input type="hidden" name="popup" value="true" />
                     <div>
