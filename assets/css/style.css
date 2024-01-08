@@ -1,6 +1,6 @@
 @charset "UTF-8";
-@import url("src/bootstrap/bootstrap.min.css");
-@import url("src/splide/splide.min.css");
+@import url("https://cdn.jsdelivr.net/gh/daffapratamaaa/daffapratamaaa.github.io/assets/css/src/bootstrap/bootstrap.min.css");
+@import url("https://cdn.jsdelivr.net/gh/daffapratamaaa/daffapratamaaa.github.io/assets/css/src/splide/splide.min.css");
 body {
   font-family: "Poppins", sans-serif;
   font-size: 15px;
