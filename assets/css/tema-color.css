@@ -1,0 +1,231 @@
+/* Variable color */ 
+:root, :root .lgT:not(.drK), :root .theme0:not(.drK){
+/* Theme */ 
+--themeC: $(themeColor); 
+/* Body */ 
+--headC: $(head.color); 
+--bodyC: $(body.color); 
+--bodyCa: $(body.colorAlt); 
+--bodyB: $(body.bgColor); 
+/* Link */ 
+--linkC: $(link.color); 
+--linkB: $(link.bgColor); 
+/* Wave */ 
+--waveB: $(wave.bgColor); 
+/* Icon */ 
+--iconC: $(icon.color); 
+--iconCa: $(icon.colorAlt); 
+--iconCs: $(icon.colorSec); 
+/* Header */ 
+--headerC: $(header.text); 
+--headerT: $(header.titleSize); 
+--headerW: 400; /* write 400(normal) or 700(bold) */ 
+--headerB: $(header.bgColor); 
+--headerL: $(header.border); 
+--headerI: $(header.icon); 
+--headerH: $(header.height); 
+--headerHi: -$(header.height); 
+--headerHm: $(header.heightM); 
+--headerR: $(moblheader.radius); 
+/* Notif */ 
+--notifH: $(notif.height); 
+--notifU: $(notif.bg); 
+--notifC: $(notif.color); 
+/* Content */ 
+--contentB: $(content.bg); 
+--contentL: $(content.border); 
+--contentW: $(content.maxWidth); 
+--sideW: $(sidebar.maxWidth); 
+--transB: rgba(0,0,0,.05); 
+/* Page */ 
+--pageW: $(page.maxContent); 
+--pageW: $(post.maxContent); 
+--postT: $(post.titleSize); 
+--postF: $(post.fontSize); 
+--postTm: $(post.titleSizeMobile); 
+--postFm: $(post.fontSizeMobile); 
+/* Widget */ 
+--widgetT: $(widget.titleSize); 
+--widgetTw: 400; /* write 400(normal) or 700(bold) */ 
+--widgetTa: $(widget.titleAfter); 
+--widgetTac: $(widget.titleAfterC); 
+/* Nav */ 
+--navW: $(nav.width); 
+--navT: $(nav.text); 
+--navI: $(nav.icon); 
+--navB: $(nav.bg); 
+--navL: $(nav.border); 
+/* Search */ 
+--srchI: $(search.icon); 
+--srchB: $(search.bg); 
+/* Mob Men */ 
+--mobT: $(mob.text); 
+--mobHv: $(mob.hovBg); 
+--mobB: $(mob.bg); 
+--mobL: $(mob.border); 
+--mobBr: $(mob.borderR); 
+/* Footer */ 
+--fotT: $(foot.text); 
+--fotB: $(foot.bg); 
+--fotL: $(foot.border); 
+/* Font family */ 
+--fontH: Google Sans Text,Arial,Helvetica,sans-serif; 
+--fontB: Google Sans Text,Arial,Helvetica,sans-serif; 
+--fontBa: Google Sans Text,Arial,Helvetica,sans-serif; 
+--fontC: Google Sans Mono,monospace; 
+/* Trans */ 
+--trans-1: all .1s ease-in-out; 
+--trans-2: all .2s ease-in-out; 
+--trans-3: all .3s ease-in-out;
+--trans-4: all .4s ease-in-out;
+--trans-5: all .5s ease-in-out;
+/* Synx */ 
+--synxBg: #f6f6f6; 
+--synxC: #2f3337; 
+--synxOrange: #b75501; 
+--synxBlue: #015692; 
+--synxGreen: #54790d; 
+--synxRed: #f15a5a; 
+--synxGray: #656e77; 
+/* Border Radius */ 
+--buttonR: $(button.radius); 
+--greetR: $(greet.radius);  
+--iconHr: $(iconhover.radius);  
+--thumbEr: $(thumbelem.radius); 
+--srchMr: $(moblsearch.radius); 
+--srchDr : $(desksearch.radius); 
+/* Dark */ 
+--darkT: $(dark.text); 
+--darkTa: $(dark.textAlt); 
+--darkU: $(dark.link); 
+--darkW: $(dark.wave); 
+--darkB: $(dark.bg); 
+--darkBa: $(dark.bgAlt); 
+--darkBs: $(dark.bgSec);
+}
+
+/* Dark Mode */ 
+:root .drK{
+/* Theme */ --themeC: $(themeDark);
+/* Link */ --linkC: #41B375; --linkB: #41B375;
+}
+
+/* Theme 1 - Red */ 
+:root .theme1:not(.drK){
+/* Theme */ --themeC: #D32F2F; 
+/* Body */ --bodyB: #FFFCFD; 
+/* Link */ --linkC: #F44336; --linkB: #F44336; 
+/* Header */ --headerB: #FFEBEE; 
+/* Notif */ --notifU: #FFEBEE; --notifC: #B71C1C; 
+/* Search */ --srchB: #FFEBEE; 
+/* MobMn */ --mobB: #FFEBEE; 
+/* Wave */ --waveB: #FFEBEE;
+}
+
+/* Theme 2 - Green */ 
+:root .theme2:not(.drK){
+/* Theme */ --themeC: #00796B; 
+/* Body */ --bodyB: #FCFFFC; 
+/* Link */ --linkC: #009688; --linkB: #009688; 
+/* Header */ --headerB: #E0F2F1; 
+/* Notif */ --notifU: #E0F2F1; --notifC: #00796B; 
+/* Search */ --srchB: #E0F2F1; 
+/* MobMn */ --mobB: #E0F2F1; 
+/* Wave */ --waveB: #E0F2F1;
+}
+
+/* Theme 3 - Blue */ 
+:root .theme3:not(.drK){
+/* Theme */ --themeC: #1565C0; 
+/* Body */ --bodyB: #FBFEFF; 
+/* Link */ --linkC: #1976D2; --linkB: #1976D2; 
+/* Header */ --headerB: #E3F2FD; 
+/* Notif */ --notifU: #E3F2FD; --notifC: #1565C0; 
+/* Search */ --srchB: #E3F2FD; 
+/* MobMn */ --mobB: #E3F2FD; 
+/* Wave */ --waveB: #E3F2FD;
+}
+
+/* Theme 4 - Yellow */ 
+:root .theme4:not(.drK){
+/* Theme */ --themeC: #FFC107; 
+/* Body */ --bodyB: #FFFEFA; 
+/* Link */ --linkC: #FF8F00; --linkB: #FF8F00; 
+/* Header */ --headerB: #FFF8E1; 
+/* Notif */ --notifU: #FFF8E1; --notifC: #FF8F00; 
+/* Search */ --srchB: #FFF8E1; 
+/* MobMn */ --mobB: #FFF8E1; 
+/* Wave */ --waveB: #FFF8E1;
+}
+
+/* Theme 5 - Pink */ 
+:root .theme5:not(.drK){
+/* Theme */ --themeC: #C2185B; 
+/* Body */ --bodyB: #FFFCFD; 
+/* Link */ --linkC: #D81B60; --linkB: #D81B60; 
+/* Header */ --headerB: #FCE4EC; 
+/* Notif */ --notifU: #FCE4EC; --notifC: #C2185B; 
+/* Search */ --srchB: #FCE4EC; 
+/* MobMn */ --mobB: #FCE4EC; 
+/* Wave */ --waveB: #FCE4EC;
+}
+
+/* Theme 6 - Orange */ 
+:root .theme6:not(.drK){
+/* Theme */ --themeC: #E64A19; 
+/* Body */ --bodyB: #FBFEFF; 
+/* Link */ --linkC: #F4511E; --linkB: #F4511E; 
+/* Header */ --headerB: #FBE9E7; 
+/* Notif */ --notifU: #FBE9E7; --notifC: #E64A19; 
+/* Search */ --srchB: #FBE9E7; 
+/* MobMn */ --mobB: #FBE9E7; 
+/* Wave */ --waveB: #FBE9E7;
+}
+
+/* Theme 7 - Blue Grey */ 
+:root .theme7:not(.drK){
+/* Theme */ --themeC: #455A64; 
+/* Body */ --bodyB: #FBFEFF; 
+/* Link */ --linkC: #546E7A; --linkB: #546E7A; 
+/* Header */ --headerB: #ECEFF1; 
+/* Notif */ --notifU: #ECEFF1; --notifC: #455A64; 
+/* Search */ --srchB: #ECEFF1; 
+/* MobMn */ --mobB: #ECEFF1; 
+/* Wave */ --waveB: #ECEFF1;
+}
+
+/* Theme 8 - Brown */ 
+:root .theme8:not(.drK){
+/* Theme */ --themeC: #5D4037; 
+/* Body */ --bodyB: #FBFEFF; 
+/* Link */ --linkC: #5D4037; --linkB: #5D4037; 
+/* Header */ --headerB: #EFEBE9; 
+/* Notif */ --notifU: #EFEBE9; --notifC: #5D4037; 
+/* Search */ --srchB: #EFEBE9; 
+/* MobMn */ --mobB: #EFEBE9; 
+/* Wave */ --waveB: #EFEBE9;
+}
+
+/* Theme 9 - Purple */ 
+:root .theme9:not(.drK){
+/* Theme */ --themeC: #7B1FA2; 
+/* Body */ --bodyB: #FBFEFF; 
+/* Link */ --linkC: #8E24AA; --linkB: #8E24AA; 
+/* Header */ --headerB: #F3E5F5; 
+/* Notif */ --notifU: #F3E5F5; --notifC: #7B1FA2; 
+/* Search */ --srchB: #F3E5F5; 
+/* MobMn */ --mobB: #F3E5F5; 
+/* Wave */ --waveB: #F3E5F5;
+}
+
+/* Theme 10 - Indigo */ 
+:root .theme10:not(.drK){
+/* Theme */ --themeC: #283593; 
+/* Body */ --bodyB: #FBFEFF; 
+/* Link */ --linkC: #3949AB; --linkB: #3949AB; 
+/* Header */ --headerB: #E8EAF6; 
+/* Notif */ --notifU: #E8EAF6; --notifC: #283593; 
+/* Search */ --srchB: #E8EAF6; 
+/* MobMn */ --mobB: #E8EAF6; 
+/* Wave */ --waveB: #E8EAF6;
+}
