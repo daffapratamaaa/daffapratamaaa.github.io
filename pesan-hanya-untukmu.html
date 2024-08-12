@@ -215,12 +215,12 @@ const body = document.querySelector("body");const swalst = Swal.mixin({timer: 23
            title: 'Masukin Nama Kamu 🫣', input: 'text',
            confirmButtonText: 'Lanjut'
        });
-       if(nama && nama.length < 11){
+       if(nama && nama.length < 21){
          window.nama = nama;
          vketikutama="Alooo, " + nama + " ✨";
          mulainama();
          } else {
-           await swals.fire('Ups!', 'Nama tidak boleh kosong atau lebih dari 10 karakter, ya!');inipesan();
+           await swals.fire('Ups!', 'Nama tidak boleh kosong atau lebih dari 20 karakter, ya!');inipesan();
     }
     //vketikutama="Alooo Kamu ✨";
   }
