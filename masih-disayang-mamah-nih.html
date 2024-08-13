@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<meta charset='UTF-8'/>
+<meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5' name='viewport'/>
+<meta content='IE=edge' http-equiv='X-UA-Compatible'/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="https://cdn.jsdelivr.net/gh/daffapratamaaa/daffapratamaaa.github.io/favicon.ico">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+
+<head>
+<title>Masih Disayang Mamah Nih</title>
+</head>
+<style>
+:root {
+--warna-bg: rgba(0, 0, 0, .75); 
+--warna-teks: white;
+--warna-bingkai: rgba(255, 255, 255, .7);
+--bingkai: 12px;
+--gaya-font: 'Ubuntu', sans-serif;
+}
+body{background-color:#101010;font-family:var(--gaya-font);padding: 25px;-webkit-user-select: none; -ms-user-select: none; user-select: none;} a{text-decoration:none;}
+body::before{content:"\00A9  Daffa Pratama Nur Ardiansyah";color:white;opacity:.3;font-size:10px;position:fixed;bottom:25px;right:25px;z-index:2}
+#bgbelakang{display:block;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.4);-webkit-backdrop-filter:blur(2px); backdrop-filter:blur(2px);transition:all 1s ease;}
+#bgbelakang img{opacity:.6;width:100%;height:100%;pointer-events: none;-webkit-user-drag: none;user-select: none;}
+
+@keyframes leaves {0% {transform: scale(1.0);} 100% {transform: scale(.8);}}
+#lope, .lopdeg{animation: leaves 1s ease-in-out infinite alternate;-webkit-animation: leaves 1s ease-in-out infinite alternate;}
+.lovein:hover{transform: scale(1.3);}
+
+@keyframes kont{0%  {left:-1px; top:-3px;} 50% {left:1px; top:3px;} 100% {left:-1px; top:-3px;}}
+blockquote{opacity:0;visibility:hidden;transition:all 1s ease;position:relative;margin-top:120px;margin-left:0;margin-right:0;}
+blockquote{width:400px;min-height:30px;background:var(--warna-bg);color:var(--warna-teks);text-shadow: 0px 2px 2px rgba(0, 0, 0, .8);text-align:center;line-height:1.3em;padding:25px;border: 1px solid var(--warna-bingkai);border-radius:var(--bingkai);}
+p{opacity:0;color:var(--warna-teks);font-size:16px;font-weight:700;line-height:1.4em;margin:0 10px;text-shadow: 0px 2px 2px rgba(0, 0, 0, .8);transform: scale(.1);transition:all .3s ease;}
+#spasi::before{content:"\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0"}
+#kalimat, #kalimatc{opacity:1;transform: scale(1);}
+#kalimatc{font-size:15px;font-weight:400}
+
+#katajawab{font-weight:400;margin:0;display:none;}
+@keyframes rto{from {transform:scale(1);} to {transform:scale(1.1);}}
+@keyframes aniopa{0% {transform: scale(1);} 50% {transform: scale(.75);} 100% {transform: scale(1);}}
+#katabawah{transform:scale(.1);font-size:30px;font-weight:400}
+#katatiga{font-size:18px;} #kataempat{font-size:13px;font-weight:400;text-align:right;}
+@keyframes rtf{from {transform: rotate(0deg);} to {transform: rotate(360deg);}} @keyframes rt{from {transform: scale(.9);/* transform: rotate(-5deg); */} to {transform: scale(1);/* transform: rotate(5deg); */}}
+#bq img{display:none;padding:10px;width:130px;height:130px;margin:20px 0 0 0;}
+#bq img:first-child{display:inline-flex}
+#akhiran{display:none;color:#FFC700;font-size:14px;text-align:center;background:rgba(0,0,0,.55);text-shadow: 0px;padding:10px;border-radius:var(--bingkai);line-height:10px;transition:all .2s ease;} #akhiran:hover{transform: scale(.9);opacity:.5;}
+
+#pergeseran{opacity:0;visibility:hidden;transition:all 1s ease;display:flex;flex-wrap:nowrap;align-items:flex-start;justify-content:flex-start;position:relative;max-width:500px;padding:0 20px; overflow-y:hidden;overflow-x:scroll;scroll-behavior:smooth;scroll-snap-type:x mandatory; -ms-overflow-style:none;-webkit-overflow-scrolling:touch}
+#pergeseran p{background:#003A76;color:white;border: 1px dashed #fff;border-radius:8px;padding:8px;display:flex;flex-wrap:nowrap;text-align:center;font-size:16px;font-weight:700;align-items:center;justify-content:center;flex-shrink:0; width:90%; min-height:130px;margin:0 15px 0 0; scroll-snap-align:center} #pergeseran > *:last-child{margin-right:0} #pergeseran:after{content:'';display:block;flex-shrink:0; align-self:stretch;padding-left:20px}
+#pergeseran p b{display:block;} #pergeseran p b img{width:80px;height:80px;margin:20px 0;}
+/*#pergeseran p b span{display:flex;}*/
+#tm{color:#FFB400;transition:all .5s ease;} #tm:hover{transform: scale(.7);}
+#idgeser{position:relative;top:30vh;font-size:17px;color:white}
+
+#contTom{opacity:0;margin:0;display:flex;align-items:left;list-style:none;transition:all 1s ease;}
+.button{cursor:pointer;display:inline-flex;align-items:center; margin:0;margin:12px 0 12px 0;transition:all .3s ease;padding:10px;outline:0;border:1px solid var(--warna-bingkai); border-radius:var(--bingkai);line-height:15px;background:var(--warna-bg);color:var(--warna-teks);font-size:13px;font-weight:700;white-space:nowrap;overflow:hidden;z-index:1} 
+.button:hover{transform: scale(.90);opacity:.98;}
+#buttonv2{position:absolute;font-size:15px;color:white;background:var(--warna-bg);padding:10px;border-radius:8px;line-height:10px;text-shadow: 0px 2px 2px rgba(0, 0, 0, .8);opacity:0}
+
+.lovein{font-size:50px;display:flex;align-items:center;justify-content:center;transition:all .3s ease;}
+.lovein svg{width:80px;height:80px;fill:#fefefe}
+
+.content2{display:block;text-align:center;width:100%;height:180px;margin-top:50px;}
+.content2 > *{display:flex;align-items:center;justify-content:center;margin-top:15px;font-size:17px;color:white}
+.image img{border-radius:10%;transform:scale(.1);transition:all .8s ease;}
+#k2 .image > *{margin-bottom:40px;} #k2{font-weight:700;font-size:17px;color:white;text-shadow: 0px 2px 2px rgba(0, 0, 0, .8);} #final1{transition:all 3s ease;}
+
+#idkirim{font-size:13px;text-shadow: 0px 2px 2px rgba(0, 0, 0, .8);color:white;transition:all .5s ease;}
+#idkirim{opacity:0;visibility:hidden;margin-top:100px} #idkirim:hover{transform:scale(.8);}
+
+.content2{display:none;}
+#Content{animation-name:none;animation-duration: 3s;animation-iteration-count: infinite;position:relative;opacity:0;margin-top:50px;width:100%;height:180px;transition:all 1.3s ease;}
+#Content > *{display:flex;align-items:center;text-align:center;justify-content:center;margin-top:15px;}
+#Content img{display:none;background:rgba(255,255,255, 1);border-radius:50%;padding:10px;width:110px;height:110px;margin:20px 0 0 0;}
+
+.swal2-modal > *{font-size:16px}
+.swal2-title{line-height:1.3em;margin-right:20px;margin-left:20px;font-size:18px;text-align:center;padding:15px 30px 0 30px;}
+.swal2-timer-progress-bar-container > *{opacity:.3;background:#007AFF;margin:0 5px}
+.swal2-modal{background:rgba(255,255,255,1);border: .7px solid #fff;border-radius:var(--bingkai);top:-60px;}
+
+.fa-heart {opacity:.3;color:white;font-size: 30px;position: absolute;animation:  heartMove linear 1;top: -10vh;z-index: 0;}
+@keyframes heartMove {0%{transform: translateY(-10vh) ;} 100%{transform: translateY(100vh) ;}}
+</style>
+<body>
+
+   <div id="bgbelakang">
+      <img src="https://daffapratamaaa.github.io/assets/image/street22.jpg"/>
+   </div>
+
+   <div id='Content'>
+   <div><img id="fotosatu" src=""/><img id="fotodua" src=""/><img id="fototiga" src=""/><img id="fotoempat" src=""/></div>
+   <div><blockquote id='bq'>
+   <p id="kalimat">...</p>
+   <p id="kalimatc"></p>
+   </blockquote></div>
+   
+      <div id="contTom"><a id="By" class='button' onClick="sjawab()">Klik untuk Jawab</a></div>
+   </div>
+
+<script>
+  function showDiv() {setTimeout(setel,50);pergantian();setTimeout(kpemb,100);document.getElementById('Content').style = "opacity:1;margin-top:4vh;animation:kont 5s infinite;";document.querySelector("body").style.animation = "none 8s ease infinite";} function kpemb() {bq.style = "opacity:1;visibility:visible;margin-top:5px";}
+  function loadfoto(){fotosatu.style="display:inline-flex;pointer-events: none;-webkit-user-drag: none;user-select: none;";fotosatu.src = gambar1;fotodua.src = gambar2;fototiga.src = gambar3;fotoempat.src = gambar4;}
+  function tombol(){contTom.style="opacity:1;transform: scale(1);";ftom=1;} ftom=0; function fakhiran(){document.getElementById("akhiran").style = "display:inline-flex";}
+  const swals = Swal.mixin({allowOutsideClick: false, cancelButtonColor: '#FF0040',}); const swalsy = Swal.mixin({confirmButtonText: 'Iya', allowOutsideClick: false,}); const swalst = Swal.mixin({allowOutsideClick: false, showConfirmButton: false, timer: 1200, timerProgressBar: true, didOpen: () => {Swal.showLoading();const b = Swal.getHtmlContainer().querySelector('b');timerInterval = setInterval(() => {Swal.getTimerLeft()}, 100)},willClose: () => {clearInterval(timerInterval)}}); const style = document.createElement('style'); var today = new Date();var dd = String(today.getDate()).padStart(2, '0');var mm = String(today.getMonth() + 1).padStart(2, '0');var yyyy = today.getFullYear();const monthNames = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];today = dd + ' ' + monthNames[today.getMonth()] + ' ' + yyyy;
+  function play() {var audio = new Audio('');audio.play();} function sjawab(){if(ftom==1){jawab();} if(ftom==2){menuju();}}
+  function otomatis() {befanimkata();setTimeout(animkata,200);} function befanimkata(){kalimatc.style="transform:scale(.3);margin-top:30px;";} function animkata() {kalimatc.style="transform:scale(1);margin-top:30px;";}
+  function finalakhir(){ftom=2;otomatis();By.innerHTML = "Kirim Pesan";kalimatc.innerHTML = "Jawabanmu: " + pesanwhatsapp;}
+  function setel(){audio.play();} function setel2(){bgm.play();} 
+  function showpalingakhir(){idketiga.style = "font-weight:700;opacity:1;font-size:16px;margin-top:20px;animation:rto .6s infinite alternate;";setTimeout(tombol,1000);}
+  var aa=0,katangetik;function ngetik() {if(aa<katangetik.length){kalimat.innerHTML += katangetik.charAt(aa);aa++;setTimeout(ngetik,60);}}
+  var ai=0,katangetik2;function ngetik2() {if(ai<katangetik2.length){kalimat.innerHTML += katangetik2.charAt(ai);ai++;setTimeout(ngetik2,60);}}
+  var au=0,katangetik3;function ngetik3() {if(au<katangetik3.length){kalimat.innerHTML += katangetik3.charAt(au);au++;setTimeout(ngetik3,50);} if(au==katangetik3.length){setTimeout(bawahlagi,600);}}
+  function bawahlagi(){fototiga.style="display:none";fotoempat.style="display:inline-flex";setTimeout(tombol,1000);kalimatc.style="margin-top:30px;";kalimatc.innerHTML = emot;}
+  
+  function pergantian(){setTimeout(gantikata,1700);setTimeout(gantikata,4200);setTimeout(gantikata,6400);}
+  function tfkata(){fkata+=1;} function bersihkan(){kalimat.innerHTML = "";}
+  fkata=1;function gantikata(){
+                 if(fkata==1){kalimat.innerHTML = "";setTimeout(ngetik,50);}
+                 if(fkata==2){kalimat.innerHTML = "";setTimeout(ngetik2,50);fotosatu.style="display:none";fotodua.style="display:inline-flex;"}
+                 if(fkata==3){kalimat.innerHTML = "";setTimeout(ngetik3,50);fotodua.style="display:none";fototiga.style="display:inline-flex";}
+                 setTimeout(tfkata, 300);
+  }
+</script>
+
+<script type="text/javascript">
+       async function menuju(){await swals.fire('Kirim pesan ke WhatsApp aku, ya!');window.location = "https://api.whatsapp.com/send?phone=6283138124986&text=" + pesanwhatsapp;}
+       async function jawab(){
+           var { value: jawaban } = await swals.fire({
+               title: 'Ketik Jawabannya &#128073;&#128072;', 
+               input: 'text', allowOutsideClick: false, showCancelButton: false,
+           });
+           if(jawaban && jawaban.length < 16){
+           	window.jawaban = jawaban;
+               pesanwhatsapp = jawaban;
+               finalakhir();
+           } else {
+               await swals.fire('Ups!', 'Jawaban tidak boleh kosong atau lebih dari 15 karakter, ya!');jawab();
+           }
+       }
+
+      async function pertama(){
+         audio = new Audio('https://audio.jukehost.co.uk/IkPAuUie3UV0XRyF1Y6iJRxski2Q7qt3');
+         
+         gambar1 = "https://daffapratamaaa.github.io/assets/image/cilukba.gif";
+         gambar2 = "https://daffapratamaaa.github.io/assets/image/gigitin.gif";
+         gambar3 = "https://daffapratamaaa.github.io/assets/image/tos.gif";
+         gambar4 = "https://daffapratamaaa.github.io/assets/image/emawh.gif";
+         
+         katangetik = "Masih.. Disayang Mamah Nih,";
+         katangetik2 = "Belum Disayang Kamu...";
+         katangetik3 = "Kamunya Kapan Sayang Sama Aku? 🤭";
+         
+         emot = "Anjay 👉🏻👈🏻";
+
+         loadfoto();await swalst.fire('Tunggu');await swals.fire('Selamat datang!', 'Sekarang lihat ini ya :)');setTimeout(showDiv,300);
+       } pertama();
+</script>
+</body>
+</html>
