@@ -968,18 +968,18 @@
   </script>
 
   <script type="text/javascript">
-    async function menuju() {await swals.fire('Kirim pesan ke WhatsApp aku, ya!'); window.location = "https://api.whatsapp.com/send?phone=6283138124986&text=" + pesanwhatsapp;}
+    async function menuju() {await swals.fire('Kirim pesan ke WhatsApp aku, ya!'); window.location = "https://api.whatsapp.com/send?phone=&text=" + pesanwhatsapp;}
     async function jawab() {
       var {value: jawaban} = await swals.fire({
         title: 'Isi Pesan &#128073;&#128072;', input: 'text', allowOutsideClick: false, showCancelButton: false,
       });
-      if (jawaban && jawaban.length < 19) {
+      if (jawaban && jawaban.length < 21) {
         window.jawaban = jawaban;
         pesanwhatsapp = jawaban;
 
         menuju();
       } else {
-        await swals.fire('Ups!', 'Jawaban tidak boleh kosong atau lebih dari 18 karakter, ya!'); jawab();
+        await swals.fire('Ups!', 'Jawaban tidak boleh kosong atau lebih dari 20 karakter, ya!'); jawab();
       }
     }
 
